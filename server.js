@@ -1,6 +1,7 @@
 require('dotenv').config({ override: true });
 console.log("[Gemini] API key configured:", Boolean(process.env.GEMINI_API_KEY));
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const fs = require('fs');
 
@@ -25,6 +26,7 @@ const PORT = process.env.PORT || 3000;
 // Body parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // Serve static assets from public folder
 app.use('/public', express.static(path.join(__dirname, 'public')));

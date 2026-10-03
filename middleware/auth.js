@@ -18,7 +18,7 @@ function parseCookies(req) {
 }
 
 function getAuthUser(req) {
-  const cookies = parseCookies(req);
+  const cookies = req.cookies || parseCookies(req);
   const authHeader = req.headers.authorization;
   let token = cookies.margdarshak_session || cookies.user_id;
 
