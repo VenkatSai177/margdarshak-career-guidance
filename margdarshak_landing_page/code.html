@@ -1,0 +1,465 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display, Cinzel, Plus Jakarta Sans, Caveat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Suranna&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#E5B25D',
+              lightgold: '#F5D796',
+              amber: '#C58C36',
+              dark: '#0d0d0f',
+              card: 'rgba(20, 20, 22, 0.65)'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            script: ['Caveat', 'cursive'],
+            telugu: ['Suranna', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles for Layout & Visual Polish -->
+<style data-purpose="custom-glassmorphism">
+    /* Glass card backdrop blur and subtle border gradient */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(28, 26, 23, 0.72) 0%, rgba(14, 14, 16, 0.82) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 178, 93, 0.22);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(245, 215, 150, 0.55);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(229, 178, 93, 0.18), 0 0 25px rgba(229, 178, 93, 0.1);
+    }
+
+    /* Golden text gradient */
+    .gold-gradient-text {
+      background: linear-gradient(180deg, #FFF6E5 0%, #F5D796 45%, #DFAC55 85%, #B47C28 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Soft ambient vignette overlay on background */
+    .hero-vignette {
+      background: radial-gradient(circle at 65% 38%, rgba(0,0,0,0) 25%, rgba(10, 8, 7, 0.35) 60%, rgba(8, 7, 6, 0.8) 100%);
+    }
+
+    /* Custom Parchment Effect */
+    .parchment-box {
+      background: linear-gradient(135deg, #dfc08f 0%, #cdab75 50%, #ba955e 100%);
+      box-shadow: 3px 6px 20px rgba(0,0,0,0.6), inset 0 0 40px rgba(114, 76, 28, 0.45);
+      border-radius: 4px;
+      clip-path: polygon(1% 2%, 99% 1%, 98% 98%, 2% 99%, 0% 50%);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-[#0b0907] text-[#EDE7DE] font-sans antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden min-h-screen relative">
+<!-- BEGIN: Master Background Wrapper with Reference Image & Atmosphere -->
+<div class="fixed inset-0 z-0 pointer-events-none select-none overflow-hidden" data-purpose="cinematic-backdrop">
+<img alt="Rural Student Looking at Future Horizon" class="w-full h-full object-cover object-center scale-[1.01] brightness-[0.96] contrast-[1.04]" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+<!-- Subtle directional vignette to improve UI legibility while maintaining the visual artwork -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent w-full md:w-3/5"></div>
+<div class="absolute inset-0 hero-vignette"></div>
+</div>
+<!-- END: Master Background Wrapper -->
+<!-- BEGIN: Main Navigation Bar -->
+<header class="sticky top-0 z-50 w-full transition-all duration-300 backdrop-blur-md bg-[#090807]/75 border-b border-white/5" data-purpose="site-header">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo & Title -->
+<a class="flex items-center space-x-3.5 group cursor-pointer" data-purpose="brand-identity" href="#">
+<!-- Golden Open Book & Sunburst Emblem -->
+<div class="w-10 h-10 flex items-center justify-center text-brand-gold group-hover:scale-105 transition-transform duration-200">
+<svg class="w-9 h-9" fill="none" viewBox="0 0 48 48">
+<!-- Sun rays -->
+<path d="M24 4V10M13 8L16.5 13M35 8L31.5 13" stroke="url(#goldRays)" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Open book leaves -->
+<path d="M6 34C13 32 19 33 24 38C29 33 35 32 42 34V18C35 16 29 17 24 22C19 17 13 16 6 18V34Z" fill="url(#goldFill)" stroke="#FFE8B2" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M24 22V38" stroke="#FFE8B2" stroke-width="1.75"></path>
+<!-- Defs for Gradient -->
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="goldFill" x1="6" x2="42" y1="16" y2="38">
+<stop stop-color="#FCE1A4"></stop>
+<stop offset="0.55" stop-color="#E2AE57"></stop>
+<stop offset="1" stop-color="#9C6B1C"></stop>
+</linearGradient>
+<linearGradient gradientUnits="userSpaceOnUse" id="goldRays" x1="13" x2="35" y1="4" y2="13">
+<stop stop-color="#FFF0D0"></stop>
+<stop offset="1" stop-color="#D79E3B"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-serif tracking-wide text-2xl font-bold text-[#F8EBD3] leading-none">Margdarshak</span>
+<span class="text-[11px] text-[#CDB99C] tracking-wider uppercase font-medium mt-1">Guiding Rural Dreams</span>
+</div>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden lg:flex items-center space-x-1 font-medium text-sm text-[#D7CEC3]" data-purpose="primary-navigation">
+<a class="px-4 py-1.5 text-white rounded-full bg-white/10 border border-white/15 backdrop-blur-sm shadow-inner transition" href="#home">Home</a>
+<a class="px-3.5 py-1.5 hover:text-brand-lightgold hover:bg-white/5 rounded-full transition duration-150" href="#about">About</a>
+<a class="px-3.5 py-1.5 hover:text-brand-lightgold hover:bg-white/5 rounded-full transition duration-150" href="#features">Features</a>
+<a class="px-3.5 py-1.5 hover:text-brand-lightgold hover:bg-white/5 rounded-full transition duration-150" href="#success-stories">Success Stories</a>
+<a class="px-3.5 py-1.5 hover:text-brand-lightgold hover:bg-white/5 rounded-full transition duration-150" href="#how-it-works">How It Works</a>
+<a class="px-3.5 py-1.5 hover:text-brand-lightgold hover:bg-white/5 rounded-full transition duration-150" href="#contact">Contact</a>
+</nav>
+<!-- Right Header Actions (Search, Language, Login, Get Started) -->
+
+</div>
+<!-- Mobile Dropdown Navigation -->
+<div class="hidden lg:hidden border-t border-stone-800 bg-[#12100d]/95 backdrop-blur-xl px-4 py-4 space-y-2" id="mobileMenu">
+<a class="block px-3 py-2 rounded-md bg-white/10 text-white font-medium text-sm" href="#home">Home</a>
+<a class="block px-3 py-2 rounded-md hover:bg-white/5 text-stone-300 font-medium text-sm" href="#about">About</a>
+<a class="block px-3 py-2 rounded-md hover:bg-white/5 text-stone-300 font-medium text-sm" href="#features">Features</a>
+<a class="block px-3 py-2 rounded-md hover:bg-white/5 text-stone-300 font-medium text-sm" href="#success-stories">Success Stories</a>
+<a class="block px-3 py-2 rounded-md hover:bg-white/5 text-stone-300 font-medium text-sm" href="#how-it-works">How It Works</a>
+<a class="block px-3 py-2 rounded-md hover:bg-white/5 text-stone-300 font-medium text-sm" href="#contact">Contact</a>
+<div class="pt-2 border-t border-stone-800 flex gap-2">
+<a class="flex-1 text-center py-2 text-sm border border-stone-700 rounded-full text-stone-200 font-semibold" href="/login">Login</a>
+<a class="flex-1 text-center py-2 text-sm bg-brand-gold text-black rounded-full font-semibold" href="/login">Get Started</a>
+</div>
+</div>
+</header>
+<!-- END: Main Navigation Bar -->
+<!-- BEGIN: Main Page Content -->
+<main class="relative z-10">
+<!-- Search Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" id="searchModal">
+<div class="bg-[#191714] border border-stone-700 rounded-2xl w-full max-w-xl p-6 shadow-2xl relative">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-white" id="closeSearchModal">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<h3 class="text-xl font-serif font-bold text-brand-lightgold mb-4">Find Career Paths, Courses &amp; Scholarships</h3>
+<div class="relative">
+<input class="w-full bg-stone-900/90 border border-stone-700 rounded-xl px-4 py-3 text-stone-200 placeholder-stone-500 focus:outline-none focus:border-brand-gold pr-10 text-sm" placeholder="e.g. Polytechnic, Agriculture diploma, AICTE scholarship..." type="text">
+<span class="absolute right-3 top-3 text-stone-400">↵</span>
+</div>
+<div class="mt-4 flex flex-wrap gap-2 text-xs text-stone-400">
+<span class="text-stone-500">Popular:</span>
+<span class="px-2.5 py-1 bg-stone-800 rounded-full hover:text-white cursor-pointer">B.Sc Agriculture</span>
+<span class="px-2.5 py-1 bg-stone-800 rounded-full hover:text-white cursor-pointer">Post-Matric Aid</span>
+<span class="px-2.5 py-1 bg-stone-800 rounded-full hover:text-white cursor-pointer">Skill Certifications</span>
+</div>
+</div>
+</div>
+<!-- BEGIN: Hero Section -->
+<section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-14 pb-12 min-h-[calc(100vh-5rem)] flex flex-col justify-between" data-purpose="hero-section">
+<!-- Top Half: Tagline, Big Headline, Paragraph, CTAs -->
+<div class="relative max-w-3xl pt-2">
+<!-- Category Tagline -->
+<div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-semibold tracking-[0.24em] text-brand-lightgold/90 uppercase mb-4" data-purpose="sub-headline-badge">
+<span>RURAL TALENT</span>
+<span class="text-brand-gold">•</span>
+<span>REAL OPPORTUNITIES</span>
+<span class="text-brand-gold">•</span>
+<span>A BRIGHTER INDIA</span>
+</div>
+<!-- Main Majestic Headline -->
+<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-serif font-semibold text-white tracking-tight leading-[1.08] drop-shadow-lg mb-6">
+<span class="block text-[#FFFDF8]">Every Dream</span>
+<span class="block gold-gradient-text">Deserves a Direction.</span>
+</h1>
+<!-- Subtitle Description -->
+<p class="text-stone-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl drop-shadow mb-9">
+          Margdarshak is an AI-powered career guidance platform for rural students, helping them discover opportunities, build skills, and achieve their dreams.
+        </p>
+<!-- CTA Button Group -->
+<div class="flex flex-wrap items-center gap-4 sm:gap-5" data-purpose="hero-ctas">
+<!-- Primary CTA Button -->
+<a class="group inline-flex items-center justify-center space-x-3 px-7 py-3.5 rounded-full font-semibold text-base text-stone-950 bg-gradient-to-r from-[#F6D899] via-[#E6B35D] to-[#D5983A] hover:brightness-110 shadow-xl shadow-amber-950/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" href="/login">
+<span>Start Your Journey</span>
+<svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+<!-- Secondary Video CTA Button -->
+<button class="group inline-flex items-center space-x-3 px-6 py-3.5 rounded-full font-medium text-base text-stone-200 bg-stone-900/60 hover:bg-stone-900/90 border border-stone-600/80 hover:border-brand-gold/60 backdrop-blur-md transition-all duration-200" id="watchStoryBtn" type="button">
+<!-- Circular Play Icon -->
+<span class="w-7 h-7 rounded-full bg-stone-200 group-hover:bg-brand-gold flex items-center justify-center text-stone-950 transition-colors">
+<svg class="w-3.5 h-3.5 fill-current translate-x-0.5" viewBox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+</span>
+<span>Watch Our Story</span>
+</button>
+</div>
+</div>
+<!-- End Top Half -->
+<!-- Middle-Right Hand-Lettered Badge: "Same Roots Bigger Dreams" (Visual Anchoring) -->
+<div class="hidden xl:block absolute right-72 top-32 pointer-events-none select-none text-right">
+<p class="font-script text-3xl sm:text-4xl text-[#E8C587] font-bold rotate-[-8deg] tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] opacity-95">
+          Same Roots<br><span class="text-4xl sm:text-5xl text-[#F9DEAC] -ml-2">Bigger Dreams</span>
+</p>
+</div>
+<!-- BEGIN: Mid Section - Key Metrics Counters -->
+<div class="my-8 md:my-10" data-purpose="metrics-row">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl">
+<!-- Stat 1: 50K+ Students -->
+<div class="flex items-center space-x-3.5 group">
+<div class="w-12 h-12 rounded-full border border-brand-gold/40 bg-black/40 backdrop-blur-md flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:scale-105 transition-all">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight">50K+</div>
+<div class="text-xs text-stone-400 font-medium">Students Guided</div>
+</div>
+</div>
+<!-- Stat 2: 1,200+ Colleges & Courses -->
+<div class="flex items-center space-x-3.5 group">
+<div class="w-12 h-12 rounded-full border border-brand-gold/40 bg-black/40 backdrop-blur-md flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:scale-105 transition-all">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight">1,200+</div>
+<div class="text-xs text-stone-400 font-medium">Colleges &amp; Courses</div>
+</div>
+</div>
+<!-- Stat 3: ₹ 5Cr+ Scholarships -->
+<div class="flex items-center space-x-3.5 group">
+<div class="w-12 h-12 rounded-full border border-brand-gold/40 bg-black/40 backdrop-blur-md flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:scale-105 transition-all">
+<span class="font-serif font-bold text-lg text-brand-gold leading-none">₹</span>
+</div>
+<div>
+<div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight">₹ 5Cr+</div>
+<div class="text-xs text-stone-400 font-medium">Scholarships Discovered</div>
+</div>
+</div>
+<!-- Stat 4: 10K+ Success Stories -->
+<div class="flex items-center space-x-3.5 group">
+<div class="w-12 h-12 rounded-full border border-brand-gold/40 bg-black/40 backdrop-blur-md flex items-center justify-center text-brand-gold group-hover:border-brand-gold group-hover:scale-105 transition-all">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div>
+<div class="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight">10K+</div>
+<div class="text-xs text-stone-400 font-medium">Success Stories</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Mid Section Metrics -->
+<!-- BEGIN: 5 Core Feature Cards Grid -->
+<div class="pt-2 pb-6" data-purpose="feature-cards-grid">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
+<!-- Card 1: Career Guidance -->
+<div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-11 h-11 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold/10 transition duration-200 mb-3">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" stroke-width="1.8"></circle>
+<polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" stroke-linejoin="round" stroke-width="1.8"></polygon>
+</svg>
+</div>
+<h3 class="text-[#F5EAD7] font-semibold text-sm sm:text-base mb-1 group-hover:text-brand-lightgold transition">Career Guidance</h3>
+<p class="text-stone-400 text-xs leading-snug">Get personalized career suggestions</p>
+</div>
+<!-- Card 2: Skill Development -->
+<div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-11 h-11 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold/10 transition duration-200 mb-3">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-[#F5EAD7] font-semibold text-sm sm:text-base mb-1 group-hover:text-brand-lightgold transition">Skill Development</h3>
+<p class="text-stone-400 text-xs leading-snug">Learn in-demand skills with guided paths</p>
+</div>
+<!-- Card 3: Courses & Colleges -->
+<div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-11 h-11 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold/10 transition duration-200 mb-3">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-[#F5EAD7] font-semibold text-sm sm:text-base mb-1 group-hover:text-brand-lightgold transition">Courses &amp; Colleges</h3>
+<p class="text-stone-400 text-xs leading-snug">Explore the best options near you</p>
+</div>
+<!-- Card 4: Scholarships -->
+<div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-11 h-11 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold/10 transition duration-200 mb-3">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-[#F5EAD7] font-semibold text-sm sm:text-base mb-1 group-hover:text-brand-lightgold transition">Scholarships</h3>
+<p class="text-stone-400 text-xs leading-snug">Find and apply for government &amp; private aid</p>
+</div>
+<!-- Card 5: AI Mentor -->
+<div class="glass-card rounded-2xl p-5 text-center flex flex-col items-center justify-center cursor-pointer group">
+<div class="w-11 h-11 rounded-full border border-brand-gold/50 flex items-center justify-center text-brand-gold group-hover:scale-110 group-hover:bg-brand-gold/10 transition duration-200 mb-3">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-[#F5EAD7] font-semibold text-sm sm:text-base mb-1 group-hover:text-brand-lightgold transition">AI Mentor</h3>
+<p class="text-stone-400 text-xs leading-snug">Get 24/7 support in your language</p>
+</div>
+</div>
+</div>
+<!-- END: 5 Feature Cards -->
+<!-- BEGIN: Bottom Section / Village Heritage & Parchment Quote -->
+<div class="pt-6 pb-2 relative" data-purpose="bottom-heritage-section">
+<!-- Central Section Title with Sprout Emblem -->
+<div class="text-center mb-6">
+<p class="text-xs sm:text-sm font-semibold tracking-[0.25em] text-[#E5B25D] uppercase">A STRONGER TOMORROW</p>
+<h2 class="text-lg sm:text-2xl font-serif text-[#F3E5CC] tracking-wide mt-0.5">STARTS IN OUR VILLAGES</h2>
+<!-- Golden Sprout Motif -->
+<div class="flex justify-center mt-2 text-brand-gold">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2C12 2 11 7 7 9C4.5 10.2 3 13 3 16C3 19.3 5.7 22 9 22C11.6 22 13.8 20.3 14.6 18C14.9 17.1 15 16.1 15 15C15 11 12 8 12 2Z" opacity="0.85"></path>
+<path d="M12 2C12 2 13 7 17 9C19.5 10.2 21 13 21 16C21 19.3 18.3 22 15 22C14.2 22 13.4 21.8 12.7 21.5C13.5 19.6 14 17.4 14 15C14 11 12 8 12 2Z" opacity="0.6"></path>
+</svg>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="flex flex-col items-center justify-center my-2">
+<a class="flex flex-col items-center group cursor-pointer text-stone-300 hover:text-brand-lightgold transition" href="#features-overview">
+<span class="w-8 h-8 rounded-full border border-stone-500/70 flex items-center justify-center group-hover:border-brand-gold group-hover:translate-y-1 transition duration-200">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</span>
+<span class="text-[11px] uppercase tracking-wider text-stone-400 mt-1.5 group-hover:text-stone-200">Scroll to Explore</span>
+</a>
+</div>
+<!-- Ambient Overlays matching reference photo annotations -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mt-4 pointer-events-none select-none">
+<!-- Left side: Telugu script & "From Villages to the World" script -->
+<div class="max-w-xs space-y-3 pointer-events-auto">
+<div class="text-[#D3B47E] font-telugu text-lg sm:text-xl font-medium tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] leading-tight">
+              చదువు<br>మార్గం<br>భవిష్యత్తు
+            </div>
+<div class="font-script text-2xl sm:text-3xl text-[#E8C587] rotate-[-5deg] drop-shadow-md">
+              From Villages<br>to the World
+            </div>
+</div>
+<!-- Right side: Vintage Parchment Quote from Dr. A.P.J. Abdul Kalam -->
+<div class="w-full sm:w-auto max-w-md pointer-events-auto">
+<div class="parchment-box p-6 text-stone-900 border border-[#8f6d3b]/50 shadow-2xl relative rotate-[1deg] hover:rotate-0 transition-transform duration-300">
+<span class="text-4xl text-stone-800 font-serif absolute top-2 left-3 leading-none opacity-40">“</span>
+<p class="font-serif italic text-stone-900 text-sm sm:text-base font-semibold leading-relaxed pl-3 pr-1 pt-1">
+                Education is the most powerful weapon you can use to change your future.
+              </p>
+<div class="text-right mt-3 text-xs sm:text-sm font-sans font-bold text-stone-800 tracking-wide">
+                — Dr. A.P.J. Abdul Kalam
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Bottom Section -->
+</section>
+<!-- END: Hero Section -->
+</main>
+<!-- END: Main Page Content -->
+<!-- BEGIN: Interactive Video Modal -->
+<div class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4" id="videoModal">
+<div class="bg-stone-900 border border-stone-700 rounded-2xl w-full max-w-2xl overflow-hidden relative shadow-2xl">
+<div class="flex items-center justify-between px-5 py-3.5 border-b border-stone-800">
+<h4 class="font-serif text-brand-lightgold text-lg font-bold">Watch Margdarshak’s Mission</h4>
+<button class="text-stone-400 hover:text-white p-1" id="closeVideoModal">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<div class="aspect-video bg-black flex flex-col items-center justify-center p-8 text-center">
+<div class="w-16 h-16 rounded-full bg-brand-gold/20 border border-brand-gold flex items-center justify-center text-brand-gold mb-4 animate-pulse">
+<svg class="w-8 h-8 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<p class="text-stone-300 text-sm max-w-md">Our documentary video showcases real students from over 400 rural villages transforming their careers through AI guidance.</p>
+<span class="text-xs text-brand-gold mt-3 font-semibold uppercase tracking-widest">Story Premiering Soon</span>
+</div>
+</div>
+</div>
+<!-- END: Interactive Video Modal -->
+<!-- BEGIN: Client Interactivity Scripts -->
+<script data-purpose="modals-and-menus">
+    // Mobile navigation toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Search Modal Handlers
+    const searchBtn = document.getElementById('searchButton');
+    const searchModal = document.getElementById('searchModal');
+    const closeSearch = document.getElementById('closeSearchModal');
+
+    if (searchBtn && searchModal && closeSearch) {
+      searchBtn.addEventListener('click', () => {
+        searchModal.classList.remove('hidden');
+        searchModal.classList.add('flex');
+      });
+      closeSearch.addEventListener('click', () => {
+        searchModal.classList.add('hidden');
+        searchModal.classList.remove('flex');
+      });
+      searchModal.addEventListener('click', (e) => {
+        if (e.target === searchModal) {
+          searchModal.classList.add('hidden');
+          searchModal.classList.remove('flex');
+        }
+      });
+    }
+
+    // Video Story Modal Handlers
+    const watchStoryBtn = document.getElementById('watchStoryBtn');
+    const videoModal = document.getElementById('videoModal');
+    const closeVideo = document.getElementById('closeVideoModal');
+
+    if (watchStoryBtn && videoModal && closeVideo) {
+      watchStoryBtn.addEventListener('click', () => {
+        videoModal.classList.remove('hidden');
+        videoModal.classList.add('flex');
+      });
+      closeVideo.addEventListener('click', () => {
+        videoModal.classList.add('hidden');
+        videoModal.classList.remove('flex');
+      });
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          videoModal.classList.add('hidden');
+          videoModal.classList.remove('flex');
+        }
+      });
+    }
+  </script>
+<!-- END: Client Interactivity Scripts -->
+<script src="/public/js/profile-hydration.js"></script>
+</body></html>

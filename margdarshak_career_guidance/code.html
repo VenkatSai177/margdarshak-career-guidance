@@ -1,0 +1,828 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter, Cinzel & Cormorant Garamond / Playfair for serif elegance, Caveat for handwritten script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: {
+            brand: {
+              dark: '#0f1115',
+              sidebar: '#12141a',
+              cardBg: '#1a1d24',
+              gold: '#c99846',
+              goldHover: '#b58434',
+              goldLight: '#f4ede2',
+              cream: '#fbf9f4',
+              parchment: '#f5edd8',
+              cardBorder: '#e8dfcc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e39;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c99846;
+    }
+  </style>
+<style data-purpose="background-helpers">
+    /* Layered backdrop alignment to leverage source imagery exactly */
+    .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(20, 22, 28, 0.25) 0%, rgba(20, 22, 28, 0.45) 60%, rgba(245, 243, 238, 0.95) 100%);
+    }
+    .parchment-texture {
+      background-color: #f7f1e1;
+      background-image: radial-gradient(#ecdcb9 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+
+<!-- BEGIN: Custom Typography Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #FAF7F0;
+      color: #262422;
+      overflow-x: hidden;
+    }
+    .font-serif-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #EFE9DC;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #D4C7B0;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #BAA98C;
+    }
+  </style>
+<!-- END: Custom Typography Styles -->
+<!-- BEGIN: Custom Layout & Effect Styles -->
+<style data-purpose="layout-effects">
+    .parchment-border {
+      border: 1px solid rgba(197, 155, 39, 0.22);
+    }
+    .parchment-shadow {
+      box-shadow: 0 4px 20px -2px rgba(43, 42, 39, 0.05), 0 2px 6px -1px rgba(43, 42, 39, 0.03);
+    }
+    .sidebar-active-tab {
+      background: linear-gradient(90deg, #3A3223 0%, #2A2419 100%);
+      border-left: 3px solid #E6C665;
+      color: #F8F3E6 !important;
+    }
+    .badge-gold {
+      background-color: #F8F1DE;
+      color: #936B15;
+      border: 1px solid rgba(197, 155, 39, 0.35);
+    }
+    .golden-grain {
+      background-image: radial-gradient(#d3be96 0.75px, transparent 0.75px), radial-gradient(#d3be96 0.75px, #faf7f0 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      background-opacity: 0.2;
+    }
+  </style>
+<!-- END: Custom Layout & Effect Styles -->
+</head>
+<body class="bg-[#e9e4d9] text-gray-800 font-sans antialiased overflow-x-hidden min-h-screen">
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[280px] bg-[#111317] text-gray-300 flex flex-col justify-between shrink-0 border-r border-[#222630] select-none fixed left-0 top-0 bottom-0 h-screen z-50 overflow-y-auto">
+<div>
+<!-- Logo & Branding -->
+<div class="p-5 pb-4 flex items-center gap-3 border-b border-[#1f242e]">
+<!-- Emblem -->
+<div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-gold bg-[#1c202a] border border-[#303646] shadow-inner">
+<svg class="w-6 h-6 stroke-current fill-brand-gold/20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+<circle class="fill-brand-gold" cx="12" cy="7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h1 class="font-serif font-bold text-xl tracking-wide text-[#f4ede2] leading-none">Margdarshak</h1>
+<p class="text-[11px] text-[#b3a182] font-medium tracking-wider mt-1">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="p-3 space-y-1 text-[13.5px] font-medium font-sans">
+<!-- Active Item: Home -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/student/dashboard">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Career Guidance -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#44361e] to-[#24211a] text-white border border-brand-gold/40 shadow-sm" href="/career-guidance">
+
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+</svg>
+<span class="">Career Guidance</span>
+
+</a>
+<!-- Skill Development -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/skill-development">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="">Skill Development</span>
+</a>
+<!-- Courses & Colleges -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/courses-colleges">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Courses &amp; Colleges</span>
+</a>
+<!-- Scholarships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/scholarships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Scholarships</span>
+</a>
+<!-- Jobs & Internships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/jobs-internships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span class="">Jobs &amp; Internships</span>
+</a>
+<!-- AI Mentor -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/ai-mentor">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">AI Mentor</span>
+</a>
+<!-- Resume Builder -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resume-builder">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resume Builder</span>
+</a>
+<!-- Challenges & XP -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/challenges-xp">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<span class="">Challenges &amp; XP</span>
+</a>
+<!-- Community -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/community">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Community</span>
+</a>
+<!-- Resources -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resources">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resources</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Vignette / Quote / Footer -->
+<div class="p-4 border-t border-[#1e222c] relative overflow-hidden bg-gradient-to-t from-black via-[#111317] to-transparent">
+<div class="relative z-10 text-center space-y-2">
+<p class="font-serif italic text-[13px] text-amber-200/90 leading-snug">
+            “Every dream deserves a direction.”
+          </p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">— Margdarshak</p>
+<!-- Decorative Lantern & Books representation -->
+<div class="py-2 flex justify-center items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+<svg class="w-10 h-10 text-brand-gold relative drop-shadow" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+<path d="M9 2h6l2 4H7l2-4z"></path>
+<path d="M6 6h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6z"></path>
+<circle class="fill-amber-300 text-amber-400" cx="12" cy="12" r="3"></circle>
+<path d="M4 22h16"></path>
+</svg>
+</div>
+</div>
+<div class="pt-1 text-[9.5px] tracking-widest text-[#a8987d] font-serif uppercase">
+            LEARN • GROW • ACHIEVE
+          </div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<div class="ml-[280px] min-h-screen w-[calc(100%-280px)] flex flex-col bg-[#e9e4d9]">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-[#e2d8c3] bg-[#fbf9f4]/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+<!-- Global Search Bar -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-16 py-1.5 text-xs bg-[#242834] text-gray-200 rounded-full border border-gray-700/60 focus:outline-none focus:ring-1 focus:ring-brand-gold placeholder-gray-400" placeholder="Search careers, colleges, scholarships, skills..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-gray-400 font-mono">
+<span class="bg-[#191b22] px-1.5 py-0.5 rounded border border-gray-700">Ctrl K</span>
+</span>
+</div>
+<!-- Top Right Actions -->
+<div class="flex items-center space-x-5">
+<!-- Language Toggle -->
+
+<!-- Theme Toggle (Sun/Moon) -->
+
+<!-- Notifications with Badge -->
+<div class="relative cursor-pointer">
+<button class="w-8 h-8 rounded-full bg-[#232733] text-gray-300 hover:text-white flex items-center justify-center border border-gray-700">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center border border-[#16181f]">
+              3
+            </span>
+</div>
+<!-- User Profile Dropdown -->
+<div class="flex items-center space-x-2.5 cursor-pointer pl-1 hover:opacity-90">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-brand-gold">
+<img alt="Venkat Sai" data-bind="user.fullName" class="w-full h-full object-cover object-[88%_4%]" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+</div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-xs font-semibold text-gray-200"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[10px] text-gray-400">Student</div>
+</div>
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="px-8 py-7 space-y-8 flex-1">
+<!-- BEGIN: Page Header & Direction Eyebrow -->
+<section class="flex flex-col md:flex-row md:items-end justify-between border-b border-amber-950/10 pb-6 gap-4" data-purpose="page-title-banner">
+<div>
+<div class="flex items-center space-x-2 text-xs font-semibold tracking-wider text-amber-800 uppercase font-sans mb-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+<span class="">Career Guidance • Personalized For You</span>
+</div>
+<h1 class="font-serif-heading text-3xl lg:text-4xl text-stone-900 font-bold tracking-tight">Find Your Direction.</h1>
+<p class="text-stone-600 text-sm mt-1 max-w-2xl leading-relaxed">
+              Discover career paths that match your interests, strengths, academic background and aspirations. Synchronized with the state rural curriculum.
+            </p>
+</div>
+<div class="flex items-center space-x-2 bg-amber-100/60 border border-amber-300/60 px-3.5 py-1.5 rounded-full self-start md:self-auto shadow-2xs">
+<span class="text-amber-700 text-xs">✦</span>
+<span class="text-[11px] font-medium text-amber-900">Synchronized with AP Rural Education Matrix</span>
+</div>
+</section>
+<!-- END: Page Header & Direction Eyebrow -->
+<!-- BEGIN: Personalized Direction Summary Card -->
+<section class="bg-brand-cardBg rounded-xl p-5 border border-amber-900/15 parchment-shadow relative overflow-hidden" data-purpose="student-context-card">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<!-- Left Info Block -->
+<div class="space-y-3 max-w-3xl">
+<div class="flex items-center space-x-2.5">
+<span class="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-stone-900 text-amber-200 uppercase tracking-wider">Your Profile Context</span>
+<span class="text-xs text-stone-500">Verified Diploma Profile (SBTET AP)</span>
+</div>
+<!-- Student Profile Badges -->
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-800 border border-stone-200 font-medium">Diploma in CSE (2nd Year)</span>
+<span class="text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-800 border border-stone-200 font-medium">Academic Score: 84.5%</span>
+<span class="text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-800 border border-stone-200 font-medium">Interests: Tech &amp; AI</span>
+<span class="text-xs px-2.5 py-1 rounded-md bg-stone-100 text-stone-800 border border-stone-200 font-medium">Strengths: Analytical Thinking</span>
+<span class="text-xs px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-300 font-medium">Target: Software Engineering Pathway</span>
+</div>
+<!-- AI Advisor Note -->
+<div class="flex items-start space-x-2.5 pt-1 text-xs text-stone-700 bg-amber-50/70 p-2.5 rounded-lg border border-amber-200/50">
+<span class="text-amber-800 font-bold text-sm leading-none">“</span>
+<p class="leading-relaxed">
+<strong class="text-amber-900 font-semibold">Margdarshak AI Insight:</strong> Your background in computer systems paired with problem-solving strengths provides a strong foundation for Software Engineering and Data Science lateral pathways via ECET.
+                </p>
+</div>
+</div>
+<!-- Right CTA Action -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-2 shrink-0 justify-center">
+<button class="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-amber-100 rounded-lg text-xs font-semibold tracking-wide transition flex items-center justify-center space-x-2 shadow-sm">
+<span class="">Ask AI Mentor</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="px-4 py-2 bg-white hover:bg-stone-50 text-stone-700 border border-stone-300 rounded-lg text-xs font-medium transition text-center">
+                Edit Preferences
+              </button>
+</div>
+</div>
+</section>
+<!-- END: Personalized Direction Summary Card -->
+<!-- BEGIN: Lightweight Filters & Search Bar -->
+<section class="space-y-3" data-purpose="career-filters">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+<!-- Search Careers -->
+<div class="relative flex-1 max-w-md">
+<input class="w-full pl-9 pr-4 py-2 bg-white border border-stone-300 rounded-lg text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-1 focus:ring-amber-600 focus:border-amber-600" placeholder="Search career paths, titles or domains..." type="text">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Sort and Level Toggles -->
+<div class="flex items-center space-x-2 text-xs">
+<div class="flex items-center bg-white border border-stone-300 rounded-lg px-2.5 py-1.5 text-stone-700">
+<span class="text-stone-400 mr-1.5">Sort:</span>
+<select class="bg-transparent border-0 p-0 text-xs font-medium focus:ring-0 cursor-pointer text-stone-800">
+<option>Highest Match %</option>
+<option>Starting Salary (High to Low)</option>
+<option>Shortest Learning Duration</option>
+<option>Government / PSU Availability</option>
+</select>
+</div>
+<button class="bg-white hover:bg-stone-50 border border-stone-300 px-3 py-1.5 rounded-lg text-xs font-medium text-stone-700 flex items-center space-x-1">
+<svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Eligibility: Match My Level</span>
+</button>
+</div>
+</div>
+<!-- Domain Filter Chips -->
+<div class="flex items-center space-x-2 overflow-x-auto pb-1 custom-scrollbar text-xs">
+<button class="px-3 py-1.5 rounded-full font-medium bg-stone-900 text-amber-200 shrink-0">All Domains</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Tech &amp; IT</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">AI &amp; Data Science</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Core Engineering</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Healthcare &amp; Pharma</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Govt &amp; Civil Services</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Agriculture &amp; Rural Tech</button>
+<button class="px-3 py-1.5 rounded-full font-medium bg-white border border-stone-300 text-stone-700 hover:border-amber-600 hover:text-stone-900 shrink-0 transition">Skilled Trades &amp; ITI</button>
+</div>
+</section>
+<!-- END: Lightweight Filters & Search Bar -->
+<!-- BEGIN: Recommended Career Paths Grid -->
+<section class="space-y-4" data-purpose="recommended-careers-section">
+<div class="flex items-center justify-between">
+<h2 class="font-serif-heading text-xl font-bold text-stone-900">Recommended Pathways For Venkat Sai</h2>
+<span class="text-xs text-stone-500 font-medium">4 Highly Aligned Paths Identified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Software Engineer (Selected Active Card) -->
+<article class="bg-brand-cardBg rounded-xl p-4 border-2 border-amber-600 parchment-shadow flex flex-col justify-between relative transition hover:shadow-md" data-purpose="career-card-1">
+<div class="absolute -top-3 right-4 bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-xs">
+                Top Recommendation
+              </div>
+<div>
+<div class="flex items-start justify-between">
+<span class="badge-gold text-xs font-semibold px-2 py-0.5 rounded-md inline-block mb-2">78% Profile Match</span>
+<button class="text-stone-400 hover:text-red-600 transition p-1" onclick="toggleSaveHeart(this)" title="Save Career">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<h3 class="font-serif text-lg font-bold text-stone-900 mt-1">Software Engineer</h3>
+<p class="text-[11px] text-amber-800 font-medium">Technology &amp; IT • Lateral Entry / Degree</p>
+<p class="text-xs text-stone-600 mt-2 leading-relaxed line-clamp-3">
+                  Designs and builds software systems, web applications, and digital services. Strong hiring demand across Hyderabad, Vizag, and Bengaluru tech hubs.
+                </p>
+<!-- Tags -->
+<div class="flex flex-wrap gap-1 mt-3">
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Problem Solving</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Python / Java</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Data Structures</span>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-stone-200/80">
+<div class="flex items-center justify-between text-xs mb-3">
+<span class="text-stone-500">Starting Avg:</span>
+<span class="font-bold text-stone-800">₹4.5L - ₹9.0L / yr</span>
+</div>
+<button class="w-full py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-semibold tracking-wide transition shadow-xs flex items-center justify-center space-x-1.5">
+<span class="">Explore Career Roadmap</span>
+<span class="">→</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Data Analyst -->
+<article class="bg-brand-cardBg rounded-xl p-4 border border-stone-200 parchment-shadow flex flex-col justify-between relative transition hover:border-amber-400 hover:shadow-md" data-purpose="career-card-2">
+<div>
+<div class="flex items-start justify-between">
+<span class="bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold px-2 py-0.5 rounded-md inline-block mb-2">68% Profile Match</span>
+<button class="text-stone-400 hover:text-red-600 transition p-1" onclick="toggleSaveHeart(this)" title="Save Career">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<h3 class="font-serif text-lg font-bold text-stone-900 mt-1">Data Analyst / BI</h3>
+<p class="text-[11px] text-stone-500 font-medium">AI &amp; Data Science • Analytics</p>
+<p class="text-xs text-stone-600 mt-2 leading-relaxed line-clamp-3">
+                  Transforms raw datasets into business intelligence and predictive insights using SQL, statistical tools, and PowerBI dashboards.
+                </p>
+<div class="flex flex-wrap gap-1 mt-3">
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">SQL &amp; Databases</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">PowerBI</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Analytics</span>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-stone-200/80">
+<div class="flex items-center justify-between text-xs mb-3">
+<span class="text-stone-500">Growth:</span>
+<span class="font-semibold text-emerald-700">+24% YoY Growth</span>
+</div>
+<button class="w-full py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-semibold tracking-wide transition border border-stone-300">
+                  Explore Career Roadmap →
+                </button>
+</div>
+</article>
+<!-- Card 3: AI / ML Systems Engineer -->
+<article class="bg-brand-cardBg rounded-xl p-4 border border-stone-200 parchment-shadow flex flex-col justify-between relative transition hover:border-amber-400 hover:shadow-md" data-purpose="career-card-3">
+<div>
+<div class="flex items-start justify-between">
+<span class="bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold px-2 py-0.5 rounded-md inline-block mb-2">64% Profile Match</span>
+<button class="text-stone-400 hover:text-red-600 transition p-1" onclick="toggleSaveHeart(this)" title="Save Career">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<h3 class="font-serif text-lg font-bold text-stone-900 mt-1">AI / ML Engineer</h3>
+<p class="text-[11px] text-stone-500 font-medium">Emerging Tech • Machine Intelligence</p>
+<p class="text-xs text-stone-600 mt-2 leading-relaxed line-clamp-3">
+                  Builds computational models and automations. Best fit for students with strong foundations in mathematics and algorithmic problem solving.
+                </p>
+<div class="flex flex-wrap gap-1 mt-3">
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Machine Learning</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Python</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Calculus</span>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-stone-200/80">
+<div class="flex items-center justify-between text-xs mb-3">
+<span class="text-stone-500">Market Demand:</span>
+<span class="font-semibold text-amber-700">Very High Demand</span>
+</div>
+<button class="w-full py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-semibold tracking-wide transition border border-stone-300">
+                  Explore Career Roadmap →
+                </button>
+</div>
+</article>
+<!-- Card 4: Cybersecurity Specialist -->
+<article class="bg-brand-cardBg rounded-xl p-4 border border-stone-200 parchment-shadow flex flex-col justify-between relative transition hover:border-amber-400 hover:shadow-md" data-purpose="career-card-4">
+<div>
+<div class="flex items-start justify-between">
+<span class="bg-stone-100 text-stone-700 border border-stone-300 text-xs font-semibold px-2 py-0.5 rounded-md inline-block mb-2">58% Profile Match</span>
+<button class="text-stone-400 hover:text-red-600 transition p-1" onclick="toggleSaveHeart(this)" title="Save Career">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<h3 class="font-serif text-lg font-bold text-stone-900 mt-1">Cybersecurity Specialist</h3>
+<p class="text-[11px] text-stone-500 font-medium">Information Security &amp; Defence</p>
+<p class="text-xs text-stone-600 mt-2 leading-relaxed line-clamp-3">
+                  Safeguards institutional networks, cloud infra, and government e-governance portals against threats and unauthorized intrusion.
+                </p>
+<div class="flex flex-wrap gap-1 mt-3">
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Networking</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Linux OS</span>
+<span class="text-[10px] bg-stone-100 text-stone-600 px-1.5 py-0.5 rounded">Protocols</span>
+</div>
+</div>
+<div class="pt-4 mt-4 border-t border-stone-200/80">
+<div class="flex items-center justify-between text-xs mb-3">
+<span class="text-stone-500">Industry Need:</span>
+<span class="font-semibold text-stone-700">High Security Demand</span>
+</div>
+<button class="w-full py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-semibold tracking-wide transition border border-stone-300">
+                  Explore Career Roadmap →
+                </button>
+</div>
+</article>
+</div>
+</section>
+<!-- END: Recommended Career Paths Grid -->
+<!-- BEGIN: Why This Path Fits Deep-Dive -->
+<section class="bg-brand-cardBg rounded-xl p-6 border border-amber-900/15 parchment-shadow" data-purpose="why-fits-section">
+<div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-200">
+<div>
+<span class="text-[11px] font-bold text-amber-800 uppercase tracking-widest">Alignment Analysis</span>
+<h3 class="font-serif text-xl font-bold text-stone-900">Why Software Engineering Fits Venkat Sai</h3>
+</div>
+<span class="badge-gold text-xs px-3 py-1 rounded-full font-semibold">Matched via Rural Tech Framework</span>
+</div>
+<!-- 4 Pillars of Justification -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+<div class="bg-white/90 p-3.5 rounded-lg border border-stone-200/70">
+<div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs mb-2">1</div>
+<h4 class="font-semibold text-stone-900 text-xs">Matches Technical Interest</h4>
+<p class="text-[11px] text-stone-600 mt-1 leading-normal">
+                You designated Tech &amp; IT and AI systems as your prime interest areas in your onboarding profile assessment.
+              </p>
+</div>
+<div class="bg-white/90 p-3.5 rounded-lg border border-stone-200/70">
+<div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs mb-2">2</div>
+<h4 class="font-semibold text-stone-900 text-xs">Exercises Analytical Strengths</h4>
+<p class="text-[11px] text-stone-600 mt-1 leading-normal">
+                Software development directly capitalizes on your evaluated strengths in logic deduction and structured problem solving.
+              </p>
+</div>
+<div class="bg-white/90 p-3.5 rounded-lg border border-stone-200/70">
+<div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs mb-2">3</div>
+<h4 class="font-semibold text-stone-900 text-xs">Diploma Direct Progression</h4>
+<p class="text-[11px] text-stone-600 mt-1 leading-normal">
+                Seamless lateral entry eligibility into B.Tech CSE (2nd Year) through state ECET rank, preserving your coursework credits.
+              </p>
+</div>
+<div class="bg-white/90 p-3.5 rounded-lg border border-stone-200/70">
+<div class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs mb-2">4</div>
+<h4 class="font-semibold text-stone-900 text-xs">High Scholarship Coverage</h4>
+<p class="text-[11px] text-stone-600 mt-1 leading-normal">
+                12 state and corporate rural student engineering scholarships match this specific discipline and income demographic.
+              </p>
+</div>
+</div>
+</section>
+<!-- END: Why This Path Fits Deep-Dive -->
+<!-- BEGIN: Step-by-Step Authentic Career Roadmap -->
+<section class="bg-brand-cardBg rounded-xl p-6 border border-amber-900/15 parchment-shadow" data-purpose="career-roadmap">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-3 border-b border-stone-200">
+<div>
+<span class="text-[11px] font-bold text-amber-800 uppercase tracking-widest">Step-by-Step Pathway</span>
+<h3 class="font-serif text-xl font-bold text-stone-900">Career Roadmap: Diploma to Software Engineer</h3>
+</div>
+<span class="text-xs text-stone-500 mt-1 sm:mt-0 font-medium">Estimated Timeline: 24 - 36 Months</span>
+</div>
+<!-- Editorial Horizontal / Sequential Pathway -->
+<div class="relative">
+<!-- Connecting Line on larger screens -->
+<div class="hidden lg:block absolute top-7 left-8 right-8 h-0.5 bg-stone-300 -z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 relative z-10">
+<!-- Step 1 -->
+<div class="bg-white p-4 rounded-lg border border-stone-200 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-stone-900 text-amber-200 font-bold text-xs flex items-center justify-center mb-3">01</div>
+<span class="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">Phase 1: Foundation</span>
+<h4 class="font-semibold text-stone-900 text-xs mt-1">Core Programming &amp; Web Basics</h4>
+<p class="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                    Master C and Python syntax, Linux command line fundamentals, and HTML/CSS during your 2nd year of Diploma.
+                  </p>
+</div>
+<span class="text-[10px] text-stone-400 font-medium mt-3 block">Months 1 - 6</span>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-4 rounded-lg border border-stone-200 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-stone-900 text-amber-200 font-bold text-xs flex items-center justify-center mb-3">02</div>
+<span class="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">Phase 2: Specialization</span>
+<h4 class="font-semibold text-stone-900 text-xs mt-1">Data Structures &amp; Git</h4>
+<p class="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                    Learn algorithms, object-oriented concepts in Java, version control with GitHub, and relational SQL databases.
+                  </p>
+</div>
+<span class="text-[10px] text-stone-400 font-medium mt-3 block">Months 7 - 12</span>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-4 rounded-lg border border-stone-200 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-stone-900 text-amber-200 font-bold text-xs flex items-center justify-center mb-3">03</div>
+<span class="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">Phase 3: Applied Work</span>
+<h4 class="font-semibold text-stone-900 text-xs mt-1">Build 2 Practical Projects</h4>
+<p class="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                    Create a rural agricultural price-tracker and a local Panchayat public grievance tracker application.
+                  </p>
+</div>
+<span class="text-[10px] text-stone-400 font-medium mt-3 block">Months 13 - 18</span>
+</div>
+<!-- Step 4 -->
+<div class="bg-white p-4 rounded-lg border border-amber-300 bg-amber-50/30 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-amber-700 text-white font-bold text-xs flex items-center justify-center mb-3">04</div>
+<span class="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">Phase 4: Transition</span>
+<h4 class="font-semibold text-stone-900 text-xs mt-1">ECET Exam or Direct Placement</h4>
+<p class="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                    Clear ECET for B.Tech lateral seat in top tier government colleges or take direct campus tech recruitment tests.
+                  </p>
+</div>
+<span class="text-[10px] text-stone-400 font-medium mt-3 block">Months 19 - 24</span>
+</div>
+<!-- Step 5 -->
+<div class="bg-white p-4 rounded-lg border border-stone-200 flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-full bg-stone-900 text-amber-200 font-bold text-xs flex items-center justify-center mb-3">05</div>
+<span class="text-[10px] font-semibold text-amber-800 uppercase tracking-wider">Phase 5: First Role</span>
+<h4 class="font-semibold text-stone-900 text-xs mt-1">Associate Software Engineer</h4>
+<p class="text-[11px] text-stone-600 mt-2 leading-relaxed">
+                    Begin career as Junior Full-Stack Developer or Software Development Engineer in regional or global tech centers.
+                  </p>
+</div>
+<span class="text-[10px] text-stone-400 font-medium mt-3 block">Goal Achievement</span>
+</div>
+</div>
+</div>
+<!-- Roadmap Actions -->
+<div class="mt-6 pt-4 border-t border-stone-200 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center space-x-3">
+<button class="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-amber-200 rounded-lg text-xs font-semibold tracking-wide transition shadow-xs">
+                Build My Skill Roadmap (Module Preview) →
+              </button>
+<button class="px-3.5 py-2 bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 rounded-lg text-xs font-medium transition">
+                Explore Relevant Courses
+              </button>
+</div>
+<button class="text-xs text-amber-800 hover:text-amber-900 font-semibold underline underline-offset-4">
+              Find Matching Rural Scholarships for this Pathway →
+            </button>
+</div>
+</section>
+<!-- END: Step-by-Step Authentic Career Roadmap -->
+<!-- BEGIN: Explore All Career Disciplines -->
+<section class="space-y-4" data-purpose="career-disciplines-directory">
+<div class="flex items-center justify-between">
+<h3 class="font-serif-heading text-xl font-bold text-stone-900">Explore All Career Disciplines</h3>
+<a class="text-xs text-amber-800 hover:text-amber-900 font-semibold" href="#">View All 42 Streams →</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Technology &amp; IT</h5>
+<span class="text-[10px] text-stone-500">28 Career Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">AI &amp; Data Science</h5>
+<span class="text-[10px] text-stone-500">14 Career Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Core Engineering</h5>
+<span class="text-[10px] text-stone-500">32 Career Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Healthcare &amp; Pharma</h5>
+<span class="text-[10px] text-stone-500">19 Career Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Govt &amp; UPSC</h5>
+<span class="text-[10px] text-stone-500">22 Exam Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Agriculture &amp; AgriTech</h5>
+<span class="text-[10px] text-stone-500">11 Career Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Rural MSME &amp; Business</h5>
+<span class="text-[10px] text-stone-500">16 Pathways</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Finance &amp; Banking</h5>
+<span class="text-[10px] text-stone-500">15 Pathways</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Design &amp; Media</h5>
+<span class="text-[10px] text-stone-500">8 Tracks</span>
+</div>
+<div class="p-3.5 bg-white border border-stone-200 rounded-lg text-center hover:border-amber-600 hover:shadow-xs transition cursor-pointer group">
+<div class="w-8 h-8 mx-auto rounded-full bg-stone-100 flex items-center justify-center text-stone-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition mb-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<h5 class="text-xs font-semibold text-stone-800">Skilled Trades &amp; ITI</h5>
+<span class="text-[10px] text-stone-500">24 Certifications</span>
+</div>
+</div>
+</section>
+<!-- END: Explore All Career Disciplines -->
+<!-- BEGIN: Next Action Steps Section -->
+<section class="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 text-amber-100 rounded-xl p-6 shadow-md border border-amber-800/40" data-purpose="next-action-steps">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="space-y-1">
+<span class="text-[11px] uppercase tracking-widest text-amber-400 font-semibold">Recommended Action Item</span>
+<h4 class="font-serif text-2xl font-bold text-white">Your Next Steps for Software Engineering</h4>
+<p class="text-xs text-amber-200/80 max-w-xl">
+                Completing these initial steps will boost your match confidence and unlock targeted mentor reviews.
+              </p>
+</div>
+<!-- Steps checklist cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 flex-1 max-w-3xl">
+<div class="bg-black/30 border border-amber-500/20 p-3 rounded-lg flex items-start space-x-2.5">
+<span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-xs shrink-0 font-bold">1</span>
+<div>
+<h5 class="text-xs font-semibold text-white">Save Top 2 Careers</h5>
+<p class="text-[10px] text-amber-200/70">Pin choices to your personal student tracker.</p>
+</div>
+</div>
+<div class="bg-black/30 border border-amber-500/20 p-3 rounded-lg flex items-start space-x-2.5">
+<span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-xs shrink-0 font-bold">2</span>
+<div>
+<h5 class="text-xs font-semibold text-white">Matching Scholarships</h5>
+<p class="text-[10px] text-amber-200/70">Browse 12 verified engineering bursaries.</p>
+</div>
+</div>
+<div class="bg-black/30 border border-amber-500/20 p-3 rounded-lg flex items-start space-x-2.5">
+<span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-xs shrink-0 font-bold">3</span>
+<div>
+<h5 class="text-xs font-semibold text-white">Check ECET Cutoffs</h5>
+<p class="text-[10px] text-amber-200/70">Evaluate regional college cutoffs for CSE.</p>
+</div>
+</div>
+<div class="bg-black/30 border border-amber-500/20 p-3 rounded-lg flex items-start space-x-2.5">
+<span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center text-xs shrink-0 font-bold">4</span>
+<div>
+<h5 class="text-xs font-semibold text-white">Telugu AI Mentor</h5>
+<p class="text-[10px] text-amber-200/70">Speak in your native dialect for guidance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Next Action Steps Section -->
+</main>
+</div>
+</div>
+<script src="/public/js/profile-hydration.js"></script>
+
+
+</body></html>

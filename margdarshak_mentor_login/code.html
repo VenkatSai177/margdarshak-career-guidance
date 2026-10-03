@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#0F1113]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Margdarshak - Guiding Rural Dreams | Authentication</title>
+<!-- Fonts: Cormorant Garamond & Playfair for editorial heritage serif, Plus Jakarta Sans for clean UI -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Forms & Container Plugins -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              goldLight: '#E8CA65',
+              goldDark: '#A8831A',
+              charcoal: '#0F1113',
+              darkCard: '#16191D',
+              parchment: '#FAF7F0',
+              parchmentMuted: '#F1ECE1',
+              borderMuted: 'rgba(212, 175, 55, 0.28)'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom Styles for Heritage Accents & Layout Enhancements -->
+<style data-purpose="custom-typography">
+    .font-heritage {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 55%, #AA820A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+<style data-purpose="ui-effects">
+    /* Subtle warm ambient glow behind the card */
+    .glow-gold {
+      box-shadow: 0 0 60px -15px rgba(212, 175, 55, 0.15);
+    }
+    /* Elegant antique stationery border */
+    .border-stationery {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+    /* Smooth view fade transitions */
+    .auth-view {
+      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .auth-view.hidden-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    .auth-view.active-view {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-800 bg-[#0F1113] overflow-x-hidden selection:bg-[#D4AF37]/30 selection:text-[#FAF7F0]">
+<!-- BEGIN: MainContainer -->
+<div class="min-h-screen flex flex-col lg:flex-row w-full relative">
+<!-- BEGIN: LeftBrandPane -->
+<!-- Left Pane: Heritage story & cinematic visual (50% desktop width) -->
+<section aria-label="Margdarshak Brand Story" class="lg:w-1/2 relative min-h-[420px] lg:min-h-screen flex flex-col justify-between p-6 sm:p-10 lg:p-14 overflow-hidden border-b lg:border-b-0 lg:border-r border-amber-900/30">
+<!-- High Resolution Cinematic Rural India Backdrop -->
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic rural Indian landscape at golden hour with student looking towards misty mountains and temple" class="w-full h-full object-cover object-center scale-105 transform hover:scale-100 transition-transform duration-1000 ease-out" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop"/>
+<!-- Atmospheric Vignettes & Color Gradients -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#0F1113] via-[#0F1113]/55 to-[#0F1113]/40 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0F1113]/80 via-transparent to-[#0F1113]/90"></div>
+<div class="absolute inset-0 bg-amber-950/20 mix-blend-color-burn"></div>
+</div>
+<!-- Left Header: Back to Landing Link and Telugu Accent -->
+<div class="relative z-10 flex items-center justify-between">
+<a class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-amber-200/90 hover:text-white transition-colors bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/20" data-purpose="back-home-link" href="#landing">
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Back to Margdarshak Home
+        </a>
+<!-- Cultural Telugu Typography Accent Pill -->
+<div class="hidden sm:flex items-center gap-2 text-xs font-medium text-amber-100/90 bg-gradient-to-r from-amber-950/70 to-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-400/30 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+<span class="">చదువు • మార్గం • భవిష్యత్తు</span>
+</div>
+</div>
+<!-- Left Middle: Brand Identity & Emotional Hook -->
+<div class="relative z-10 my-8 lg:my-auto max-w-xl">
+<!-- Sunburst & Open Book Emblem -->
+<div class="inline-flex items-center gap-3 mb-6 bg-black/50 backdrop-blur-md px-4 py-2 rounded-2xl border border-amber-300/30">
+<div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center shadow-lg text-black font-bold">
+<svg class="w-5 h-5 text-amber-950" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-white font-heritage font-bold text-xl tracking-wider uppercase leading-none">Margdarshak</h1>
+<p class="text-[11px] text-amber-300/90 tracking-widest uppercase font-medium">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Editorial Slogan -->
+<div class="space-y-3">
+<p class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold">Same Roots. Bigger Dreams.</p>
+<h2 class="font-heritage text-3xl sm:text-4xl lg:text-5xl text-white font-semibold leading-[1.15] tracking-tight">
+            "Every dream deserves a true direction."
+          </h2>
+<p class="text-sm sm:text-base text-amber-100/80 font-normal leading-relaxed max-w-lg pt-1">
+            Empowering passionate students from the heart of rural India with AI-driven career guidance, local scholarships, and verified mentor pathways.
+          </p>
+</div>
+<!-- Dr. Kalam Quote Accent Card -->
+<div class="mt-7 p-4 rounded-xl bg-gradient-to-br from-[#181B1E]/90 to-black/80 backdrop-blur-md border border-amber-300/20 shadow-xl max-w-md">
+<div class="flex items-start gap-3">
+<span class="text-3xl font-heritage text-brand-gold leading-none">“</span>
+<div>
+<p class="text-xs text-amber-100/90 italic leading-relaxed">
+                Education is the most powerful weapon you can use to change your world. Your village roots are your greatest strength.
+              </p>
+<div class="mt-2 flex items-center justify-between">
+<span class="text-[11px] font-semibold tracking-wider text-amber-400 uppercase">— Dr. A.P.J. Abdul Kalam</span>
+<span class="text-[10px] text-amber-200/60 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Inspiration</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Left Footer: Trust Metric Pills -->
+<div class="relative z-10 pt-4 flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/20 text-xs text-amber-100/90">
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="currentColor" viewbox="0 0 20 20">
+<path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+</svg>
+<span class="font-bold text-white">50,000+</span> Rural Students Guided
+        </div>
+<div class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-amber-500/20 text-xs text-amber-100/90">
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="currentColor" viewbox="0 0 20 20">
+<path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+<path clip-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" fill-rule="evenodd"></path>
+</svg>
+<span class="font-bold text-white">₹5 Cr+</span> Scholarships Discovered
+        </div>
+</div>
+</section>
+<!-- END: LeftBrandPane -->
+<!-- BEGIN: RightAuthPane -->
+<!-- Right Pane: Editorial Auth Station (50% desktop width) -->
+<main aria-label="Margdarshak Authentication Panel" class="lg:w-1/2 flex items-center justify-center p-4 sm:p-8 lg:p-12 relative bg-[#0F1113]">
+<!-- Subtle warm ambient radial background glow -->
+<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 left-10 w-72 h-72 bg-amber-700/5 rounded-full blur-3xl pointer-events-none"></div>
+
+<!-- Centered Premium Stationery Card -->
+<div class="w-full max-w-md bg-[#FAF7F0] rounded-2xl p-6 sm:p-8 sm:py-9 shadow-2xl border-stationery glow-gold relative z-10 text-slate-900">
+<!-- Margdarshak Emblem Inside Card Header -->
+<div class="text-center mb-6">
+<div class="mx-auto w-12 h-12 rounded-xl bg-gradient-to-br from-[#1C1F23] to-black p-0.5 shadow-md flex items-center justify-center mb-3">
+<div class="w-full h-full rounded-[10px] bg-[#121416] flex items-center justify-center border border-amber-400/40">
+<svg class="w-6 h-6 text-brand-gold" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"></path>
+</svg>
+</div>
+</div>
+<p class="font-heritage text-xl tracking-[0.18em] font-bold text-[#1F2428] uppercase">MARGDARSHAK</p>
+<p class="text-[11px] uppercase tracking-widest text-[#8A7036] font-semibold">GUIDING RURAL DREAMS</p>
+</div>
+<!-- Notification Toast (For Feedback / Submission / Reset Link) -->
+<div class="hidden mb-5 p-3 rounded-lg text-xs font-medium border transition-all duration-300 flex items-start gap-2.5" id="auth-alert" role="alert">
+<svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" id="auth-alert-icon" stroke="currentColor" viewbox="0 0 24 24"></svg>
+<span class="leading-relaxed" id="auth-alert-message"></span>
+</div>
+<!-- ========================================== -->
+<!-- VIEW 1: LOGIN FORM (/login)                -->
+<!-- ========================================== -->
+<!-- BEGIN: LoginFormView -->
+<section aria-labelledby="login-title" class="auth-view active-view" id="view-login">
+<div class="text-center mb-6">
+<h3 class="font-heritage text-2xl sm:text-3xl font-bold text-slate-900" id="login-title">Welcome Back, Mentor</h3>
+<p class="text-xs text-slate-600 mt-1">Continue guiding students towards a brighter tomorrow.</p>
+</div>
+<form action="javascript:void(0)" class="space-y-4" id="form-login" novalidate=""><div class="rounded-xl bg-[#F0ECE1] p-1 flex items-center border border-[#E2DCCE] mb-5" id="login-role-selector" role="tablist">
+  <a href="/auth/student" class="text-[#6B7280] hover:text-[#1A1D20] font-medium text-xs py-2 px-3 rounded-lg flex-1 text-center cursor-pointer transition-all duration-150 flex items-center justify-center gap-1.5">
+    <svg class="w-3.5 h-3.5" fill="currentColor" viewbox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a10.97 10.97 0 00-.25 2.449c0 1.343.376 2.597 1.026 3.659L4.606 15.58A1 1 0 005.42 17h9.16a1 1 0 00.814-1.42l-1.42-1.42c.65-1.062 1.026-2.316 1.026-3.66 0-.84-.09-1.657-.25-2.448l2.644-1.132a1 1 0 000-1.84l-7-3zM10 4.162L15.11 6.35 10 8.54 4.89 6.35 10 4.162z"></path></svg>Student
+  </a>
+  <a href="/auth/mentor-login" class="bg-[#1A1D20] text-[#D4AF37] font-semibold text-xs py-2 px-3 rounded-lg shadow-sm flex-1 text-center cursor-pointer transition-all duration-150 flex items-center justify-center gap-1.5">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>Mentor
+  </a>
+  <a href="/auth/admin-login" class="text-[#6B7280] hover:text-[#1A1D20] font-medium text-xs py-2 px-3 rounded-lg flex-1 text-center cursor-pointer transition-all duration-150 flex items-center justify-center gap-1.5">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>Admin
+  </a>
+</div>
+<!-- Email Input -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5" for="login-email">
+                Email Address
+              </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-stone-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all" id="login-email" name="email" placeholder="mentor.sharma@example.com" required="" type="email"/>
+</div>
+<p class="hidden mt-1 text-[11px] text-red-600 font-medium" id="error-login-email"></p>
+</div>
+<!-- Password Input with Show/Hide Toggle -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5" for="login-password">
+                Password
+              </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-9 pr-10 py-2.5 text-sm bg-white border border-stone-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all" id="login-password" name="password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="toggle-password-visibility absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-700 focus:outline-none" data-toggle-target="login-password" type="button">
+<svg class="h-4 w-4 eye-open" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="h-4 w-4 eye-closed hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<p class="hidden mt-1 text-[11px] text-red-600 font-medium" id="error-login-password"></p>
+</div>
+<!-- Remember me & Forgot Password Options -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-amber-600 border-stone-300 focus:ring-amber-500 cursor-pointer" id="login-remember" type="checkbox"/>
+<span class="text-xs text-slate-700">Remember me</span>
+</label>
+<button class="text-xs font-semibold text-amber-800 hover:text-amber-950 underline underline-offset-2 transition-colors" data-switch-view="view-forgot" type="button">
+                Forgot Password?
+              </button>
+</div>
+<!-- Primary Login Button -->
+<div class="pt-2">
+<button class="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-[#C2962C] via-[#D4AF37] to-[#B38722] hover:from-[#B88C22] hover:to-[#9E7416] text-[#121416] font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition-all transform active:scale-[0.99] flex items-center justify-center gap-2" id="btn-login-submit" type="submit">
+<span class="btn-text">Login as Mentor</span>
+<svg class="spinner hidden animate-spin h-4 w-4 text-black" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="relative my-5">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-stone-300"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-[#FAF7F0] px-3 text-stone-500 tracking-wider">or continue with</span>
+</div>
+</div>
+<!-- Social Button: Google -->
+<div>
+<button class="w-full py-2.5 px-4 bg-white hover:bg-stone-50 text-slate-800 text-xs font-semibold rounded-lg border border-stone-300 shadow-sm flex items-center justify-center gap-3 transition-colors" id="btn-google-login" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.3 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3 0-.8.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.8.7 5.5 1.9 7.8l3.7-2.9z" fill="#FBBC05"></path>
+<path d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.3-6.4-5.2L1.9 16.5C3.7 20.2 7.5 23.5 12 23.5z" fill="#34A853"></path>
+</svg>
+<span class="">Continue with Google</span>
+</button>
+<!-- Protected Notice (Login Only) -->
+<div class="mt-6 text-center text-xs text-slate-600 font-medium"><span>Protected Mentor Portal. Account provisioned by Administrator.</span></div>
+</section>
+<!-- END: LoginFormView -->
+<!-- ========================================== -->
+
+<!-- ========================================== -->
+<!-- VIEW 3: FORGOT PASSWORD (/forgot-password) -->
+<!-- ========================================== -->
+<!-- BEGIN: ForgotPasswordView -->
+<section aria-labelledby="forgot-title" class="auth-view hidden-view" id="view-forgot">
+<div class="text-center mb-6">
+<h3 class="font-heritage text-2xl sm:text-3xl font-bold text-slate-900" id="forgot-title">Reset Password</h3>
+<p class="text-xs text-slate-600 mt-1.5 max-w-xs mx-auto">
+              Enter your registered email address and we'll send you an instant recovery link to restore access.
+            </p>
+</div>
+<form action="javascript:void(0)" class="space-y-4" id="form-forgot" novalidate="">
+<!-- Email Input -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5" for="forgot-email">
+                Registered Email Address
+              </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-9 pr-3 py-2.5 text-sm bg-white border border-stone-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all" id="forgot-email" name="email" placeholder="student@example.com" required="" type="email"/>
+</div>
+<p class="hidden mt-1 text-[11px] text-red-600 font-medium" id="error-forgot-email"></p>
+</div>
+<!-- Helpful Information Badge -->
+<div class="p-3 bg-amber-50 rounded-lg border border-amber-200/80 text-[11px] text-amber-950 flex items-start gap-2">
+<svg class="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">If you registered with your village panchayat center or mobile OTP, you can also reset via SMS.</span>
+</div>
+<!-- Reset Action Button -->
+<div class="pt-2">
+<button class="w-full py-2.5 px-4 rounded-lg bg-gradient-to-r from-[#C2962C] via-[#D4AF37] to-[#B38722] hover:from-[#B88C22] hover:to-[#9E7416] text-[#121416] font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2" id="btn-forgot-submit" type="submit">
+<span class="btn-text">Send Recovery Link</span>
+<svg class="spinner hidden animate-spin h-4 w-4 text-black" fill="none" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</button>
+</div>
+</form>
+<!-- Back to Login -->
+<div class="mt-6 text-center">
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-900 hover:text-amber-950 transition-colors" data-switch-view="view-login" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              Back to Login
+            </button>
+</div>
+</section>
+<!-- END: ForgotPasswordView -->
+<!-- Trust Note Footer inside Card -->
+<div class="mt-6 pt-4 border-t border-stone-200/80 text-center">
+<p class="text-[10px] text-stone-500 uppercase tracking-widest flex items-center justify-center gap-2">
+<span class="">Free for Rural India</span>
+<span class="">•</span>
+<span class="">Government Scholarship Sync</span>
+</p>
+</div>
+</div>
+</main>
+<!-- END: RightAuthPane -->
+</div>
+<!-- END: MainContainer -->
+<!-- BEGIN: ClientAuthenticationScript -->
+<script data-purpose="auth-interactivity">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const views = {
+        'view-login': document.getElementById('view-login'),
+        'view-forgot': document.getElementById('view-forgot')
+      };
+
+      // View Switcher Function
+      function switchView(targetViewId) {
+        Object.keys(views).forEach(id => {
+          const el = views[id];
+          if (el) {
+            if (id === targetViewId) {
+              el.classList.remove('hidden-view');
+              el.classList.add('active-view');
+            } else {
+              el.classList.remove('active-view');
+              el.classList.add('hidden-view');
+            }
+          }
+        });
+      }
+
+      // Bind all data-switch-view buttons
+      document.querySelectorAll('[data-switch-view]').forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = button.getAttribute('data-switch-view');
+          switchView(target);
+        });
+      });
+
+      // Default View
+      switchView('view-login');
+
+      // Password Visibility Toggle
+      document.querySelectorAll('.toggle-password-visibility').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-toggle-target');
+          const input = document.getElementById(targetId);
+          const eyeOpen = btn.querySelector('.eye-open');
+          const eyeClosed = btn.querySelector('.eye-closed');
+
+          if (input && input.type === 'password') {
+            input.type = 'text';
+            if (eyeOpen) eyeOpen.classList.add('hidden');
+            if (eyeClosed) eyeClosed.classList.remove('hidden');
+          } else if (input) {
+            input.type = 'password';
+            if (eyeOpen) eyeOpen.classList.remove('hidden');
+            if (eyeClosed) eyeClosed.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+<!-- END: ClientAuthenticationScript -->
+<script src="/public/js/profile-hydration.js"></script>
+</body></html>

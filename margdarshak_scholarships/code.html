@@ -1,0 +1,887 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter, Cinzel & Cormorant Garamond / Playfair for serif elegance, Caveat for handwritten script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: {
+            brand: {
+              dark: '#0f1115',
+              sidebar: '#12141a',
+              cardBg: '#1a1d24',
+              gold: '#c99846',
+              goldHover: '#b58434',
+              goldLight: '#f4ede2',
+              cream: '#fbf9f4',
+              parchment: '#f5edd8',
+              cardBorder: '#e8dfcc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e39;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c99846;
+    }
+  </style>
+<style data-purpose="background-helpers">
+    /* Layered backdrop alignment to leverage source imagery exactly */
+    .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(20, 22, 28, 0.25) 0%, rgba(20, 22, 28, 0.45) 60%, rgba(245, 243, 238, 0.95) 100%);
+    }
+    .parchment-texture {
+      background-color: #f7f1e1;
+      background-image: radial-gradient(#ecdcb9 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+
+<style data-purpose="custom-scrollbars">
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EDE6DA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C4B59D;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A69274;
+    }
+    aside::-webkit-scrollbar {
+      width: 4px;
+    }
+    aside::-webkit-scrollbar-track {
+      background: #0B0D10;
+    }
+    aside::-webkit-scrollbar-thumb {
+      background: #252830;
+      border-radius: 2px;
+    }
+  </style>
+<style data-purpose="decorative-effects">
+    .active-nav-card {
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.06) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 0 14px -3px rgba(212, 175, 55, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-[#e9e4d9] text-gray-800 font-sans antialiased overflow-x-hidden min-h-screen">
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[280px] bg-[#111317] text-gray-300 flex flex-col justify-between shrink-0 border-r border-[#222630] select-none fixed left-0 top-0 bottom-0 h-screen z-50 overflow-y-auto">
+<div>
+<!-- Logo & Branding -->
+<div class="p-5 pb-4 flex items-center gap-3 border-b border-[#1f242e]">
+<!-- Emblem -->
+<div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-gold bg-[#1c202a] border border-[#303646] shadow-inner">
+<svg class="w-6 h-6 stroke-current fill-brand-gold/20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+<circle class="fill-brand-gold" cx="12" cy="7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h1 class="font-serif font-bold text-xl tracking-wide text-[#f4ede2] leading-none">Margdarshak</h1>
+<p class="text-[11px] text-[#b3a182] font-medium tracking-wider mt-1">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="p-3 space-y-1 text-[13.5px] font-medium font-sans">
+<!-- Active Item: Home -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/student/dashboard">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Career Guidance -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/career-guidance">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+</svg>
+<span class="">Career Guidance</span>
+</a>
+<!-- Skill Development -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/skill-development">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="">Skill Development</span>
+</a>
+<!-- Courses & Colleges -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/courses-colleges">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Courses &amp; Colleges</span>
+</a>
+<!-- Scholarships -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#44361e] to-[#24211a] text-white border border-brand-gold/40 shadow-sm" href="/scholarships">
+
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Scholarships</span>
+
+</a>
+<!-- Jobs & Internships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/jobs-internships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span class="">Jobs &amp; Internships</span>
+</a>
+<!-- AI Mentor -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/ai-mentor">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">AI Mentor</span>
+</a>
+<!-- Resume Builder -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resume-builder">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resume Builder</span>
+</a>
+<!-- Challenges & XP -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/challenges-xp">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<span class="">Challenges &amp; XP</span>
+</a>
+<!-- Community -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/community">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Community</span>
+</a>
+<!-- Resources -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resources">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resources</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Vignette / Quote / Footer -->
+<div class="p-4 border-t border-[#1e222c] relative overflow-hidden bg-gradient-to-t from-black via-[#111317] to-transparent">
+<div class="relative z-10 text-center space-y-2">
+<p class="font-serif italic text-[13px] text-amber-200/90 leading-snug">
+            “Every dream deserves a direction.”
+          </p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">— Margdarshak</p>
+<!-- Decorative Lantern & Books representation -->
+<div class="py-2 flex justify-center items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+<svg class="w-10 h-10 text-brand-gold relative drop-shadow" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+<path d="M9 2h6l2 4H7l2-4z"></path>
+<path d="M6 6h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6z"></path>
+<circle class="fill-amber-300 text-amber-400" cx="12" cy="12" r="3"></circle>
+<path d="M4 22h16"></path>
+</svg>
+</div>
+</div>
+<div class="pt-1 text-[9.5px] tracking-widest text-[#a8987d] font-serif uppercase">
+            LEARN • GROW • ACHIEVE
+          </div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<div class="ml-[280px] min-h-screen w-[calc(100%-280px)] flex flex-col bg-[#e9e4d9]">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-[#e2d8c3] bg-[#fbf9f4]/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+<!-- Global Search Bar -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-16 py-1.5 text-xs bg-[#242834] text-gray-200 rounded-full border border-gray-700/60 focus:outline-none focus:ring-1 focus:ring-brand-gold placeholder-gray-400" placeholder="Search careers, colleges, scholarships, skills..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-gray-400 font-mono">
+<span class="bg-[#191b22] px-1.5 py-0.5 rounded border border-gray-700">Ctrl K</span>
+</span>
+</div>
+<!-- Top Right Actions -->
+<div class="flex items-center space-x-5">
+<!-- Language Toggle -->
+
+<!-- Theme Toggle (Sun/Moon) -->
+
+<!-- Notifications with Badge -->
+<div class="relative cursor-pointer">
+<button class="w-8 h-8 rounded-full bg-[#232733] text-gray-300 hover:text-white flex items-center justify-center border border-gray-700">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center border border-[#16181f]">
+              3
+            </span>
+</div>
+<!-- User Profile Dropdown -->
+<div class="flex items-center space-x-2.5 cursor-pointer pl-1 hover:opacity-90">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-brand-gold">
+<img alt="Venkat Sai" data-bind="user.fullName" class="w-full h-full object-cover object-[88%_4%]" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+</div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-xs font-semibold text-gray-200"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[10px] text-gray-400">Student</div>
+</div>
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="flex-1 px-7 py-7 space-y-7 max-w-[1440px] w-full mx-auto">
+<!-- BEGIN: Editorial Page Header -->
+<section class="relative rounded-2xl overflow-hidden border border-brand-cardBorder bg-[#E8DCB9] shadow-sm" data-purpose="scholarships-header-banner">
+<div class="absolute inset-0 z-0 opacity-20 mix-blend-multiply pointer-events-none" style="background-image: radial-gradient(circle at right 30%, #a47d22 10%, transparent 60%), linear-gradient(180deg, #edd7ad 0%, #c49a45 100%);"></div>
+<div class="relative z-10 px-8 py-8 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="max-w-3xl space-y-3">
+<div class="flex flex-wrap items-center gap-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/25 border border-brand-goldDark/30 text-brand-charcoal text-xs font-semibold">
+<span class="text-brand-goldDark">✦</span> SCHOLARSHIPS • PERSONALIZED FOR YOU
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-[#D5C5AE] text-[#554737] text-xs font-medium">
+<span>Personalized for Venkat Sai (Level 5 Explorer)</span>
+</div>
+</div>
+<h2 class="font-serif text-3xl md:text-4xl font-bold tracking-tight text-[#2B2319] leading-tight">
+        Find Support for Your Dreams.
+      </h2>
+<p class="text-[#5B4E3E] text-sm md:text-base font-normal max-w-2xl leading-relaxed">
+        Discover scholarships, government fee reimbursements, and financial-aid opportunities aligned with your academic background, Diploma CSE pathway, and eligibility.
+      </p>
+<!-- Page Search -->
+<div class="pt-2 flex items-center gap-3">
+<div class="relative flex-1 max-w-md">
+<input class="w-full bg-white/95 text-neutral-800 text-sm pl-4 pr-10 py-2.5 rounded-xl border border-[#D5C6AC] shadow-inner focus:outline-none focus:ring-2 focus:ring-brand-gold/80" placeholder="Search scholarships, schemes, financial aid, corporate trusts... (Ctrl S)" type="text">
+<button class="absolute right-1.5 top-1.5 bottom-1.5 px-3 bg-brand-goldDark text-white rounded-lg hover:bg-brand-charcoal transition flex items-center justify-center">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-xs text-[#5D5041]">
+<span class="font-medium text-[#7D6B58]">Suggested:</span>
+<span class="px-2 py-1 bg-white/80 rounded-md border border-[#D2C5B0] cursor-pointer hover:bg-white">Jagananna Vidya Deevena</span>
+<span class="px-2 py-1 bg-white/80 rounded-md border border-[#D2C5B0] cursor-pointer hover:bg-white">AICTE Pragati</span>
+<span class="px-2 py-1 bg-white/80 rounded-md border border-[#D2C5B0] cursor-pointer hover:bg-white">Reliance Foundation</span>
+<span class="px-2 py-1 bg-white/80 rounded-md border border-[#D2C5B0] cursor-pointer hover:bg-white">Tata Trusts</span>
+</div>
+</div>
+</div>
+<!-- Side Callout Badge -->
+<div class="w-full md:w-72 bg-gradient-to-br from-[#FDFBF7] to-[#F5EDE0] border border-[#D8C7AF] rounded-xl p-4 shadow-sm relative overflow-hidden flex-shrink-0">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-serif italic text-brand-goldDark font-semibold">AP Post-Matric &amp; AICTE Matrix</span>
+<span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">Sample Data</span>
+</div>
+<p class="font-serif italic text-sm text-[#443B30] leading-snug">
+        “Govt fee reimbursement &amp; national merit opportunities verified for rural students.”
+      </p>
+<div class="mt-3 flex items-center justify-between text-[11px] text-[#786652] pt-2 border-t border-[#E3D5C1]">
+<span>Aid Category</span>
+<span class="font-semibold text-brand-charcoal">Tuition Waiver &amp; Stipend</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Editorial Page Header -->
+<!-- BEGIN: Profile Context Card & AI Advice -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6" data-purpose="scholarship-eligibility-summary">
+<!-- Card 1: Your Scholarship Profile -->
+<div class="lg:col-span-6 bg-[#121316] text-white rounded-2xl p-6 border border-[#272B33] shadow-md flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[11px] uppercase tracking-widest text-brand-gold font-semibold">YOUR SCHOLARSHIP PROFILE</span>
+<h3 class="text-xl font-serif font-bold text-[#F8F1E4] mt-0.5">Venkat Sai • Diploma CSE</h3>
+<p class="text-xs text-neutral-400 mt-1">2nd Year Completed • Government Polytechnic, Anantapuramu</p>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold">
+<span>✓ JVD &amp; Merit Eligible</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-2 pt-4 my-2">
+<div class="bg-[#1A1C22] p-2.5 rounded-xl border border-neutral-800 text-center">
+<span class="text-[10px] text-neutral-400 uppercase tracking-wider block">Academic Score</span>
+<span class="text-base font-bold text-brand-gold">84.5%</span>
+<span class="text-[9px] text-emerald-400 font-semibold">High Merit</span>
+</div>
+<div class="bg-[#1A1C22] p-2.5 rounded-xl border border-neutral-800 text-center">
+<span class="text-[10px] text-neutral-400 uppercase tracking-wider block">Target Goal</span>
+<span class="text-xs font-bold text-neutral-100">B.Tech CSE</span>
+<span class="text-[9px] text-neutral-400">Lateral Entry</span>
+</div>
+<div class="bg-[#1A1C22] p-2.5 rounded-xl border border-neutral-800 text-center">
+<span class="text-[10px] text-neutral-400 uppercase tracking-wider block">Region</span>
+<span class="text-xs font-bold text-neutral-100">Rayalaseema</span>
+<span class="text-[9px] text-neutral-400">SVU Zone</span>
+</div>
+<div class="bg-[#1A1C22] p-2.5 rounded-xl border border-neutral-800 text-center">
+<span class="text-[10px] text-neutral-400 uppercase tracking-wider block">Fee Scheme</span>
+<span class="text-xs font-bold text-amber-400">JVD Eligible</span>
+<span class="text-[9px] text-amber-500">100% Waiver</span>
+</div>
+<div class="bg-[#1A1C22] p-2.5 rounded-xl border border-neutral-800 text-center col-span-2 md:col-span-1">
+<span class="text-[10px] text-neutral-400 uppercase tracking-wider block">Category</span>
+<span class="text-xs font-bold text-neutral-100">BC-A</span>
+<span class="text-[9px] text-neutral-400">(Sample)</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-neutral-800 flex items-center justify-between">
+<span class="text-xs text-neutral-400">Income Bracket: &lt; ₹2.5 Lakhs | Non-Tax Payer</span>
+<button class="px-3 py-1.5 bg-[#282B33] text-xs font-medium text-neutral-200 rounded-lg hover:bg-neutral-700 transition border border-neutral-700">
+        Edit Preferences
+      </button>
+</div>
+</div>
+<!-- Card 2: Margdarshak AI Scholarship Insight -->
+<div class="lg:col-span-6 bg-gradient-to-br from-[#FFFDF9] to-[#F7EFE2] rounded-2xl p-6 border border-[#E0D2BE] shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-brand-gold/20 border border-brand-goldDark flex items-center justify-center text-brand-goldDark">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+</svg>
+</div>
+<div>
+<h3 class="font-serif font-bold text-lg text-brand-charcoal">Margdarshak AI Scholarship Insight</h3>
+<span class="text-[11px] text-brand-goldDark font-semibold uppercase tracking-wider">Automated Verification &amp; Match</span>
+</div>
+</div>
+<span class="px-2.5 py-1 bg-amber-100 text-amber-900 border border-amber-300 rounded-full text-[11px] font-medium">
+          🌟 14 Matching Schemes
+        </span>
+</div>
+<div class="bg-white rounded-xl p-3.5 border border-[#E4D7C4] text-xs text-[#44382B] leading-relaxed shadow-inner">
+<p class="font-medium text-neutral-800 mb-1">
+          “Based on your 84.5% in Diploma CSE, you have high probability for full tuition waiver under Jagananna Vidya Deevena (JVD) for B.Tech lateral entry.”
+        </p>
+<p>
+          Plus eligibility for AICTE Pragati/Swanath technical grants and corporate merit bursaries. Guidance provided as sample data; verify with official portal.
+        </p>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-[#E8DCB9] flex items-center justify-between gap-3">
+<button class="px-4 py-2 rounded-lg bg-[#121316] text-white text-xs font-semibold hover:bg-neutral-800 transition flex items-center gap-2 shadow-sm">
+<span>Check Scheme Eligibility →</span>
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white border border-[#D5C5AE] text-[#554737] hover:text-brand-charcoal text-xs font-medium hover:bg-amber-50/50 transition">
+        Download Scheme Guide PDF
+      </button>
+</div>
+</div>
+</section>
+<!-- END: Profile Context Card & AI Advice -->
+<!-- BEGIN: Horizontal Category Chips -->
+<section class="flex items-center gap-2.5 overflow-x-auto pb-1 text-xs select-none" data-purpose="scholarship-category-chips">
+<button class="px-4 py-2 rounded-full font-semibold bg-brand-charcoal text-white shadow-sm flex-shrink-0 flex items-center gap-2">
+<span>✨ All Scholarships</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🏛️ Government Schemes</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🏆 Merit-Based</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🤝 Need-Based</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>📜 Post-Matric (JVD)</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🔄 Diploma to Degree</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🏢 Corporate &amp; CSR</span>
+</button>
+<button class="px-4 py-2 rounded-full font-medium bg-[#ECE1CF] hover:bg-[#E5D7C2] text-[#42392E] border border-[#D5C5AE] shadow-2xs flex-shrink-0 flex items-center gap-1.5 transition">
+<span>🌾 Rural Students</span>
+</button>
+</section>
+<!-- END: Horizontal Category Chips -->
+<!-- BEGIN: Secondary Filter Controls Bar -->
+<section class="bg-white rounded-xl border border-[#DECDB8] p-4 shadow-xs flex flex-wrap items-center justify-between gap-3 text-xs text-[#554737]" data-purpose="scholarship-filters-bar">
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-1.5 font-medium">
+<span class="text-[#786652]">Scheme Type:</span>
+<select class="bg-[#F8F3EA] border border-[#D5C5AE] rounded-lg px-2.5 py-1.5 text-xs text-[#2A231A] focus:outline-none focus:ring-1 focus:ring-brand-gold">
+<option selected="">All Scheme Types</option>
+<option>Full Tuition Fee Waiver</option>
+<option>Hostel &amp; Maintenance Grant</option>
+<option>One-time Merit Cash Award</option>
+<option>CSR Technical Bursary</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 font-medium">
+<span class="text-[#786652]">State / Region:</span>
+<select class="bg-[#F8F3EA] border border-[#D5C5AE] rounded-lg px-2.5 py-1.5 text-xs text-[#2A231A] focus:outline-none focus:ring-1 focus:ring-brand-gold">
+<option selected="">Andhra Pradesh &amp; National</option>
+<option>Andhra Pradesh Only</option>
+<option>Central / National</option>
+<option>Private Trusts (PAN India)</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 font-medium">
+<span class="text-[#786652]">Education Level:</span>
+<select class="bg-[#F8F3EA] border border-[#D5C5AE] rounded-lg px-2.5 py-1.5 text-xs text-[#2A231A] focus:outline-none focus:ring-1 focus:ring-brand-gold">
+<option selected="">Diploma &amp; Lateral B.Tech</option>
+<option>Diploma 3rd Year</option>
+<option>Undergraduate Degree</option>
+<option>Post-Graduate</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-neutral-500">Sort by:</span>
+<button class="px-3 py-1.5 rounded-lg bg-[#F6EFE3] font-semibold text-[#2B2319] border border-[#DECDB8] flex items-center gap-1">
+<span>Highest Match</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+</section>
+<!-- END: Secondary Filter Controls Bar -->
+<!-- BEGIN: Scholarships For You Grid -->
+<section class="space-y-4" data-purpose="recommended-scholarships-catalog">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-serif text-2xl font-bold text-[#2A231A]">Scholarships For You</h3>
+<p class="text-xs text-brand-textMuted">Top financial aid schemes aligned with your Diploma CSE credentials and eligibility status</p>
+</div>
+<a class="text-xs font-semibold text-brand-goldDark hover:underline flex items-center gap-1" href="#">
+<span>Browse All Schemes</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Scheme 1 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+            96% Profile Match
+          </span>
+<span class="text-[11px] text-emerald-700 font-semibold">100% Tuition Waived</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">Jagananna Vidya Deevena (JVD) &amp; Vasathi Deevena</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          Govt of Andhra Pradesh | Full Tuition Reimbursement + ₹20,000/yr Hostel Aid for eligible students.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">AP e-Pass / Jnanabhumi Portal</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">Diploma &amp; Lateral Entry B.Tech, Income &lt; ₹2.5L</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-emerald-800">100% Tuition Waived</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Govt Premier Scheme</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Verified Portal</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+<!-- Scheme 2 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+            92% Profile Match
+          </span>
+<span class="text-[11px] text-brand-goldDark font-semibold">₹50,000 / annum</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">AICTE Pragati &amp; Saksham Technical Scholarship</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          All India Council for Technical Education (MoE, Govt of India) grant for meritorious diploma and degree candidates.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">National Scholarship Portal (NSP)</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">AICTE Approved Diploma / Engg, Merit &gt; 60%</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-brand-charcoal">₹50,000 / annum</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">National Central Grant</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Technical Focus</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+<!-- Scheme 3 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-800 border border-blue-200 text-[11px] font-bold">
+            88% Profile Match
+          </span>
+<span class="text-[11px] text-brand-goldDark font-semibold">Up to ₹2,00,000</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">Reliance Foundation Undergraduate &amp; Diploma Scholarship</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          Reliance Foundation CSR Initiative supporting emerging tech talent through scholarship and leadership workshops.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">Online Aptitude &amp; Merit Evaluation</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">1st/2nd Year Technical Diploma or Degree</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-brand-charcoal">Up to ₹2,00,000 across study</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">High Value Merit</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Mentorship Included</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+<!-- Scheme 4 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold">
+            85% Profile Match
+          </span>
+<span class="text-[11px] text-brand-goldDark font-semibold">₹35,000 / year</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">HDFC Bank Parivartan ECSS Scholarship</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          HDFC Bank Educational Crisis Support supporting rural families and technical students with annual bursaries.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">Direct Application / Buddy4Study</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">Rural students, family income &lt; ₹2.5L</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-brand-charcoal">₹35,000 / year</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Need-Based</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Annual Renewal</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+<!-- Scheme 5 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-800 border border-purple-200 text-[11px] font-bold">
+            82% Profile Match
+          </span>
+<span class="text-[11px] text-brand-goldDark font-semibold">₹25,000 / yr + Books</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">Tata Trusts Rural Education &amp; Technical Bursary</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          Tata Education and Development Trust support program for government polytechnic &amp; engineering colleges.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">Institutional Rec via Polytechnic Principal</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">Meritorious students from rural govt institutes</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-brand-charcoal">₹25,000 / year + Book Grant</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">STEM Focus</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Govt Institute Priority</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+<!-- Scheme 6 -->
+<article class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md hover:border-brand-gold transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-2.5">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-bold">
+            79% Profile Match
+          </span>
+<span class="text-[11px] text-brand-goldDark font-semibold">₹12,000 - ₹20,000/yr</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal leading-snug">Central Sector Scheme of Scholarships (CSSS)</h4>
+<p class="text-xs text-neutral-600 mt-1 line-clamp-2">
+          Department of Higher Education, Govt of India initiative for higher technical &amp; collegiate education.
+        </p>
+<div class="mt-4 space-y-1.5 text-xs text-[#554737] bg-[#F8F3EA] p-3 rounded-lg border border-[#E6DCCF]">
+<div class="flex justify-between"><span class="text-neutral-500">Route:</span> <span class="font-semibold text-brand-charcoal">National Scholarship Portal (NSP)</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Eligibility:</span> <span class="font-semibold text-brand-charcoal">Top 80th percentile in board / technical diploma</span></div>
+<div class="flex justify-between"><span class="text-neutral-500">Benefit:</span> <span class="font-bold text-brand-charcoal">₹12,000 - ₹20,000 / year</span></div>
+</div>
+<div class="mt-3 flex flex-wrap gap-1.5 text-[10px] text-neutral-600">
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">Direct Benefit Transfer (DBT)</span>
+<span class="bg-[#F6EFE3] px-2 py-0.5 rounded border border-[#E2D5C0]">National Scheme</span>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-neutral-100 flex items-center justify-between">
+<button class="text-xs font-semibold text-[#7D6B58] hover:text-brand-charcoal flex items-center gap-1">
+<span>Save Scheme</span>
+</button>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold text-xs font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Scheme Details →
+        </button>
+</div>
+</article>
+</div>
+</section>
+<!-- END: Scholarships For You Grid -->
+<!-- BEGIN: Verified Aid Providers Section -->
+<section class="space-y-4" data-purpose="verified-aid-providers-section">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+<div>
+<h3 class="font-serif text-2xl font-bold text-[#2A231A]">Verified Aid Providers</h3>
+<p class="text-xs text-brand-textMuted">Official statutory welfare boards and authenticated philanthropic grant foundations</p>
+</div>
+<div class="flex items-center gap-2 text-xs">
+<span class="text-neutral-500">Filter By Source:</span>
+<button class="px-2.5 py-1 rounded-md bg-brand-charcoal text-white font-medium">All Providers</button>
+<button class="px-2.5 py-1 rounded-md bg-[#ECE1CF] text-[#42392E] font-medium border border-[#D5C5AE]">AP State Govt</button>
+<button class="px-2.5 py-1 rounded-md bg-[#ECE1CF] text-[#42392E] font-medium border border-[#D5C5AE]">CSR &amp; Philanthropic</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Provider 1: AP Welfare Departments -->
+<div class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-amber-100 text-amber-900 border border-amber-300 rounded text-[10px] font-bold">State Government</span>
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded text-[10px] font-bold">100% DBT Verified</span>
+<span class="text-[11px] text-[#786652] font-semibold">Official Portal</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal">Andhra Pradesh State Welfare Departments</h4>
+<p class="text-xs text-neutral-500 mt-0.5">Social Welfare, BC Welfare, Tribal Welfare &amp; Minority Welfare Departments</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-goldDark flex items-center justify-center font-serif font-bold text-xs flex-shrink-0 text-center">
+            APWD
+          </div>
+</div>
+<div class="grid grid-cols-3 gap-2 my-3 text-center text-xs">
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Core Portal</span>
+<span class="font-bold text-brand-charcoal">Jnanabhumi</span>
+</div>
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Beneficiaries</span>
+<span class="font-bold text-brand-charcoal">10 Lakh+ Students</span>
+</div>
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Tuition Coverage</span>
+<span class="font-bold text-emerald-700">Full JVD Scheme</span>
+</div>
+</div>
+<p class="text-xs text-neutral-600 line-clamp-2">
+          Jnanabhumi Integrated Platform handles biometric student verification, attendance authentication, and direct fund transfer directly to university escrow accounts.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
+<span class="text-neutral-500">Contact: District Welfare Officers &amp; Sachivalayam</span>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Welfare Centers →
+        </button>
+</div>
+</div>
+<!-- Provider 2: National & Corporate CSR -->
+<div class="bg-white rounded-xl border border-[#E3D7C5] p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-amber-100 text-amber-900 border border-amber-300 rounded text-[10px] font-bold">National &amp; CSR Trusts</span>
+<span class="px-2 py-0.5 bg-blue-50 text-blue-800 border border-blue-200 rounded text-[10px] font-bold">Merit-Cum-Means</span>
+<span class="text-[11px] text-[#786652] font-semibold">Audited Grants</span>
+</div>
+<h4 class="font-serif text-lg font-bold text-brand-charcoal">National &amp; Corporate CSR Technical Education Grants</h4>
+<p class="text-xs text-neutral-500 mt-0.5">Reliance Foundation, Tata Trusts, Infosys Foundation &amp; HDFC Parivartan</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-goldDark flex items-center justify-center font-serif font-bold text-xs flex-shrink-0 text-center">
+            CSR
+          </div>
+</div>
+<div class="grid grid-cols-3 gap-2 my-3 text-center text-xs">
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Grant Range</span>
+<span class="font-bold text-brand-charcoal">₹25K - ₹2.0L</span>
+</div>
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Selection</span>
+<span class="font-bold text-brand-charcoal">Aptitude + Need</span>
+</div>
+<div class="bg-[#F8F3EA] p-2 rounded-lg border border-[#E6DCCF]">
+<span class="text-[10px] text-neutral-500 block">Transparency</span>
+<span class="font-bold text-emerald-700">100% Direct DBT</span>
+</div>
+</div>
+<p class="text-xs text-neutral-600 line-clamp-2">
+          High-value national grants designed to support bright rural talent entering advanced engineering, computing diplomas, and technical undergraduate universities.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
+<span class="text-neutral-500">Support: Application Auditing &amp; Mentorship</span>
+<button class="px-3.5 py-1.5 bg-brand-charcoal text-brand-gold font-semibold rounded-lg hover:bg-neutral-800 transition">
+          View Corporate Grants →
+        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Verified Aid Providers Section -->
+<!-- BEGIN: Scholarship Application Roadmap & Documents Checklist -->
+<section class="bg-gradient-to-r from-[#FFFDF9] via-[#FAF3E7] to-[#F5ECE0] rounded-xl border border-[#DFD1BE] p-6 shadow-sm space-y-4" data-purpose="scholarship-roadmap-timeline">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div>
+<span class="text-[10px] uppercase tracking-wider font-bold text-brand-goldDark">Upcoming Admission &amp; Aid Milestones</span>
+<h4 class="font-serif text-xl font-bold text-brand-charcoal mt-0.5">Scholarship Application Roadmap &amp; Documents Checklist</h4>
+<p class="text-xs text-neutral-600">Ensure documentation is completed ahead of time to prevent delays in fee sanctioning.</p>
+</div>
+<button class="px-4 py-2 bg-brand-goldDark hover:bg-[#8D6A1A] text-white text-xs font-bold rounded-xl shadow transition self-start md:self-auto">
+      Download Complete Documents Checklist
+    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-2">
+<div class="bg-white p-3.5 rounded-xl border border-[#E3D7C5]">
+<span class="text-[10px] font-bold text-brand-goldDark block mb-1">STEP 1 • JULY 2025</span>
+<h5 class="text-xs font-bold text-brand-charcoal">MeeSeva Document Readiness</h5>
+<p class="text-[11px] text-neutral-500 mt-1">Acquire updated Income Certificate (&lt; ₹2.5L), Integrated Caste, Residence &amp; White Ration Card.</p>
+</div>
+<div class="bg-white p-3.5 rounded-xl border border-[#E3D7C5]">
+<span class="text-[10px] font-bold text-brand-goldDark block mb-1">STEP 2 • AUGUST 2025</span>
+<h5 class="text-xs font-bold text-brand-charcoal">Aadhaar e-KYC &amp; NPCI Seeding</h5>
+<p class="text-[11px] text-neutral-500 mt-1">Verify active mobile link with Aadhaar and ensure active bank account is NPCI-mapped for DBT payments.</p>
+</div>
+<div class="bg-white p-3.5 rounded-xl border border-[#E3D7C5]">
+<span class="text-[10px] font-bold text-brand-goldDark block mb-1">STEP 3 • SEPTEMBER 2025</span>
+<h5 class="text-xs font-bold text-brand-charcoal">College Bonafide &amp; Attestation</h5>
+<p class="text-[11px] text-neutral-500 mt-1">Obtain lateral entry admission allotment order, tuition receipt, and Principal institutional seal.</p>
+</div>
+<div class="bg-white p-3.5 rounded-xl border border-[#E3D7C5]">
+<span class="text-[10px] font-bold text-brand-goldDark block mb-1">STEP 4 • OCTOBER 2025</span>
+<h5 class="text-xs font-bold text-brand-charcoal">Jnanabhumi / NSP Portal Biometric</h5>
+<p class="text-[11px] text-neutral-500 mt-1">Complete final biometric authentication at Grama/Ward Sachivalayam or designated college nodal cell.</p>
+</div>
+</div>
+</section>
+<!-- END: Scholarship Application Roadmap & Documents Checklist -->
+<!-- BEGIN: CulturalWatermarkFooter -->
+<footer class="pt-6 pb-6 border-t border-[#DECDB8] text-center space-y-3" data-purpose="cultural-closing-footer">
+<div class="inline-flex items-center gap-3 text-xs font-cinzel text-brand-goldDark font-semibold uppercase tracking-widest">
+<span>Rural Talent</span> • <span>Global Opportunities</span> • <span>A Brighter India</span>
+</div>
+<div class="max-w-xl mx-auto">
+<p class="font-serif italic text-sm text-[#4E4334]">
+      “Education is the most powerful weapon which you can use to change your future.”
+    </p>
+<span class="text-[11px] text-[#7A6B59] block mt-0.5">— Dr. A.P.J. Abdul Kalam</span>
+</div>
+<div class="pt-2 flex items-center justify-center gap-2 text-xs font-telugu text-[#675743]">
+<span class="font-serif tracking-wider uppercase text-[11px] font-bold text-[#3B3224]">From Villages to the World</span>
+<span class="text-neutral-400">|</span>
+<span class="font-semibold">మన ఊరు - మన భవిష్యత్తు (Mana Ooru - Mana Bhavishyatu)</span>
+</div>
+<p class="text-[11px] text-neutral-500">
+    © 2025 Margdarshak Rural Advancement Initiative. Andhra Pradesh &amp; Telangana Student Portal.
+  </p>
+</footer>
+<!-- END: CulturalWatermarkFooter -->
+</main>
+</div>
+</div>
+<script src="/public/js/profile-hydration.js"></script>
+
+
+</body></html>

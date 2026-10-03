@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter, Cinzel & Cormorant Garamond / Playfair for serif elegance, Caveat for handwritten script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: {
+            brand: {
+              dark: '#0f1115',
+              sidebar: '#12141a',
+              cardBg: '#1a1d24',
+              gold: '#c99846',
+              goldHover: '#b58434',
+              goldLight: '#f4ede2',
+              cream: '#fbf9f4',
+              parchment: '#f5edd8',
+              cardBorder: '#e8dfcc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e39;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c99846;
+    }
+  </style>
+<style data-purpose="background-helpers">
+    /* Layered backdrop alignment to leverage source imagery exactly */
+    .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(20, 22, 28, 0.25) 0%, rgba(20, 22, 28, 0.45) 60%, rgba(245, 243, 238, 0.95) 100%);
+    }
+    .parchment-texture {
+      background-color: #f7f1e1;
+      background-image: radial-gradient(#ecdcb9 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+
+<style data-purpose="custom-scrollbars">
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EDE6DA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C4B59D;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A69274;
+    }
+    aside::-webkit-scrollbar {
+      width: 4px;
+    }
+    aside::-webkit-scrollbar-track {
+      background: #0B0D10;
+    }
+    aside::-webkit-scrollbar-thumb {
+      background: #252830;
+      border-radius: 2px;
+    }
+  </style>
+<style data-purpose="decorative-effects">
+    .active-nav-card {
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.06) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 0 14px -3px rgba(212, 175, 55, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-[#e9e4d9] text-gray-800 font-sans antialiased overflow-x-hidden min-h-screen">
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[280px] bg-[#111317] text-gray-300 flex flex-col justify-between shrink-0 border-r border-[#222630] select-none fixed left-0 top-0 bottom-0 h-screen z-50 overflow-y-auto">
+<div>
+<!-- Logo & Branding -->
+<div class="p-5 pb-4 flex items-center gap-3 border-b border-[#1f242e]">
+<!-- Emblem -->
+<div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-gold bg-[#1c202a] border border-[#303646] shadow-inner">
+<svg class="w-6 h-6 stroke-current fill-brand-gold/20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+<circle class="fill-brand-gold" cx="12" cy="7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h1 class="font-serif font-bold text-xl tracking-wide text-[#f4ede2] leading-none">Margdarshak</h1>
+<p class="text-[11px] text-[#b3a182] font-medium tracking-wider mt-1">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="p-3 space-y-1 text-[13.5px] font-medium font-sans">
+<!-- Active Item: Home -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/student/dashboard">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Career Guidance -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/career-guidance">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+</svg>
+<span class="">Career Guidance</span>
+</a>
+<!-- Skill Development -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/skill-development">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="">Skill Development</span>
+</a>
+<!-- Courses & Colleges -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/courses-colleges">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Courses &amp; Colleges</span>
+</a>
+<!-- Scholarships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/scholarships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Scholarships</span>
+</a>
+<!-- Jobs & Internships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/jobs-internships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span class="">Jobs &amp; Internships</span>
+</a>
+<!-- AI Mentor -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#44361e] to-[#24211a] text-white border border-brand-gold/40 shadow-sm" href="/ai-mentor">
+
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">AI Mentor</span>
+
+</a>
+<!-- Resume Builder -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resume-builder">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resume Builder</span>
+</a>
+<!-- Challenges & XP -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/challenges-xp">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<span class="">Challenges &amp; XP</span>
+</a>
+<!-- Community -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/community">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Community</span>
+</a>
+<!-- Resources -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resources">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resources</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Vignette / Quote / Footer -->
+<div class="p-4 border-t border-[#1e222c] relative overflow-hidden bg-gradient-to-t from-black via-[#111317] to-transparent">
+<div class="relative z-10 text-center space-y-2">
+<p class="font-serif italic text-[13px] text-amber-200/90 leading-snug">
+            “Every dream deserves a direction.”
+          </p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">— Margdarshak</p>
+<!-- Decorative Lantern & Books representation -->
+<div class="py-2 flex justify-center items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+<svg class="w-10 h-10 text-brand-gold relative drop-shadow" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+<path d="M9 2h6l2 4H7l2-4z"></path>
+<path d="M6 6h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6z"></path>
+<circle class="fill-amber-300 text-amber-400" cx="12" cy="12" r="3"></circle>
+<path d="M4 22h16"></path>
+</svg>
+</div>
+</div>
+<div class="pt-1 text-[9.5px] tracking-widest text-[#a8987d] font-serif uppercase">
+            LEARN • GROW • ACHIEVE
+          </div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<div class="ml-[280px] min-h-screen w-[calc(100%-280px)] flex flex-col bg-[#e9e4d9]">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-[#e2d8c3] bg-[#fbf9f4]/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+<!-- Global Search Bar -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-16 py-1.5 text-xs bg-[#242834] text-gray-200 rounded-full border border-gray-700/60 focus:outline-none focus:ring-1 focus:ring-brand-gold placeholder-gray-400" placeholder="Search careers, colleges, scholarships, skills..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-gray-400 font-mono">
+<span class="bg-[#191b22] px-1.5 py-0.5 rounded border border-gray-700">Ctrl K</span>
+</span>
+</div>
+<!-- Top Right Actions -->
+<div class="flex items-center space-x-5">
+<!-- Language Toggle -->
+
+<!-- Theme Toggle (Sun/Moon) -->
+
+<!-- Notifications with Badge -->
+<div class="relative cursor-pointer">
+<button class="w-8 h-8 rounded-full bg-[#232733] text-gray-300 hover:text-white flex items-center justify-center border border-gray-700">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center border border-[#16181f]">
+              3
+            </span>
+</div>
+<!-- User Profile Dropdown -->
+<div class="flex items-center space-x-2.5 cursor-pointer pl-1 hover:opacity-90">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-brand-gold">
+<img alt="Venkat Sai" data-bind="user.fullName" class="w-full h-full object-cover object-[88%_4%]" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+</div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-xs font-semibold text-gray-200"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[10px] text-gray-400">Student</div>
+</div>
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="flex-1 px-7 py-7 space-y-7 max-w-[1440px] w-full mx-auto"><section class="relative rounded-2xl overflow-hidden border border-brand-cardBorder bg-[#E8DCB9] shadow-sm" data-purpose="ai-mentor-banner"><div class="absolute inset-0 z-0 opacity-20 mix-blend-multiply pointer-events-none" style="background-image: radial-gradient(circle at right 30%, #a47d22 10%, transparent 60%), linear-gradient(180deg, #edd7ad 0%, #c49a45 100%);"></div><div class="relative z-10 px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"><div class="max-w-3xl space-y-3"><div class="flex flex-wrap items-center gap-2"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/25 border border-brand-goldDark/30 text-brand-charcoal text-xs font-semibold"><span class="text-brand-goldDark">✦</span> AI MENTOR • PERSONALIZED GUIDANCE</div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-[#D5C5AE] text-[#554737] text-xs font-medium"><span>Personalized for <span id="ai-banner-name">Student</span> (Level <span id="ai-banner-level">?</span>)</span></div></div><h2 class="font-serif text-3xl md:text-4xl font-bold tracking-tight text-[#2B2319] leading-tight">Your Questions. Your Journey. Your Mentor.</h2><p class="text-[#5B4E3E] text-sm md:text-base font-normal max-w-2xl leading-relaxed">Talk to Margdarshak AI for personalized guidance on careers, skills, courses, scholarships, jobs, internships, and your next steps.</p></div><div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-2.5 flex-shrink-0"><div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-charcoal text-white text-xs font-semibold shadow-sm"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> <span>● Mentor Online &amp; Verified</span></div><button class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#D5C5AE] text-[#44382B] hover:text-brand-charcoal text-xs font-semibold hover:bg-white/95 transition shadow-2xs"><span>🎙️ Voice Mode (Telugu &amp; English)</span></button></div></div></section><div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start"><div class="lg:col-span-8 space-y-4"><div class="bg-white rounded-2xl border border-[#DECDB8] shadow-sm overflow-hidden flex flex-col"><div class="px-5 py-4 border-b border-[#E6DCCF] bg-[#FDFBF7] flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-brand-charcoal text-brand-gold flex items-center justify-center flex-shrink-0 shadow-xs"><svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 48 48"><circle cx="24" cy="14" fill="rgba(212,175,55,0.2)" r="5" stroke-width="1.8"></circle><path d="M24 22c-4-3-11-3-16-1v17c5-2 12-2 16 1 4-3 11-3 16-1V21c-5-2-12-2-16 1z" fill="rgba(212,175,55,0.12)" stroke-linejoin="round" stroke-width="1.8"></path><path d="M24 22v17" stroke-width="1.8"></path></svg></div><div><div class="flex items-center gap-2"><h3 class="font-serif font-bold text-base text-brand-charcoal">Margdarshak AI Mentor</h3><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold">● Online</span></div><p class="text-[11px] text-[#786652]">Personalized to your Diploma CSE &amp; Lateral ECET profile</p></div></div><div class="flex items-center gap-2"><button class="p-2 text-[#786652] hover:text-brand-charcoal bg-[#F6EFE3] hover:bg-[#ECE1CF] rounded-lg border border-[#DECDB8] transition" title="Voice read out"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button class="px-2.5 py-1.5 text-[11px] text-[#786652] hover:text-brand-charcoal bg-[#F6EFE3] hover:bg-[#ECE1CF] rounded-lg border border-[#DECDB8] transition font-medium">Clear Chat</button></div></div>
+  <div class="p-5 space-y-5 bg-[#FAF6EF]/60 min-h-[400px]" id="ai-chat-container">
+     <!-- Messages will be rendered here dynamically -->
+     <div class="flex items-center justify-center h-full w-full py-20" id="ai-loading-state">
+        <div class="w-8 h-8 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+     </div>
+  </div>
+<div class="p-4 bg-white border-t border-[#E6DCCF]"><div class="relative flex items-center"><textarea rows="1" style="resize:none;" class="w-full bg-[#F8F3EA] text-neutral-800 text-xs pl-4 pr-24 py-3 rounded-xl border border-[#D5C6AC] shadow-inner focus:outline-none focus:ring-2 focus:ring-brand-gold/80" placeholder="Ask Margdarshak anything... (Type your query or click suggested topics)"></textarea><div class="absolute right-2 flex items-center gap-1.5"><button class="p-2 text-[#786652] hover:text-brand-charcoal hover:bg-[#E8DCB9] rounded-lg transition" title="Voice input in Telugu or English"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button class="px-3 py-2 bg-brand-goldDark text-white text-xs font-bold rounded-lg hover:bg-brand-charcoal transition flex items-center gap-1"><span>Send</span> <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div></div><p class="text-[10px] text-[#786652] mt-2 flex items-center justify-between"><span>Press Enter ↵ to send • Shift + Enter for new line</span><span>Voice mode supported in Telugu &amp; English</span></p></div></div></div><div class="lg:col-span-4 space-y-4"><div class="bg-[#121316] text-white rounded-2xl p-5 border border-[#272B33] shadow-sm space-y-3"><div class="flex items-center justify-between"><span class="text-[10px] uppercase tracking-widest text-brand-gold font-semibold">YOUR MARGDARSHAK CONTEXT</span><span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200">✓ Verified Student</span></div><h4 class="font-serif text-base font-bold text-[#F8F1E4]"><span id="ai-student-name">Loading...</span> • <span id="ai-student-course">Course</span></h4><div class="grid grid-cols-2 gap-2 text-xs pt-1"><div class="bg-[#1A1C22] p-2 rounded-lg border border-neutral-800"><span class="text-[9.5px] text-neutral-400 block uppercase">Institute</span><span class="font-medium text-neutral-200 line-clamp-1"><span id="ai-student-college">-</span></span></div><div class="bg-[#1A1C22] p-2 rounded-lg border border-neutral-800"><span class="text-[9.5px] text-neutral-400 block uppercase">Academic Score</span><span class="font-bold text-brand-gold"><span id="ai-student-marks">-</span></span></div><div class="bg-[#1A1C22] p-2 rounded-lg border border-neutral-800"><span class="text-[9.5px] text-neutral-400 block uppercase">Target Goal</span><span class="font-medium text-neutral-200"><span id="ai-student-goal">-</span></span></div><div class="bg-[#1A1C22] p-2 rounded-lg border border-neutral-800"><span class="text-[9.5px] text-neutral-400 block uppercase">Strong Skills</span><span class="font-medium text-amber-400"><span id="ai-student-skills">-</span></span></div></div><div class="pt-2 border-t border-neutral-800 flex items-center justify-between text-xs"><span class="text-[11px] text-neutral-400">SVU Region • Rayalaseema</span><button class="text-[11px] font-semibold text-brand-gold hover:underline">Edit Preferences →</button></div></div><div class="bg-gradient-to-br from-[#FFFDF9] to-[#F7EFE2] rounded-2xl p-5 border border-[#E0D2BE] shadow-xs space-y-2.5"><div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-goldDark text-xs font-bold">✦</div><h4 class="font-serif font-bold text-sm text-brand-charcoal">Today's AI Guidance &amp; Insight</h4></div><p class="text-xs text-[#44382B] leading-relaxed">Based on your current Diploma CSE journey and Software Engineering goal: Your highest-leverage task this week is completing <strong>Linked Lists &amp; Stacks</strong> on the Skill Development tab, then registering on the <strong>NATS 2.0</strong> apprentice portal.</p><div class="pt-2 flex flex-wrap gap-2 text-xs"><button class="px-3 py-1 rounded-lg bg-white border border-[#D5C5AE] text-[#554737] hover:text-brand-charcoal font-medium hover:bg-white/80 transition">View Skill Roadmap →</button><button class="px-3 py-1 rounded-lg bg-white border border-[#D5C5AE] text-[#554737] hover:text-brand-charcoal font-medium hover:bg-white/80 transition">Check JVD Eligibility →</button></div></div><div class="bg-white rounded-2xl p-5 border border-[#DECDB8] shadow-xs space-y-3"><h4 class="font-serif font-bold text-sm text-brand-charcoal flex items-center justify-between"><span>I Can Help You With</span><span class="text-[10px] text-[#786652] font-sans font-normal">Click to prompt</span></h4><div class="space-y-1.5 text-xs"><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>🧭 Career Direction (AP Tech &amp; Engineering)</span><span class="text-brand-goldDark">→</span></button><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>⚡ Skill Roadmaps (DSA, Python, Full-Stack)</span><span class="text-brand-goldDark">→</span></button><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>🎓 Lateral Colleges &amp; ECET Cutoffs (JNTUA, SVU)</span><span class="text-brand-goldDark">→</span></button><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>💰 Fee Waivers &amp; Scholarships (JVD, AICTE)</span><span class="text-brand-goldDark">→</span></button><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>💼 Internships &amp; NATS DBT Stipends</span><span class="text-brand-goldDark">→</span></button><button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-[#FAF6EF] hover:bg-[#F2E8D5] text-[#3B3224] transition text-left font-medium"><span>📄 Resume Review &amp; Telugu Translation</span><span class="text-brand-goldDark">→</span></button></div></div><div class="bg-gradient-to-br from-[#FAF6EF] to-[#F5ECE0] rounded-2xl p-5 border border-[#DECDB8] shadow-xs space-y-3"><div class="flex items-center justify-between"><h4 class="font-serif font-bold text-sm text-brand-charcoal">30-Day Engineering Roadmap</h4><span class="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">Month 1</span></div><div class="space-y-2 text-xs"><div class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-goldDark text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">1</span><div><p class="font-semibold text-brand-charcoal">Week 1: Python OOPs &amp; Problem Solving</p><p class="text-[11px] text-[#786652]">Classes, Objects, File I/O (+50 XP)</p></div></div><div class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-goldDark text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">2</span><div><p class="font-semibold text-brand-charcoal">Week 2: Linear Data Structures</p><p class="text-[11px] text-[#786652]">Stacks, Queues, Arrays, Complexity</p></div></div><div class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-goldDark text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">3</span><div><p class="font-semibold text-brand-charcoal">Week 3: SQL Database Queries</p><p class="text-[11px] text-[#786652]">Joins, Group By, Student Portal Project</p></div></div><div class="flex items-start gap-2"><span class="w-5 h-5 rounded-full bg-brand-goldDark text-white text-[10px] flex items-center justify-center font-bold flex-shrink-0 mt-0.5">4</span><div><p class="font-semibold text-brand-charcoal">Week 4: Git &amp; Portfolio Deployment</p><p class="text-[11px] text-[#786652]">GitHub Readme, Resume, Mock Interview</p></div></div></div><button class="w-full py-2 bg-brand-charcoal text-brand-gold hover:bg-neutral-800 rounded-xl text-xs font-semibold transition mt-2">Download Full 30-Day Study Plan PDF</button></div></div></div><footer class="pt-6 pb-6 border-t border-[#DECDB8] text-center space-y-3" data-purpose="cultural-closing-footer"><div class="inline-flex items-center gap-3 text-xs font-cinzel text-brand-goldDark font-semibold uppercase tracking-widest"><span>Rural Talent</span> • <span>Global Opportunities</span> • <span>A Brighter India</span></div><div class="max-w-xl mx-auto"><p class="font-serif italic text-sm text-[#4E4334]">“Education is the most powerful weapon which you can use to change your future.”</p><span class="text-[11px] text-[#7A6B59] block mt-0.5">— Dr. A.P.J. Abdul Kalam</span></div><div class="pt-2 flex items-center justify-center gap-2 text-xs font-telugu text-[#675743]"><span class="font-serif tracking-wider uppercase text-[11px] font-bold text-[#3B3224]">From Villages to the World</span> <span class="text-neutral-400">|</span> <span class="font-semibold">మన ఊరు - మన భవిష్యత్తు (Mana Ooru - Mana Bhavishyatu)</span></div><p class="text-[11px] text-neutral-500">© 2025 Margdarshak Rural Advancement Initiative. Andhra Pradesh &amp; Telangana Student Portal.</p></footer></main>
+</div>
+</div>
+<script src="/public/js/profile-hydration.js"></script>
+
+
+</body></html>

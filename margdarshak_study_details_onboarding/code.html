@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Margdarshak - Study Details &amp; Onboarding</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: {
+              900: '#0F1113',
+              800: '#16191D',
+              700: '#22262C',
+            },
+            cream: {
+              50: '#FAF7F0',
+              100: '#F5F1E6',
+              200: '#EDE6D4',
+              300: '#E0D6BD',
+            },
+            gold: {
+              400: '#E5B242',
+              500: '#C89327',
+              600: '#AF7E1B',
+              700: '#8E6410',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="custom-scrollbars">
+    /* Custom clean scrollbar for the right card container */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #F1ECE0;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D9CEA9;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #C89327;
+    }
+  </style>
+<style data-purpose="chip-states">
+    /* Styling for selectable tag chips */
+    .choice-chip {
+      transition: all 0.18s ease-in-out;
+      user-select: none;
+      cursor: pointer;
+    }
+    .choice-chip.active {
+      background-color: #C89327 !important;
+      color: #FFFFFF !important;
+      border-color: #AF7E1B !important;
+      box-shadow: 0 2px 6px rgba(200, 147, 39, 0.28);
+    }
+  </style>
+</head>
+<body class="h-full bg-charcoal-900 font-sans text-neutral-800 antialiased selection:bg-gold-500 selection:text-white">
+<!-- BEGIN: MainContainer -->
+<div class="min-h-screen w-full flex flex-col lg:flex-row relative overflow-hidden bg-charcoal-900" data-purpose="split-screen-layout">
+<!-- Top Floating Demo Trigger (Desktop Only) -->
+<div class="absolute top-5 right-8 z-30 hidden lg:block">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700/80 bg-charcoal-800/80 backdrop-blur-md text-xs font-semibold tracking-wide text-amber-200/90 hover:text-amber-100 hover:border-amber-400/60 hover:bg-charcoal-700 transition duration-200 shadow-lg" data-purpose="demo-autofill-action" id="demoFillBtn" type="button">
+<svg class="w-3.5 h-3.5 text-amber-400 animate-pulse" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" fill-rule="evenodd"></path>
+</svg>
+<span>Fill Demo Studies</span>
+</button>
+</div>
+<!-- BEGIN: LeftVisualPanel -->
+<section class="relative w-full lg:w-1/2 min-h-[520px] lg:min-h-screen flex flex-col justify-between p-6 sm:p-10 lg:p-14 overflow-hidden" data-purpose="storytelling-hero">
+<!-- Background Image with Ambient Overlays -->
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic rural Indian landscape with student overlooking valley" class="w-full h-full object-cover object-center transform scale-[1.02] filter brightness-[0.92] contrast-[1.04]" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop"/>
+<!-- Multi-stop Dark Vignette & Gradient Overlays for readable editorial contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/55 to-charcoal-900/40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900/85 via-charcoal-900/40 to-transparent"></div>
+</div>
+<!-- Top Header Row within Left Panel -->
+<div class="relative z-10 flex items-center justify-between gap-4 w-full">
+<!-- Return to Step 1 Button -->
+<a class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-charcoal-900/70 border border-neutral-700/80 backdrop-blur-md text-xs font-medium tracking-wider text-neutral-200 hover:text-white hover:border-gold-500/60 hover:bg-charcoal-800 transition duration-200 shadow-md" href="#step1-personal-details" onclick="window.history.back(); return false;">
+<svg class="w-3.5 h-3.5 text-neutral-300" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>BACK TO PERSONAL DETAILS</span>
+</a>
+<!-- Regional Telugu Cultural Motto Pill -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-charcoal-900/70 border border-neutral-700/80 backdrop-blur-md text-xs font-medium text-amber-200/90 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span>చదువు • మార్గం • భవిష్యత్తు</span>
+</div>
+</div>
+<!-- Middle Editorial Story Block -->
+<div class="relative z-10 my-auto py-10 max-w-xl">
+<!-- Margdarshak Brand Emblem Badge -->
+<div class="inline-flex items-center gap-3 px-3.5 py-2 rounded-xl bg-charcoal-900/80 border border-gold-500/40 backdrop-blur-md mb-6 shadow-md">
+<div class="w-8 h-8 rounded-lg bg-charcoal-800 border border-gold-400/40 flex items-center justify-center text-amber-300">
+<!-- Graduation Cap Icon -->
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5l-7-3.82v4.82c0 2.5 3.13 4.5 7 4.5s7-2 7-4.5v-4.82l-7 3.82z"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold tracking-widest text-neutral-100 uppercase">Margdarshak</span>
+<span class="text-[10px] tracking-wider text-amber-300 font-medium uppercase">Guiding Rural Dreams</span>
+</div>
+</div>
+<!-- Tagline -->
+<p class="text-[11px] font-bold tracking-[0.2em] text-gold-400 uppercase mb-3">Same Roots. Bigger Dreams.</p>
+<!-- Main Headline -->
+<h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.18] text-white mb-4 tracking-tight drop-shadow-sm">
+          “Your studies today.<br/>
+<span class="italic font-normal text-amber-100">Your possibilities tomorrow.”</span>
+</h1>
+<!-- Supporting Narrative Text -->
+<p class="text-neutral-300 text-sm sm:text-base leading-relaxed mb-8 max-w-lg font-normal">
+          Every subject, skill, and lesson can become a step towards the future you imagine. Tell us about your academic journey so we can find your direction.
+        </p>
+<!-- Inspiration Quote Box (Dr. APJ Abdul Kalam) -->
+<div class="p-5 sm:p-6 rounded-2xl bg-charcoal-900/80 border border-neutral-700/80 backdrop-blur-md relative shadow-xl">
+<div class="flex items-center justify-between mb-3">
+<span class="text-amber-400/80 text-3xl font-serif leading-none">“</span>
+<span class="px-2.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-amber-950/60 border border-gold-500/30 text-amber-300">
+              Inspiration
+            </span>
+</div>
+<p class="font-serif italic text-neutral-200 text-sm sm:text-base leading-snug mb-3">
+            Education is the most powerful weapon you can use to change your world. Your village roots are your greatest strength.
+          </p>
+<div class="text-[11px] font-semibold tracking-wider text-gold-400 uppercase">
+            — Dr. A.P.J. Abdul Kalam
+          </div>
+</div>
+</div>
+<!-- Bottom Pillar Metrics -->
+<div class="relative z-10 flex flex-wrap items-center gap-3 pt-4">
+<!-- Metric 1 -->
+<div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-charcoal-900/75 border border-neutral-700/80 backdrop-blur-md text-xs text-neutral-300 shadow-sm">
+<span class="text-amber-400 text-sm">👥</span>
+<span><strong class="font-semibold text-white">50,000+</strong> Rural Students Guided</span>
+</div>
+<!-- Metric 2 -->
+<div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-charcoal-900/75 border border-neutral-700/80 backdrop-blur-md text-xs text-neutral-300 shadow-sm">
+<span class="text-amber-400 text-sm">💳</span>
+<span><strong class="font-semibold text-white">₹5 Cr+</strong> Scholarships Discovered</span>
+</div>
+</div>
+</section>
+<!-- END: LeftVisualPanel -->
+<!-- BEGIN: RightFormPanel -->
+<section class="relative w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8 lg:p-10 bg-charcoal-900" data-purpose="onboarding-form-wrapper">
+<!-- Ambient Glow Behind Card -->
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-96 h-96 bg-amber-700/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Cream Stationery Rounded Form Card -->
+<div class="w-full max-w-[580px] bg-cream-50 rounded-[32px] border border-[#E8DFC8] shadow-2xl overflow-hidden flex flex-col max-h-[92vh]" data-purpose="student-details-card">
+<!-- Card Scrollable Content Area -->
+<div class="overflow-y-auto custom-scroll px-6 sm:px-10 pt-8 pb-6">
+<!-- Card Top Brand Badge -->
+<div class="flex flex-col items-center text-center mb-5">
+<div class="w-12 h-12 rounded-2xl bg-charcoal-900 text-amber-400 flex items-center justify-center shadow-md mb-3 border border-gold-500/40">
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5l-7-3.82v4.82c0 2.5 3.13 4.5 7 4.5s7-2 7-4.5v-4.82l-7 3.82z"></path>
+</svg>
+</div>
+<h2 class="text-xs font-bold tracking-[0.25em] text-neutral-900 uppercase">Margdarshak</h2>
+<p class="text-[10px] font-semibold tracking-[0.2em] text-gold-600 uppercase mt-0.5">Guiding Rural Dreams</p>
+</div>
+<!-- Progress Indicator: Step 2 of 2 (100%) -->
+<div class="mb-7" data-purpose="progress-tracker">
+<div class="flex justify-between items-center text-[11px] font-bold tracking-wider text-gold-700 uppercase mb-2">
+<span>Step 2 of 2: Study Details</span>
+<span>100%</span>
+</div>
+<!-- Progress Bar Track -->
+<div class="w-full h-2 rounded-full bg-cream-200 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-gold-500 to-amber-500 rounded-full w-full transition-all duration-700 shadow-inner"></div>
+</div>
+</div>
+<!-- Form Header -->
+<div class="text-center mb-7">
+<h3 class="font-serif text-2xl sm:text-3xl font-semibold text-neutral-900 mb-2 tracking-tight">
+              Tell Us About Your Studies
+            </h3>
+<p class="text-xs sm:text-sm text-neutral-600 max-w-md mx-auto leading-relaxed">
+              Help us understand your academic journey so Margdarshak can guide you towards the right opportunities.
+            </p>
+</div>
+<!-- Interactive Form Elements -->
+<form class="space-y-6" id="studyDetailsForm" novalidate="" onsubmit="return false;">
+<!-- BEGIN: AcademicInfoSection -->
+<div class="p-4 sm:p-5 rounded-2xl bg-cream-100/70 border border-[#E3D8BC]" data-purpose="section-academic-info">
+<!-- Section Title Pill -->
+<div class="flex items-center gap-2 text-xs font-bold tracking-wider text-gold-700 uppercase mb-4">
+<span class="text-base">🎓</span>
+<span>Academic Information</span>
+</div>
+<div class="space-y-4">
+<!-- Field: Current Education Level -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-1.5" for="educationLevel">
+                    Current Education Level <span class="text-amber-700">*</span>
+</label>
+<div class="relative">
+<select class="w-full rounded-xl border border-neutral-300 bg-white/95 px-3.5 py-2.5 text-sm text-neutral-800 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="educationLevel" name="educationLevel" required="">
+<option disabled="" selected="" value="">Select your current study level</option>
+<option value="school_8_10">School (Class 8 - 10)</option>
+<option value="intermediate">Intermediate (+2 / Junior College)</option>
+<option value="diploma">Diploma / Polytechnic</option>
+<option value="iti">ITI / Vocational Certification</option>
+<option value="undergraduate">Undergraduate (B.Tech, B.Sc, B.Com, BA, etc.)</option>
+<option value="postgraduate">Postgraduate (M.Tech, MBA, M.Sc, etc.)</option>
+<option value="other">Other Pathway</option>
+</select>
+</div>
+</div>
+<!-- Field: School / College Name -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-1.5" for="institutionName">
+                    School / College / Polytechnic Name <span class="text-amber-700">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-neutral-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+<input class="w-full rounded-xl border border-neutral-300 bg-white/95 pl-10 pr-3.5 py-2.5 text-sm text-neutral-800 placeholder-neutral-400 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="institutionName" name="institutionName" placeholder="e.g. Zilla Parishad High School / Govt Polytechnic, Punganur" required="" type="text"/>
+</div>
+</div>
+<!-- Row: Course & Year -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Course / Branch -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-1.5" for="courseBranch">
+                      Course / Stream / Branch
+                    </label>
+<select class="w-full rounded-xl border border-neutral-300 bg-white/95 px-3 py-2.5 text-sm text-neutral-800 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="courseBranch" name="courseBranch">
+<option value="Computer Science / Engineering">Computer Science / IT</option>
+<option value="Electrical / Electronics">Electronics &amp; Communication (ECE)</option>
+<option value="Mechanical Engineering">Mechanical Engineering</option>
+<option value="Civil Engineering">Civil Engineering</option>
+<option value="MPC / Science">MPC (Maths, Physics, Chem)</option>
+<option value="BiPC / Biology">BiPC (Biology, Physics, Chem)</option>
+<option value="Commerce &amp; Accounts">Commerce / Accounts</option>
+<option value="General High School">General High School Studies</option>
+<option value="Other">Other Branch</option>
+</select>
+</div>
+<!-- Year / Class -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-1.5" for="studyYear">
+                      Current Year / Class <span class="text-amber-700">*</span>
+</label>
+<select class="w-full rounded-xl border border-neutral-300 bg-white/95 px-3 py-2.5 text-sm text-neutral-800 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="studyYear" name="studyYear" required="">
+<option value="1st Year">1st Year</option>
+<option selected="" value="2nd Year">2nd Year</option>
+<option value="3rd Year">3rd Year</option>
+<option value="Final Year">Final Year</option>
+<option value="Class 10">Class 10</option>
+<option value="Class 9">Class 9</option>
+<option value="Completed / Passed Out">Completed / Passed Out</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- END: AcademicInfoSection -->
+<!-- BEGIN: PerformanceSection -->
+<div class="p-4 sm:p-5 rounded-2xl bg-cream-100/70 border border-[#E3D8BC]" data-purpose="section-academic-performance">
+<!-- Section Title Pill -->
+<div class="flex items-center gap-2 text-xs font-bold tracking-wider text-gold-700 uppercase mb-4">
+<span class="text-base">📊</span>
+<span>Academic Performance</span>
+</div>
+<div class="space-y-4">
+<!-- Score Type Toggle & Score Input -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-[11px] font-bold tracking-wider uppercase text-neutral-700">
+                      Latest Academic Score
+                    </label>
+<!-- Toggle Pill -->
+<div class="inline-flex rounded-lg bg-cream-200 p-0.5 border border-[#D9CEB4] text-[10px] font-semibold" data-purpose="score-unit-toggle">
+<button class="px-2.5 py-1 rounded-md bg-white text-neutral-900 shadow-sm transition" id="scoreTogglePercent" type="button">
+                        % Percentage
+                      </button>
+<button class="px-2.5 py-1 rounded-md text-neutral-600 hover:text-neutral-900 transition" id="scoreToggleCgpa" type="button">
+                        CGPA (10.0)
+                      </button>
+</div>
+</div>
+<div class="relative">
+<input class="w-full rounded-xl border border-neutral-300 bg-white/95 px-3.5 py-2.5 text-sm text-neutral-800 placeholder-neutral-400 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="scoreInput" placeholder="e.g. 84.5%" type="text"/>
+<div class="flex justify-between items-center mt-1">
+<span class="text-[10px] text-neutral-500">Use your latest available mark sheet or semester result.</span>
+<button class="text-[10px] font-semibold text-gold-700 hover:underline" id="notAvailableScoreBtn" type="button">Mark Not Available</button>
+</div>
+</div>
+</div>
+<!-- Strongest Subject -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-1.5" for="strongSubject">
+                    Strongest Subject
+                  </label>
+<select class="w-full rounded-xl border border-neutral-300 bg-white/95 px-3 py-2.5 text-sm text-neutral-800 shadow-sm focus:border-gold-500 focus:ring-2 focus:ring-gold-400/30 outline-none transition" id="strongSubject" name="strongSubject">
+<option value="Mathematics">Mathematics</option>
+<option value="Computer Science / Coding">Computer Science / Coding</option>
+<option value="Physics">Physics &amp; Electronics</option>
+<option value="Chemistry">Chemistry</option>
+<option value="Biology / Agriculture">Biology &amp; Life Sciences</option>
+<option value="English">English</option>
+<option value="Telugu">Telugu Language</option>
+<option value="Social Studies / History">Social Studies</option>
+<option value="Not Sure Yet">Not Sure Yet</option>
+</select>
+</div>
+<!-- Subjects You Enjoy (Multi-select Chips) -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-2">
+                    Subjects You Genuinely Enjoy (Select 1 or more)
+                  </label>
+<div class="flex flex-wrap gap-2" data-purpose="multi-select-subjects" id="subjectsChipsContainer">
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Maths" type="button">Mathematics</button>
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Coding" type="button">Computer &amp; Coding</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Science" type="button">Science &amp; Physics</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Agri" type="button">Agriculture</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Languages" type="button">Languages</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Design" type="button">Arts &amp; Design</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Commerce" type="button">Business &amp; Commerce</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Health" type="button">Healthcare</button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: PerformanceSection -->
+<!-- BEGIN: SupportNeedsSection -->
+<div class="p-4 sm:p-5 rounded-2xl bg-cream-100/70 border border-[#E3D8BC]" data-purpose="section-support-needs">
+<!-- Section Title Pill -->
+<div class="flex items-center gap-2 text-xs font-bold tracking-wider text-gold-700 uppercase mb-4">
+<span class="text-base">🌱</span>
+<span>Learning &amp; Support Needs</span>
+</div>
+<div class="space-y-4">
+<!-- Learning Mode Preference -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-2">
+                    How do you prefer to learn?
+                  </label>
+<div class="flex flex-wrap gap-2" id="learningModeContainer">
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Video" type="button">🎥 Video Lectures</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Practical" type="button">🛠️ Practical / Hands-on</button>
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Telugu" type="button">🗣️ Telugu / Local Language</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Mentor" type="button">🤝 1-on-1 Mentorship</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Notes" type="button">📖 Reading Notes &amp; PDFs</button>
+</div>
+</div>
+<!-- Guidance Help Topics -->
+<div>
+<label class="block text-[11px] font-bold tracking-wider uppercase text-neutral-700 mb-2">
+                    What would you like Margdarshak to help you with?
+                  </label>
+<div class="flex flex-wrap gap-2" id="helpTopicsContainer">
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Pathways" type="button">🧭 Choosing a Career Pathway</button>
+<button class="choice-chip active px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Scholarships" type="button">💰 Finding Local Scholarships</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Colleges" type="button">🏫 Best Govt &amp; Low-fee Colleges</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="Jobs" type="button">💼 Placement &amp; Job Prep</button>
+<button class="choice-chip px-3 py-1.5 rounded-full border border-neutral-300 bg-white text-xs font-medium text-neutral-700" data-value="English" type="button">🗣️ English Communication</button>
+</div>
+</div>
+</div>
+</div>
+<!-- END: SupportNeedsSection -->
+<!-- Form Validation Feedback Message -->
+<div class="hidden p-3 rounded-xl bg-red-100/90 border border-red-300 text-xs font-medium text-red-800" id="formErrorMessage">
+              Please enter your Institution Name and Education Level to complete your profile.
+            </div>
+<!-- Main Primary CTA Button -->
+<div class="pt-2">
+<button class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-gold-500 via-amber-500 to-gold-600 hover:from-gold-600 hover:to-amber-600 text-white font-semibold text-sm sm:text-base tracking-wide flex items-center justify-center gap-2 shadow-lg shadow-gold-600/30 hover:shadow-xl hover:shadow-gold-600/40 active:scale-[0.99] transition duration-200" data-purpose="complete-profile-action" id="submitStudyFormBtn" type="button">
+<span>Complete Profile &amp; Enter Dashboard</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<!-- Card Footer -->
+<div class="bg-cream-100/90 border-t border-[#E8DFC8] py-3.5 px-6 text-center">
+<p class="text-[10px] font-semibold tracking-wider text-neutral-500 uppercase">
+            Free For Rural India • Government Scholarship Sync • 100% Verified Pathways
+          </p>
+</div>
+</div>
+</section>
+<!-- END: RightFormPanel -->
+</div>
+<!-- END: MainContainer -->
+<!-- BEGIN: SuccessCelebrationModal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-900/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" data-purpose="onboarding-completion-modal" id="completionModal">
+<div class="w-full max-w-md bg-cream-50 rounded-3xl border border-gold-500/40 p-8 text-center shadow-2xl transform scale-95 transition-transform duration-300" id="completionModalCard">
+<!-- Animated Check Icon -->
+<div class="w-16 h-16 rounded-full bg-gold-500/20 text-gold-600 border-2 border-gold-500 flex items-center justify-center mx-auto mb-4">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<p class="text-xs font-bold tracking-widest text-gold-700 uppercase mb-1">Journey Activated</p>
+<h3 class="font-serif text-2xl font-bold text-neutral-900 mb-2">Welcome, Venkat Sai!</h3>
+<p class="text-xs sm:text-sm text-neutral-600 mb-6 leading-relaxed">
+        Your academic details have been successfully mapped with Margdarshak's AI pathway engine. Connecting you to local scholarships and career mentors.
+      </p>
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cream-100 border border-gold-500/30 text-xs font-medium text-neutral-700 mb-6">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+<span>Redirecting to Student Dashboard...</span>
+</div>
+<button class="w-full py-3 px-5 rounded-xl bg-gold-500 text-white text-sm font-semibold hover:bg-gold-600 transition shadow-md" onclick="window.location.href='#dashboard';" type="button">
+        Enter Dashboard Now →
+      </button>
+</div>
+</div>
+<!-- END: SuccessCelebrationModal -->
+<!-- BEGIN: InteractiveHandlers -->
+<script data-purpose="chip-selection-and-toggles">
+    // Chip toggle behavior
+    document.querySelectorAll('.choice-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('active');
+      });
+    });
+
+    // Score toggle (Percentage vs CGPA)
+    const togglePercent = document.getElementById('scoreTogglePercent');
+    const toggleCgpa = document.getElementById('scoreToggleCgpa');
+    const scoreInput = document.getElementById('scoreInput');
+    let currentScoreMode = 'percent';
+
+    togglePercent.addEventListener('click', () => {
+      currentScoreMode = 'percent';
+      togglePercent.className = 'px-2.5 py-1 rounded-md bg-white text-neutral-900 shadow-sm transition';
+      toggleCgpa.className = 'px-2.5 py-1 rounded-md text-neutral-600 hover:text-neutral-900 transition';
+      scoreInput.placeholder = 'e.g. 84.5%';
+    });
+
+    toggleCgpa.addEventListener('click', () => {
+      currentScoreMode = 'cgpa';
+      toggleCgpa.className = 'px-2.5 py-1 rounded-md bg-white text-neutral-900 shadow-sm transition';
+      togglePercent.className = 'px-2.5 py-1 rounded-md text-neutral-600 hover:text-neutral-900 transition';
+      scoreInput.placeholder = 'e.g. 8.6 CGPA';
+    });
+
+    // Score "Not Available" shortcut
+    document.getElementById('notAvailableScoreBtn').addEventListener('click', () => {
+      scoreInput.value = 'Not Available / Results Awaited';
+    });
+  </script>
+<script data-purpose="autofill-demo-student">
+    // Fill Demo Studies action
+    const demoFillBtn = document.getElementById('demoFillBtn');
+    demoFillBtn.addEventListener('click', () => {
+      document.getElementById('educationLevel').value = 'diploma';
+      document.getElementById('institutionName').value = 'Govt Polytechnic College, Punganur';
+      document.getElementById('courseBranch').value = 'Computer Science / Engineering';
+      document.getElementById('studyYear').value = '2nd Year';
+      document.getElementById('scoreInput').value = '86.4%';
+      document.getElementById('strongSubject').value = 'Computer Science / Coding';
+      
+      // Ensure key chips are activated
+      const chips = document.querySelectorAll('#subjectsChipsContainer .choice-chip');
+      chips.forEach(chip => {
+        const val = chip.getAttribute('data-value');
+        if (['Maths', 'Coding', 'Science'].includes(val)) {
+          chip.classList.add('active');
+        }
+      });
+
+      // Quick visual pulse on button
+      demoFillBtn.classList.add('ring-2', 'ring-amber-400');
+      setTimeout(() => demoFillBtn.classList.remove('ring-2', 'ring-amber-400'), 400);
+    });
+  </script>
+<script data-purpose="form-submission-flow">
+    // Form submission validation and modal launch
+    const submitBtn = document.getElementById('submitStudyFormBtn');
+    const institutionInput = document.getElementById('institutionName');
+    const eduLevelSelect = document.getElementById('educationLevel');
+    const errorMsg = document.getElementById('formErrorMessage');
+    const modal = document.getElementById('completionModal');
+    const modalCard = document.getElementById('completionModalCard');
+
+    submitBtn.addEventListener('click', () => {
+      // Basic check
+      if (!institutionInput.value.trim() || !eduLevelSelect.value) {
+        errorMsg.classList.remove('hidden');
+        if (!institutionInput.value.trim()) institutionInput.focus();
+        else eduLevelSelect.focus();
+        return;
+      }
+
+      errorMsg.classList.add('hidden');
+
+      // Trigger Celebration Modal
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalCard.classList.remove('scale-95');
+      modalCard.classList.add('scale-100');
+
+      // Optional simulated redirect to student dashboard
+      setTimeout(() => {
+        // Safe demonstration redirect placeholder
+        console.log('Redirecting to Margdarshak Student Dashboard (/student/dashboard)');
+      }, 2400);
+    });
+  </script>
+<!-- END: InteractiveHandlers -->
+<script src="/public/js/profile-hydration.js"></script>
+</body></html>

@@ -1,0 +1,932 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter, Cinzel & Cormorant Garamond / Playfair for serif elegance, Caveat for handwritten script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: {
+            brand: {
+              dark: '#0f1115',
+              sidebar: '#12141a',
+              cardBg: '#1a1d24',
+              gold: '#c99846',
+              goldHover: '#b58434',
+              goldLight: '#f4ede2',
+              cream: '#fbf9f4',
+              parchment: '#f5edd8',
+              cardBorder: '#e8dfcc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e39;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c99846;
+    }
+  </style>
+<style data-purpose="background-helpers">
+    /* Layered backdrop alignment to leverage source imagery exactly */
+    .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(20, 22, 28, 0.25) 0%, rgba(20, 22, 28, 0.45) 60%, rgba(245, 243, 238, 0.95) 100%);
+    }
+    .parchment-texture {
+      background-color: #f7f1e1;
+      background-image: radial-gradient(#ecdcb9 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+
+<style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F7F4EE;
+      color: #1A1A18;
+    }
+    .font-serif-title {
+      font-family: 'Cinzel', serif;
+    }
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.03);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.3);
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(212, 175, 55, 0.6);
+    }
+  </style>
+</head>
+<body class="bg-[#e9e4d9] text-gray-800 font-sans antialiased overflow-x-hidden min-h-screen">
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[280px] bg-[#111317] text-gray-300 flex flex-col justify-between shrink-0 border-r border-[#222630] select-none fixed left-0 top-0 bottom-0 h-screen z-50 overflow-y-auto">
+<div>
+<!-- Logo & Branding -->
+<div class="p-5 pb-4 flex items-center gap-3 border-b border-[#1f242e]">
+<!-- Emblem -->
+<div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-gold bg-[#1c202a] border border-[#303646] shadow-inner">
+<svg class="w-6 h-6 stroke-current fill-brand-gold/20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+<circle class="fill-brand-gold" cx="12" cy="7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h1 class="font-serif font-bold text-xl tracking-wide text-[#f4ede2] leading-none">Margdarshak</h1>
+<p class="text-[11px] text-[#b3a182] font-medium tracking-wider mt-1">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="p-3 space-y-1 text-[13.5px] font-medium font-sans">
+<!-- Active Item: Home -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/student/dashboard">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Career Guidance -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/career-guidance">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+</svg>
+<span class="">Career Guidance</span>
+</a>
+<!-- Skill Development -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/skill-development">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="">Skill Development</span>
+</a>
+<!-- Courses & Colleges -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/courses-colleges">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Courses &amp; Colleges</span>
+</a>
+<!-- Scholarships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/scholarships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Scholarships</span>
+</a>
+<!-- Jobs & Internships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/jobs-internships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span class="">Jobs &amp; Internships</span>
+</a>
+<!-- AI Mentor -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/ai-mentor">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">AI Mentor</span>
+</a>
+<!-- Resume Builder -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resume-builder">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resume Builder</span>
+</a>
+<!-- Challenges & XP -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/challenges-xp">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<span class="">Challenges &amp; XP</span>
+</a>
+<!-- Community -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/community">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Community</span>
+</a>
+<!-- Resources -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#44361e] to-[#24211a] text-white border border-brand-gold/40 shadow-sm" href="/resources">
+
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resources</span>
+
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Vignette / Quote / Footer -->
+<div class="p-4 border-t border-[#1e222c] relative overflow-hidden bg-gradient-to-t from-black via-[#111317] to-transparent">
+<div class="relative z-10 text-center space-y-2">
+<p class="font-serif italic text-[13px] text-amber-200/90 leading-snug">
+            “Every dream deserves a direction.”
+          </p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">— Margdarshak</p>
+<!-- Decorative Lantern & Books representation -->
+<div class="py-2 flex justify-center items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+<svg class="w-10 h-10 text-brand-gold relative drop-shadow" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+<path d="M9 2h6l2 4H7l2-4z"></path>
+<path d="M6 6h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6z"></path>
+<circle class="fill-amber-300 text-amber-400" cx="12" cy="12" r="3"></circle>
+<path d="M4 22h16"></path>
+</svg>
+</div>
+</div>
+<div class="pt-1 text-[9.5px] tracking-widest text-[#a8987d] font-serif uppercase">
+            LEARN • GROW • ACHIEVE
+          </div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<div class="ml-[280px] min-h-screen w-[calc(100%-280px)] flex flex-col bg-[#e9e4d9]">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-[#e2d8c3] bg-[#fbf9f4]/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+<!-- Global Search Bar -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-16 py-1.5 text-xs bg-[#242834] text-gray-200 rounded-full border border-gray-700/60 focus:outline-none focus:ring-1 focus:ring-brand-gold placeholder-gray-400" placeholder="Search careers, colleges, scholarships, skills..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-gray-400 font-mono">
+<span class="bg-[#191b22] px-1.5 py-0.5 rounded border border-gray-700">Ctrl K</span>
+</span>
+</div>
+<!-- Top Right Actions -->
+<div class="flex items-center space-x-5">
+<!-- Language Toggle -->
+
+<!-- Theme Toggle (Sun/Moon) -->
+
+<!-- Notifications with Badge -->
+<div class="relative cursor-pointer">
+<button class="w-8 h-8 rounded-full bg-[#232733] text-gray-300 hover:text-white flex items-center justify-center border border-gray-700">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center border border-[#16181f]">
+              3
+            </span>
+</div>
+<!-- User Profile Dropdown -->
+<div class="flex items-center space-x-2.5 cursor-pointer pl-1 hover:opacity-90">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-brand-gold">
+<img alt="Venkat Sai" data-bind="user.fullName" class="w-full h-full object-cover object-[88%_4%]" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+</div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-xs font-semibold text-gray-200"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[10px] text-gray-400">Student</div>
+</div>
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="flex-1 px-8 py-7 space-y-7 min-h-screen">
+<!-- Hero Section: Follows exact feature-page hero structure -->
+<div class="mb-8">
+<!-- Eyebrow & Personalization Pill -->
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide uppercase bg-[#201D16] text-[#D4AF37] border border-[#D4AF37]/30">
+          ✦ RESOURCES • LEARN &amp; GROW
+        </span>
+<span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-[#ECE7DC] text-[#4A453A] border border-[#DDD6C8]">
+          Personalized for Venkat Sai (Level 5 Explorer)
+        </span>
+</div>
+<!-- Main Heading & Editorial Copy -->
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+<div class="max-w-3xl">
+<h1 class="font-editorial text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#141518] tracking-tight leading-[1.18] mb-3">
+            Resources That Move Your Journey Forward.
+          </h1>
+<p class="text-sm sm:text-base text-[#524E45] leading-relaxed">
+            Explore trusted learning materials, career guides, preparation resources, government portals, and practical tools curated for your academic and career goals.
+          </p>
+</div>
+<!-- Quick Top Action Controls -->
+<div class="flex items-center space-x-3 flex-shrink-0">
+<button class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-[#141518] text-[#F5F0E6] text-xs font-semibold hover:bg-[#2A2B30] transition-all shadow-sm">
+<svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>View Saved (12)</span>
+</button>
+<button class="inline-flex items-center space-x-2 px-4 py-2.5 rounded-lg bg-white border border-[#D4AF37]/50 text-[#141518] text-xs font-semibold hover:bg-[#FAF7F2] transition-all shadow-sm">
+<svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Request Resource</span>
+</button>
+</div>
+</div>
+<!-- Interactive In-Hero Resource Search Bar -->
+<div class="mt-6 p-2 rounded-xl bg-white border border-[#E4DDD0] shadow-sm flex flex-col md:flex-row md:items-center gap-2">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<svg class="w-4 h-4 text-[#8C8474]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-transparent text-[#1F2024] placeholder-[#8C8474] focus:outline-none font-medium" placeholder="Search resources, study guides, roadmaps, government portals, interview kits..." type="text">
+</div>
+<div class="flex items-center gap-1.5 flex-wrap border-t md:border-t-0 md:border-l border-[#EBE5DA] pt-2 md:pt-0 md:pl-3">
+<span class="text-[11px] font-semibold text-[#8C8474] uppercase tracking-wider px-1">Quick:</span>
+<button class="px-2.5 py-1 rounded-md text-xs font-medium bg-[#F4EFE6] text-[#4A453A] hover:bg-[#EAE4D7] transition-colors">Python</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-medium bg-[#F4EFE6] text-[#4A453A] hover:bg-[#EAE4D7] transition-colors">DSA</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-medium bg-[#F4EFE6] text-[#4A453A] hover:bg-[#EAE4D7] transition-colors">ECET 2025</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-medium bg-[#F4EFE6] text-[#4A453A] hover:bg-[#EAE4D7] transition-colors">Placements</button>
+<button class="px-2.5 py-1 rounded-md text-xs font-medium bg-[#F4EFE6] text-[#4A453A] hover:bg-[#EAE4D7] transition-colors">Scholarships</button>
+</div>
+</div>
+</div>
+<!-- Category Pills Strip (Exact Margdarshak Design Pattern) -->
+<div class="mb-8 overflow-x-auto pb-2 custom-scrollbar">
+<div class="flex items-center space-x-2 min-w-max">
+<!-- Active Pill -->
+<button class="px-4 py-2 rounded-lg bg-[#141518] text-[#F5F0E6] text-xs font-semibold border border-[#141518] flex items-center space-x-1.5 shadow-sm">
+<span>✨</span>
+<span>All Resources</span>
+<span class="ml-1.5 px-1.5 py-0.5 rounded-full bg-[#2A2B30] text-[10px] text-[#D4AF37]">48</span>
+</button>
+<!-- Inactive Pills -->
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DC CF] transition-all flex items-center space-x-1.5">
+<span>💻</span>
+<span>Programming</span>
+<span class="text-[10px] text-[#8C8474]">12</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🧠</span>
+<span>DSA &amp; Problem Solving</span>
+<span class="text-[10px] text-[#8C8474]">9</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🎓</span>
+<span>ECET Lateral Entry</span>
+<span class="text-[10px] text-[#8C8474]">6</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>📄</span>
+<span>Resume &amp; Career</span>
+<span class="text-[10px] text-[#8C8474]">7</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>💼</span>
+<span>Placements</span>
+<span class="text-[10px] text-[#8C8474]">8</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🏛️</span>
+<span>Government Portals</span>
+<span class="text-[10px] text-[#8C8474]">5</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>💰</span>
+<span>Scholarships</span>
+<span class="text-[10px] text-[#8C8474]">6</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🚀</span>
+<span>Internships</span>
+<span class="text-[10px] text-[#8C8474]">5</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🌐</span>
+<span>Web Development</span>
+<span class="text-[10px] text-[#8C8474]">7</span>
+</button>
+<button class="px-3.5 py-2 rounded-lg bg-white text-[#4D4940] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-medium border border-[#E2DCCF] transition-all flex items-center space-x-1.5">
+<span>🗣️</span>
+<span>Telugu &amp; English</span>
+<span class="text-[10px] text-[#8C8474]">4</span>
+</button>
+</div>
+</div>
+<!-- Main 2-Column Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- ============================================== -->
+<!-- LEFT COLUMN (8 COLS): CURATED RESOURCE LIBRARY -->
+<!-- ============================================== -->
+<div class="lg:col-span-8 space-y-8">
+<!-- 1. FEATURED & RECOMMENDED SECTION -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<span class="text-[#D4AF37] font-bold text-sm">✦</span>
+<h2 class="text-base sm:text-lg font-bold text-[#141518] tracking-tight">Recommended for Venkat's Path</h2>
+</div>
+<span class="text-xs font-semibold text-[#8C8474]">Tailored to Diploma CSE 2nd Year</span>
+</div>
+<!-- Featured Spotlight Card -->
+<div class="p-6 rounded-2xl bg-white border border-[#D4AF37]/40 shadow-sm relative overflow-hidden group hover:border-[#D4AF37] transition-all mb-4">
+<div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#D4AF37]/10 to-transparent rounded-bl-full pointer-events-none"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="space-y-3 flex-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#201D16] text-[#D4AF37] border border-[#D4AF37]/30 tracking-wider uppercase">
+                    ⭐ High Priority
+                  </span>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#EBF5EE] text-[#276749]">
+                    ✓ Official Syllabus
+                  </span>
+<span class="text-xs text-[#8C8474] font-medium">Updated for 2025</span>
+</div>
+<h3 class="font-editorial text-xl sm:text-2xl font-bold text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug">
+                  AP ECET Lateral Entry CSE Master Preparation Kit
+                </h3>
+<p class="text-xs sm:text-sm text-[#524E45] leading-relaxed">
+                  Complete official syllabus breakdown for Andhra Pradesh lateral entry admissions into B.Tech CSE. Includes 10 years solved question papers, chapter-wise weightage for Mathematics, Physics, Chemistry, and Computer Science core topics.
+                </p>
+<div class="flex flex-wrap items-center gap-y-2 gap-x-4 pt-1 text-xs text-[#6B6558]">
+<div class="flex items-center space-x-1.5">
+<span class="text-[#8C8474]">Format:</span>
+<span class="font-semibold text-[#141518]">PDF Guides + Mock Tests</span>
+</div>
+<span class="text-[#D4AF37]">•</span>
+<div class="flex items-center space-x-1.5">
+<span class="text-[#8C8474]">Source:</span>
+<span class="font-semibold text-[#141518]">APSCHE Verified</span>
+</div>
+<span class="text-[#D4AF37]">•</span>
+<div class="flex items-center space-x-1.5">
+<span class="text-[#8C8474]">Language:</span>
+<span class="font-semibold text-[#141518]">English &amp; Telugu Explanations</span>
+</div>
+</div>
+</div>
+<!-- Action Column -->
+<div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2.5 flex-shrink-0 pt-2 sm:pt-0">
+<button class="px-4 py-2.5 rounded-lg bg-[#141518] text-[#FAF7F2] text-xs font-semibold hover:bg-[#2A2B30] transition-all flex items-center space-x-2 shadow-sm w-full sm:w-auto justify-center">
+<span>Open Kit</span>
+<svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3.5 py-2.5 rounded-lg border border-[#E2DCCF] text-[#4A453A] hover:text-[#141518] hover:bg-[#FAF7F2] text-xs font-semibold transition-all flex items-center space-x-1.5 w-full sm:w-auto justify-center">
+<svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+</svg>
+<span>Saved</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. CORE RESOURCE DIRECTORY CARDS -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-base sm:text-lg font-bold text-[#141518] tracking-tight">Curated Learning &amp; Placement Library</h2>
+<div class="flex items-center space-x-2 text-xs text-[#8C8474]">
+<span>Sort by:</span>
+<select class="bg-white border border-[#E2DCCF] rounded-md px-2 py-1 text-xs font-medium text-[#3A362D] focus:outline-none">
+<option>Highest Relevance</option>
+<option>Most Saved</option>
+<option>Recently Added</option>
+</select>
+</div>
+</div>
+<!-- Cards Grid (2 cols on md+) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Card 1: Data Structures & Algorithms Roadmap -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    🧠
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#EBF5EE] text-[#276749]">
+                    ✓ Verified Roadmap
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">DSA &amp; Problem Solving</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  Diploma to B.Tech DSA Practice Roadmap
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  Step-by-step topic sequence for Arrays, Linked Lists, Stacks, Queues, and Trees with 50 curated practice problems calibrated for AP state technical drives.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>45 Practice Problems • Free</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#8C8474] hover:text-[#D4AF37] p-1" title="Save Resource">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Python Programming Fundamentals -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    🐍
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FEF3C7] text-[#92400E]">
+                    Beginner Friendly
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">Programming Languages</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  Python 3 for Polytechnic Students (Telugu &amp; English)
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  Concise syntax guide, OOP patterns, SQLite database integration, and automation scripts. Designed specifically for Andhra Pradesh and Telangana polytechnic curricula.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>Cheat Sheets + Code Repos</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#D4AF37] p-1" title="Saved">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Resume ATS Checklist & Template -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    📄
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#EBF5EE] text-[#276749]">
+                    ✓ Verified Tool
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">Resume &amp; Career</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  Rural Student ATS Resume Checklist &amp; Word/LaTeX Kit
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  Tested with leading hiring portals. Includes 40 high-impact technical action verbs, education credential formatting, and project description formulas for APSSDC drives.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>ATS Safe • Word &amp; PDF</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#8C8474] hover:text-[#D4AF37] p-1" title="Save Resource">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Government Scholarship Official Portal Guide -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    🏛️
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#E8EDF5] text-[#1E3A8A]">
+                    Official Portal
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">Scholarships &amp; State Schemes</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  Jagananna Vidya Deevena &amp; NSP Application Manual
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  Step-by-step documentation checklist, income certificate renewal, biometric verification guidelines, and grievance redressal helpline directory.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>Govt. AP &amp; Central Schemes</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#D4AF37] p-1" title="Saved">
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5: NATS 2.0 Apprenticeship Handbook -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    💼
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#EBF5EE] text-[#276749]">
+                    ✓ MoE / AICTE Verified
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">Internships &amp; Apprenticeships</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  National Apprenticeship Training Scheme (NATS 2.0) Guide
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  Guide for polytechnic diploma holders to secure monthly stipend-bearing apprenticeships in PSUs, BHEL, ECIL, and Indian Railways.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>Stipend ₹8,000–₹12,000/mo</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#8C8474] hover:text-[#D4AF37] p-1" title="Save Resource">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6: Technical Interview Toolkit -->
+<div class="p-5 rounded-xl bg-white border border-[#E4DDD0] shadow-sm hover:border-[#D4AF37]/70 hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="w-9 h-9 rounded-lg bg-[#201D16] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-base">
+                    🎯
+                  </div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FEF3C7] text-[#92400E]">
+                    Interview Ready
+                  </span>
+</div>
+<div class="text-[11px] font-bold text-[#8D6B18] uppercase tracking-wider mb-1">Placement Preparation</div>
+<h4 class="font-bold text-sm sm:text-base text-[#141518] group-hover:text-[#8D6B18] transition-colors leading-snug mb-2">
+                  TCS Ninja &amp; Wipro Elite Polytechnic Question Bank
+                </h4>
+<p class="text-xs text-[#59544A] leading-relaxed mb-3">
+                  250 frequently asked quantitative aptitude, verbal ability, SQL query snippets, and pseudo-code questions from recent off-campus hiring drives.
+                </p>
+</div>
+<div>
+<div class="pt-3 border-t border-[#F0EBE1] flex items-center justify-between text-[11px] text-[#787163]">
+<span>250+ Solved Questions</span>
+<div class="flex items-center space-x-2">
+<button class="text-[#8C8474] hover:text-[#D4AF37] p-1" title="Save Resource">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-[#141518] text-[#F5F0E6] text-xs font-medium hover:bg-[#2A2B30] transition-colors">
+                      Explore →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. OFFICIAL GOVERNMENT & STATE PORTALS ACCORDION / STRIP -->
+<div class="p-6 rounded-2xl bg-[#FAF7F2] border border-[#E4DDD0] shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<span class="text-base">🏛️</span>
+<h3 class="text-sm sm:text-base font-bold text-[#141518]">Official Direct Portals &amp; Verification Hubs</h3>
+</div>
+<span class="text-[11px] font-semibold text-[#8C8474]">100% Verified Govt. Links</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<a class="p-3 rounded-lg bg-white border border-[#E2DCCF] hover:border-[#D4AF37] transition-all flex items-center space-x-3 group" href="#">
+<div class="w-8 h-8 rounded bg-[#ECE7DC] flex items-center justify-center text-xs font-bold text-[#4A453A] group-hover:bg-[#201D16] group-hover:text-[#D4AF37] transition-colors">
+                AP
+              </div>
+<div class="overflow-hidden">
+<div class="text-xs font-bold text-[#141518] truncate group-hover:text-[#8D6B18] transition-colors">APSCHE Portal</div>
+<div class="text-[10px] text-[#7A7466] truncate">sche.ap.gov.in</div>
+</div>
+</a>
+<a class="p-3 rounded-lg bg-white border border-[#E2DCCF] hover:border-[#D4AF37] transition-all flex items-center space-x-3 group" href="#">
+<div class="w-8 h-8 rounded bg-[#ECE7DC] flex items-center justify-center text-xs font-bold text-[#4A453A] group-hover:bg-[#201D16] group-hover:text-[#D4AF37] transition-colors">
+                NSP
+              </div>
+<div class="overflow-hidden">
+<div class="text-xs font-bold text-[#141518] truncate group-hover:text-[#8D6B18] transition-colors">National Scholarship</div>
+<div class="text-[10px] text-[#7A7466] truncate">scholarships.gov.in</div>
+</div>
+</a>
+<a class="p-3 rounded-lg bg-white border border-[#E2DCCF] hover:border-[#D4AF37] transition-all flex items-center space-x-3 group" href="#">
+<div class="w-8 h-8 rounded bg-[#ECE7DC] flex items-center justify-center text-xs font-bold text-[#4A453A] group-hover:bg-[#201D16] group-hover:text-[#D4AF37] transition-colors">
+                APSS
+              </div>
+<div class="overflow-hidden">
+<div class="text-xs font-bold text-[#141518] truncate group-hover:text-[#8D6B18] transition-colors">APSSDC Skill Portal</div>
+<div class="text-[10px] text-[#7A7466] truncate">apssdc.in</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- ============================================== -->
+<!-- RIGHT COLUMN (4 COLS): PERSONALIZED SIDEBAR    -->
+<!-- ============================================== -->
+<div class="lg:col-span-4 space-y-6">
+<!-- 1. PERSONALIZED RESOURCE PROFILE (DARK CHARCOAL CARD) -->
+<div class="p-6 rounded-2xl bg-[#14161B] text-[#FAF7F2] border border-[#2B2F3A] shadow-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#D4AF37]/15 to-transparent rounded-bl-full pointer-events-none"></div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-4 border-b border-[#242732] mb-4">
+<div>
+<div class="text-[9px] font-mono tracking-[0.2em] text-[#D4AF37] uppercase font-bold">
+                STUDENT PROFILE
+              </div>
+<h3 class="text-sm font-bold text-[#F3F4F6]">Your Resource Passport</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2A2415] text-[#D4AF37] border border-[#D4AF37]/30">
+              Level 5 Explorer
+            </span>
+</div>
+<!-- Student Information -->
+<div class="space-y-3.5 text-xs">
+<div>
+<div class="text-[10px] text-[#8C93A3] uppercase tracking-wider font-semibold">Student &amp; College</div>
+<div class="font-semibold text-white mt-0.5"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[#A4ACB9] text-[11px]">Govt. Polytechnic, Anantapuramu</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-[#222530]">
+<div>
+<div class="text-[10px] text-[#8C93A3] uppercase tracking-wider font-semibold">Current Track</div>
+<div class="font-medium text-[#E5E7EB] mt-0.5">Diploma CSE (2nd Yr)</div>
+</div>
+<div>
+<div class="text-[10px] text-[#8C93A3] uppercase tracking-wider font-semibold">Academic Score</div>
+<div class="font-semibold text-[#D4AF37] mt-0.5">84.5% Aggregate</div>
+</div>
+</div>
+<div class="pt-2 border-t border-[#222530]">
+<div class="text-[10px] text-[#8C93A3] uppercase tracking-wider font-semibold">Primary Target</div>
+<div class="font-semibold text-white mt-0.5 flex items-center space-x-1.5">
+<span>Software Engg. &amp; B.Tech Lateral Entry</span>
+</div>
+</div>
+<div class="pt-2 border-t border-[#222530]">
+<div class="text-[10px] text-[#8C93A3] uppercase tracking-wider font-semibold mb-1.5">Strong Skills</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-[#1F232D] text-[#D1D5DB] text-[11px] font-mono border border-[#2E3342]">Python</span>
+<span class="px-2 py-0.5 rounded bg-[#1F232D] text-[#D1D5DB] text-[11px] font-mono border border-[#2E3342]">SQL</span>
+<span class="px-2 py-0.5 rounded bg-[#1F232D] text-[#D1D5DB] text-[11px] font-mono border border-[#2E3342]">DSA Basics</span>
+</div>
+</div>
+</div>
+<!-- Progress Overview -->
+<div class="mt-5 pt-4 border-t border-[#242732]">
+<div class="flex items-center justify-between text-[11px] mb-1.5">
+<span class="text-[#9CA3AF]">Curated Resource Readiness</span>
+<span class="font-bold text-[#D4AF37]">72%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-[#20242E] overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+<!-- 2. MARGDARSHAK AI RESOURCE INSIGHT CARD -->
+<div class="p-6 rounded-2xl bg-white border border-[#D4AF37]/40 shadow-sm relative">
+<div class="flex items-center space-x-2.5 mb-3">
+<div class="w-8 h-8 rounded-lg bg-[#201D16] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0">
+<svg class="w-4 h-4 text-[#D4AF37]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path>
+</svg>
+</div>
+<div>
+<div class="text-[9px] font-bold text-[#8D6B18] tracking-wider uppercase">AI Personalized Insight</div>
+<h4 class="text-xs font-bold text-[#141518]">Margdarshak AI Resource Guide</h4>
+</div>
+</div>
+<p class="text-xs text-[#524E45] leading-relaxed mb-4">
+            “Based on your <strong>Diploma CSE pathway</strong> and <strong>Software Engineering goal</strong>, focus first on <em>DSA fundamentals</em>, <em>Python practice projects</em>, <em>ECET lateral syllabus</em>, and <em>APSSDC placement readiness</em> resources.”
+          </p>
+<div class="space-y-2">
+<button class="w-full py-2 px-3 rounded-lg bg-[#141518] text-[#F5F0E6] text-xs font-semibold hover:bg-[#2A2B30] transition-colors flex items-center justify-center space-x-1.5 shadow-sm">
+<span>Build My Resource Path</span>
+<span class="text-[#D4AF37]">→</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-[#FAF7F2] border border-[#E2DCCF] text-[#4A453A] text-xs font-semibold hover:bg-[#F2ECE0] transition-colors flex items-center justify-center space-x-1.5">
+<span>Ask AI Mentor About Resources</span>
+</button>
+</div>
+</div>
+<!-- 3. YOUR RESOURCE JOURNEY (PROGRESS CARD) -->
+<div class="p-5 rounded-2xl bg-white border border-[#E4DDD0] shadow-sm">
+<div class="flex items-center justify-between mb-3 pb-2 border-b border-[#F0EBE1]">
+<h4 class="text-xs font-bold text-[#141518] uppercase tracking-wider">Your Resource Journey</h4>
+<span class="text-[10px] font-semibold text-[#8D6B18]">This Semester</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center mb-4">
+<div class="p-2.5 rounded-lg bg-[#FAF7F2] border border-[#EFE9DF]">
+<div class="text-lg font-bold text-[#141518]">24</div>
+<div class="text-[10px] text-[#7A7466] uppercase font-medium mt-0.5">Explored</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#FAF7F2] border border-[#EFE9DF]">
+<div class="text-lg font-bold text-[#D4AF37]">12</div>
+<div class="text-[10px] text-[#7A7466] uppercase font-medium mt-0.5">Saved</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#FAF7F2] border border-[#EFE9DF]">
+<div class="text-lg font-bold text-[#276749]">08</div>
+<div class="text-[10px] text-[#7A7466] uppercase font-medium mt-0.5">Completed</div>
+</div>
+</div>
+<div class="text-xs text-[#524E45] flex items-center justify-between pt-1">
+<span class="text-[#7A7466]">Current Study Focus:</span>
+<span class="font-semibold text-[#141518]">DSA &amp; Python APSSDC</span>
+</div>
+</div>
+<!-- 4. SAVED RESOURCES QUICK ACCESS -->
+<div class="p-5 rounded-2xl bg-white border border-[#E4DDD0] shadow-sm">
+<div class="flex items-center justify-between mb-3 pb-2 border-b border-[#F0EBE1]">
+<div class="flex items-center space-x-1.5">
+<svg class="w-3.5 h-3.5 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24">
+<path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+</svg>
+<h4 class="text-xs font-bold text-[#141518] uppercase tracking-wider">Recently Saved</h4>
+</div>
+<span class="text-[10px] font-bold text-[#8D6B18]">12 Total</span>
+</div>
+<div class="space-y-2.5">
+<a class="block p-2 rounded-lg hover:bg-[#FAF7F2] transition-colors group" href="#">
+<div class="text-xs font-bold text-[#141518] group-hover:text-[#8D6B18] transition-colors truncate">
+                AP ECET CSE Solved Papers (2018–2024)
+              </div>
+<div class="text-[10px] text-[#7A7466] flex items-center justify-between mt-0.5">
+<span>PDF Guide</span>
+<span class="text-[#276749] font-medium">✓ Ready</span>
+</div>
+</a>
+<a class="block p-2 rounded-lg hover:bg-[#FAF7F2] transition-colors group" href="#">
+<div class="text-xs font-bold text-[#141518] group-hover:text-[#8D6B18] transition-colors truncate">
+                Python 3 for Polytechnic Students
+              </div>
+<div class="text-[10px] text-[#7A7466] flex items-center justify-between mt-0.5">
+<span>Code Repository</span>
+<span class="text-[#276749] font-medium">✓ Ready</span>
+</div>
+</a>
+<a class="block p-2 rounded-lg hover:bg-[#FAF7F2] transition-colors group" href="#">
+<div class="text-xs font-bold text-[#141518] group-hover:text-[#8D6B18] transition-colors truncate">
+                Jagananna Vidya Deevena Checklist
+              </div>
+<div class="text-[10px] text-[#7A7466] flex items-center justify-between mt-0.5">
+<span>State Portal Guide</span>
+<span class="text-[#276749] font-medium">✓ Ready</span>
+</div>
+</a>
+</div>
+<button class="w-full mt-3 py-2 text-center text-xs font-bold text-[#8D6B18] hover:text-[#5E4710] transition-colors border-t border-[#F0EBE1] pt-2.5 flex items-center justify-center space-x-1">
+<span>Continue Learning</span>
+<span>→</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Cultural Editorial Global Footer (Exact Margdarshak Design Token) -->
+<div class="mt-16 pt-8 border-t border-[#E2DCCF] text-center select-none">
+<div class="text-[10px] font-mono tracking-[0.22em] text-[#8C8474] uppercase font-bold mb-2">
+        RURAL TALENT • GLOBAL OPPORTUNITIES • A BRIGHTER INDIA
+      </div>
+<p class="font-editorial italic text-sm text-[#4A453A] max-w-xl mx-auto mb-2">
+        “Education is the most powerful weapon which you can use to change your future.”
+      </p>
+<div class="text-[10px] font-serif-title uppercase tracking-widest text-[#8D6B18] font-bold">
+        — Dr. A.P.J. Abdul Kalam —
+      </div>
+<div class="mt-4 text-[11px] text-[#6E695D] font-medium">
+<span class="font-semibold text-[#141518]">From Villages to the World</span> | 
+        <span class="text-[#8D6B18] font-semibold">మన ఊరు - మన భవిష్యత్తు</span> (Mana Ooru - Mana Bhavishyatu)
+      </div>
+<div class="text-[10px] text-[#9A9384] mt-2 font-mono">
+        © 2025 MARGDARSHAK RURAL ADVANCEMENT INITIATIVE. ANDHRA PRADESH &amp; TELANGANA STUDENT PORTAL.
+      </div>
+</div>
+</main>
+</div>
+</div>
+<script src="/public/js/profile-hydration.js"></script>
+
+
+</body></html>

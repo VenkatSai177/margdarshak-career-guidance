@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Margdarshak - Student Onboarding &amp; Personal Details</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 CDN with forms plugin -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              charcoal: '#0B0D0F',
+              charcoalLight: '#121417',
+              charcoalBorder: '#23272B',
+              gold: '#C59B27',
+              goldHover: '#B0881F',
+              goldLight: '#E8D295',
+              cream: '#FAF7F0',
+              creamInput: '#FCFAF6',
+              borderCream: '#E6DFC8',
+              muted: '#7E8691',
+              pillBg: 'rgba(18, 20, 23, 0.75)',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 25px 50px -12px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(212, 175, 55, 0.15)',
+            'gold-glow': '0 4px 20px rgba(197, 155, 39, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: CustomStyles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0B0D0F;
+      color: #121417;
+    }
+    .font-serif-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+  </style>
+<style data-purpose="form-controls">
+    /* Custom scrollbar styling for onboarding form card */
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #F3ECE1;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #D8CCA8;
+      border-radius: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #C59B27;
+    }
+    
+    /* Interactive interest chip */
+    .chip-btn {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .chip-btn.active {
+      background-color: #121417 !important;
+      color: #FAF7F0 !important;
+      border-color: #C59B27 !important;
+      box-shadow: 0 2px 8px rgba(197, 155, 39, 0.2);
+    }
+    .chip-btn.active .check-indicator {
+      display: inline-block !important;
+    }
+  </style>
+<!-- END: CustomStyles -->
+</head>
+<body class="bg-brand-charcoal text-slate-100 min-h-screen antialiased selection:bg-brand-gold selection:text-white flex flex-col">
+<!-- BEGIN: TopBarHelper -->
+<!-- Top floating controls: Quick Demo Fill Button -->
+<header class="fixed top-4 right-4 sm:top-6 sm:right-8 z-50">
+<button class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-semibold tracking-wide text-brand-goldLight bg-[#15171A]/90 hover:bg-[#1C1F24] border border-brand-gold/40 rounded-full shadow-lg backdrop-blur-md transition-all duration-200 hover:border-brand-gold hover:scale-105 active:scale-95" data-purpose="fill-demo-data" id="btn-fill-demo" title="Autofill student details for preview">
+<svg class="w-3.5 h-3.5 text-brand-gold animate-pulse" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Fill Demo Student</span>
+</button>
+</header>
+<!-- END: TopBarHelper -->
+<!-- BEGIN: MainContentGrid -->
+<main class="flex-1 w-full flex flex-col lg:flex-row min-h-screen">
+<!-- BEGIN: LeftVisualHeroPanel -->
+<!-- Left 50% Panel: Cinematic visual storytelling & rural context -->
+<section class="relative lg:w-[48%] xl:w-[50%] min-h-[520px] lg:min-h-screen flex flex-col justify-between p-6 sm:p-10 lg:p-14 overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-charcoalBorder">
+<!-- Background Image with Ambient Overlays -->
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic rural Indian landscape with stepped terrace fields and temple in Western Ghats" class="w-full h-full object-cover object-center transform scale-105 hover:scale-100 transition-transform duration-1000 ease-out" src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop"/>
+<!-- Ambient Vignette & Dark Gradients -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/45 to-black/75"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/60"></div>
+</div>
+<!-- Top Header Row: Navigation & Vernacular Badge -->
+<nav class="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-1">
+<!-- Back Navigation Pill -->
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium text-slate-200 bg-brand-pillBg border border-white/20 hover:border-brand-gold/70 hover:text-white backdrop-blur-md transition-colors" href="#back-to-home">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>BACK TO MARGDARSHAK HOME</span>
+</a>
+<!-- Regional Telugu Inscription Badge -->
+<div class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-medium text-amber-200/90 bg-brand-pillBg border border-brand-gold/30 backdrop-blur-md tracking-wider">
+<span>● చదువు • మార్గం • భవిష్యత్తు</span>
+</div>
+</nav>
+<!-- Center Content: Brand Badge, Headlines & Dr. Kalam Quote -->
+<div class="relative z-10 my-auto py-10 max-w-xl">
+<!-- Margdarshak Brand Badge -->
+<div class="inline-flex items-center gap-3 px-3.5 py-2 rounded-lg bg-[#14171BE6] border border-brand-gold/40 backdrop-blur-md mb-6 shadow-md">
+<!-- Mini Emblem Icon -->
+<div class="w-7 h-7 rounded-md bg-[#1C1F24] border border-brand-gold/50 flex items-center justify-center text-brand-gold">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+<path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"></path>
+</svg>
+</div>
+<div>
+<span class="block text-xs font-bold tracking-[0.2em] text-white uppercase leading-none">MARGDARSHAK</span>
+<span class="block text-[9px] tracking-widest text-brand-gold uppercase mt-0.5">GUIDING RURAL DREAMS</span>
+</div>
+</div>
+<!-- Editorial Subtitle & Serif Statement -->
+<p class="text-xs font-semibold tracking-[0.25em] text-brand-gold uppercase mb-3">
+          SAME ROOTS. BIGGER DREAMS.
+        </p>
+<h1 class="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white tracking-tight leading-[1.18] mb-5 drop-shadow-md">
+          "Tell us your story.<br/>We'll find your direction."
+        </h1>
+<p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-7 max-w-lg">
+          Empowering ambitious minds from villages and towns with AI-tailored career pathways, vetted local scholarships, and verified mentor guidance.
+        </p>
+<!-- Parchment Card Quote: Dr. APJ Abdul Kalam -->
+<div class="rounded-xl bg-[#14171BE0] border border-brand-gold/30 p-4 sm:p-5 backdrop-blur-md relative overflow-hidden shadow-xl">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="text-brand-gold text-2xl font-serif leading-none opacity-80">“</span>
+<span class="text-[10px] tracking-widest font-semibold uppercase text-brand-gold px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/30">Inspiration</span>
+</div>
+<p class="text-xs sm:text-sm text-amber-50/90 italic font-serif leading-relaxed mb-3">
+            Education is the most powerful weapon you can use to change your world. Your village roots are your greatest strength.
+          </p>
+<div class="text-[11px] font-semibold tracking-wider text-brand-gold uppercase">
+            — Dr. A.P.J. Abdul Kalam
+          </div>
+</div>
+</div>
+<!-- Bottom Footing: Trust Metric Pills -->
+<footer class="relative z-10 flex flex-wrap items-center gap-3 pt-4">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-pillBg border border-white/10 backdrop-blur-md text-xs text-slate-300">
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span><strong class="text-white font-semibold">50,000+</strong> Rural Students Guided</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-pillBg border border-white/10 backdrop-blur-md text-xs text-slate-300">
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span><strong class="text-white font-semibold">₹5 Cr+</strong> Scholarships Discovered</span>
+</div>
+</footer>
+</section>
+<!-- END: LeftVisualHeroPanel -->
+<!-- BEGIN: RightOnboardingCardPanel -->
+<!-- Right 50% Panel: Deep Charcoal wrapper with centered Cream Card -->
+<section class="lg:w-[52%] xl:w-[50%] bg-[#0D0F12] flex items-center justify-center p-4 sm:p-8 lg:p-12 overflow-y-auto">
+<!-- Elevated Ivory Stationery Card -->
+<div class="w-full max-w-[540px] bg-brand-cream border border-brand-borderCream rounded-[28px] shadow-card text-brand-charcoal overflow-hidden flex flex-col my-auto transition-all duration-300">
+<!-- Card Top Header with Brand Identity & Stepper -->
+<header class="pt-8 pb-4 px-6 sm:px-9 text-center border-b border-brand-borderCream/60">
+<!-- Graduation Cap Icon Emblem -->
+<div class="w-12 h-12 mx-auto rounded-xl bg-[#14171A] border border-brand-gold/60 flex items-center justify-center text-brand-gold shadow-md mb-3.5">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+<path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"></path>
+</svg>
+</div>
+<h2 class="text-[13px] font-bold tracking-[0.24em] text-brand-charcoal uppercase leading-tight font-sans">
+            MARGDARSHAK
+          </h2>
+<p class="text-[9px] tracking-[0.25em] text-brand-gold font-semibold uppercase mt-0.5">
+            GUIDING RURAL DREAMS
+          </p>
+<!-- Step Progression Indicator -->
+<div class="mt-5 max-w-xs mx-auto">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-[10px] font-bold tracking-widest text-[#6B6355] uppercase" id="step-label">
+                STEP 1 OF 2: PERSONAL &amp; REGION
+              </span>
+<span class="text-[10px] font-bold text-brand-gold tracking-wider" id="step-count">
+                50%
+              </span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1.5 bg-[#E6DEC9] rounded-full overflow-hidden">
+<div class="h-full bg-brand-gold transition-all duration-500 ease-out" id="progress-bar-fill" style="width: 50%;"></div>
+</div>
+</div>
+</header>
+<!-- Form Body Container -->
+<div class="p-6 sm:p-9">
+<!-- BEGIN: Step1FormSection -->
+<!-- STEP 1: Personal & Regional Details -->
+<section class="space-y-4" data-purpose="step-personal-info" id="step-1-content">
+<div class="text-center mb-5">
+<h3 class="font-serif-heading text-2xl sm:text-[26px] font-medium text-brand-charcoal tracking-tight">
+                Tell Us About You
+              </h3>
+<p class="text-xs text-[#5F656E] mt-1">
+                Help Margdarshak tailor scholarships and career guidance to your home roots.
+              </p>
+</div>
+<form class="space-y-3.5" id="form-step-1" onsubmit="event.preventDefault();">
+<!-- Full Name Field -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="student-name">
+                  Full Name (As in School Certificate) *
+                </label>
+<div class="relative rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-10 pr-3.5 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal placeholder-[#999282] focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="student-name" name="name" placeholder="e.g. Venkat Sai Kumar" required="" type="text"/>
+</div>
+</div>
+<!-- Two Column Grid: DOB & Mobile Number -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Date of Birth -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="student-dob">
+                    Date of Birth *
+                  </label>
+<input class="block w-full px-3 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="student-dob" name="dob" required="" type="date"/>
+</div>
+<!-- WhatsApp / Mobile -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="student-phone">
+                    Mobile Number *
+                  </label>
+<div class="relative rounded-lg shadow-sm">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-xs font-semibold text-[#786F5C] pointer-events-none">
+                      +91
+                    </span>
+<input class="block w-full pl-11 pr-3 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal placeholder-[#999282] focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="student-phone" maxlength="10" name="phone" placeholder="98765 43210" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Preferred Language -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="student-lang">
+                  Preferred Guidance Language
+                </label>
+<select class="block w-full px-3 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="student-lang" name="language">
+<option value="Telugu">తెలుగు (Telugu - Recommended)</option>
+<option value="English">English</option>
+<option value="Hindi">हिन्दी (Hindi)</option>
+<option value="Kannada">ಕನ್ನಡ (Kannada)</option>
+<option value="Tamil">தமிழ் (Tamil)</option>
+</select>
+</div>
+<!-- Regional Context Divider Box -->
+<div class="p-3.5 bg-[#F4EFE2] rounded-xl border border-brand-borderCream space-y-3">
+<div class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand-goldHover">
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Regional &amp; Hometown Information</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+<div>
+<label class="block text-[10px] font-semibold text-[#5A5344] uppercase mb-0.5" for="student-state">State *</label>
+<select class="block w-full px-2.5 py-2 bg-brand-creamInput border border-[#D5CCA8] rounded-lg text-xs font-medium text-brand-charcoal focus:ring-1 focus:ring-brand-gold focus:border-brand-gold" id="student-state" name="state">
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Telangana">Telangana</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Odisha">Odisha</option>
+<option value="Other">Other State</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-semibold text-[#5A5344] uppercase mb-0.5" for="student-district">District *</label>
+<input class="block w-full px-2.5 py-2 bg-brand-creamInput border border-[#D5CCA8] rounded-lg text-xs text-brand-charcoal placeholder-[#999282] focus:ring-1 focus:ring-brand-gold focus:border-brand-gold" id="student-district" name="district" placeholder="e.g. Chittoor / Warangal" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-semibold text-[#5A5344] uppercase mb-0.5" for="student-village">Mandal / Village / Town *</label>
+<input class="block w-full px-3 py-2 bg-brand-creamInput border border-[#D5CCA8] rounded-lg text-xs text-brand-charcoal placeholder-[#999282] focus:ring-1 focus:ring-brand-gold focus:border-brand-gold" id="student-village" name="village" placeholder="e.g. Punganur Mandal / Somala Village" required="" type="text"/>
+</div>
+</div>
+<!-- Primary Step 1 CTA Button -->
+<div class="pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-brand-gold hover:bg-brand-goldHover text-white font-bold text-sm rounded-xl shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" id="btn-goto-step-2" type="button">
+<span>Continue to Education &amp; Dreams</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</form>
+</section>
+<!-- END: Step1FormSection -->
+<!-- BEGIN: Step2FormSection -->
+<!-- STEP 2: Education, Academics & Aspirations (Hidden by default) -->
+<section class="hidden space-y-4" data-purpose="step-education-aspirations" id="step-2-content">
+<div class="text-center mb-4">
+<h3 class="font-serif-heading text-2xl sm:text-[26px] font-medium text-brand-charcoal tracking-tight">
+                Your Education &amp; Aspirations
+              </h3>
+<p class="text-xs text-[#5F656E] mt-1">
+                Tell us your subjects and future career interest for precision AI matchmaking.
+              </p>
+</div>
+<form class="space-y-3.5" id="form-step-2" onsubmit="event.preventDefault();">
+<!-- Current Education Level -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="education-level">
+                  Current Education Level *
+                </label>
+<select class="block w-full px-3 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="education-level" name="education_level">
+<option value="Class 10th (SSC)">Class 10th / SSC / High School</option>
+<option selected="" value="Intermediate / 12th">Intermediate / 12th Standard (+2)</option>
+<option value="Diploma / Polytechnic">Diploma / Polytechnic</option>
+<option value="ITI / Vocational">ITI / Vocational Training</option>
+<option value="Undergraduate (Degree / B.Tech / B.Sc)">Undergraduate (Degree / B.Tech / B.Sc / B.Com)</option>
+<option value="Postgraduate">Postgraduate (PG)</option>
+</select>
+</div>
+<!-- School / College Name -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="institution-name">
+                  Current / Last School or College *
+                </label>
+<input class="block w-full px-3.5 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal placeholder-[#999282] focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold focus:outline-none transition-all" id="institution-name" placeholder="e.g. Govt Junior College, Madanapalle" required="" type="text"/>
+</div>
+<!-- Stream & Score in 2 columns -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="stream-name">
+                    Stream / Group *
+                  </label>
+<select class="block w-full px-3 py-2 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-xs sm:text-sm text-brand-charcoal focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold" id="stream-name">
+<option value="MPC (Maths, Physics, Chem)">MPC (Maths, Physics, Chem)</option>
+<option value="BiPC (Biology, Physics, Chem)">BiPC (Biology, Physics, Chem)</option>
+<option value="MEC / CEC (Commerce)">MEC / CEC (Commerce)</option>
+<option value="HEC (Arts / Humanities)">HEC (Arts / Humanities)</option>
+<option value="General Science">General Science</option>
+<option value="Computer Science / Engineering">Engineering / Tech</option>
+</select>
+</div>
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="academic-percentage">
+                    Latest Marks / CGPA
+                  </label>
+<input class="block w-full px-3.5 py-2 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-xs sm:text-sm text-brand-charcoal placeholder-[#999282] focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold" id="academic-percentage" placeholder="e.g. 84% or 8.8 CGPA" type="text"/>
+</div>
+</div>
+<!-- Multi-select Interest Chips -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1.5">
+                  Select Areas of Interest (Choose 1 or more)
+                </label>
+<div class="flex flex-wrap gap-1.5" id="interest-chips-container">
+<button class="chip-btn active text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="Technology" type="button">
+<span class="check-indicator mr-1">✓</span>Technology &amp; Software
+                  </button>
+<button class="chip-btn active text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="Govt UPSC" type="button">
+<span class="check-indicator mr-1">✓</span>Govt Exams &amp; UPSC
+                  </button>
+<button class="chip-btn text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="AgriTech" type="button">
+<span class="check-indicator hidden mr-1">✓</span>Agri-Tech &amp; Farming
+                  </button>
+<button class="chip-btn text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="Defence" type="button">
+<span class="check-indicator hidden mr-1">✓</span>Defence &amp; Police
+                  </button>
+<button class="chip-btn text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="Healthcare" type="button">
+<span class="check-indicator hidden mr-1">✓</span>Healthcare &amp; Pharma
+                  </button>
+<button class="chip-btn text-xs px-2.5 py-1.5 rounded-lg border border-brand-borderCream bg-[#F1E9D7] text-[#333] font-medium" data-value="Teaching" type="button">
+<span class="check-indicator hidden mr-1">✓</span>Teaching &amp; Professor
+                  </button>
+</div>
+</div>
+<!-- Dream Career Goal -->
+<div>
+<label class="block text-[11px] font-bold uppercase tracking-wider text-[#4A453A] mb-1" for="career-goal">
+                  Primary Career Ambition
+                </label>
+<select class="block w-full px-3 py-2.5 bg-brand-creamInput border border-[#D5CCA8] rounded-xl text-sm text-brand-charcoal focus:ring-2 focus:ring-brand-gold/60 focus:border-brand-gold" id="career-goal">
+<option value="Software Engineer / Developer">Software Engineer / IT Professional</option>
+<option value="Civil Services (IAS/IPS/Group-1)">Civil Services (IAS / IPS / Group-1)</option>
+<option value="Bank PO / Govt Officer">Banking &amp; Public Sector Officer</option>
+<option value="Rural Entrepreneur / Agri-Innovator">Rural Entrepreneur / Modern Agri-Tech</option>
+<option value="Doctor / Nurse / Paramedic">Doctor / Nurse / Healthcare Professional</option>
+<option value="High School Teacher / Lecturer">Teacher / College Lecturer</option>
+<option value="Not Sure Yet / Guide Me">Not Sure Yet (Need Margdarshak Career Guidance)</option>
+</select>
+</div>
+<!-- Buttons Row: Back + Submit -->
+<div class="pt-2 flex items-center gap-3">
+<button class="w-1/3 py-2.5 px-3 border border-[#D5CCA8] hover:bg-[#EFE7D2] text-[#423C30] font-semibold text-xs rounded-xl transition-colors" id="btn-back-to-step-1" type="button">
+                  ← Back
+                </button>
+<button class="w-2/3 flex items-center justify-center gap-1.5 py-3 px-4 bg-brand-gold hover:bg-brand-goldHover text-white font-bold text-sm rounded-xl shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0" id="btn-submit-onboarding" type="button">
+<span>Complete Profile &amp; Open</span>
+<span class="text-amber-200">⚡</span>
+</button>
+</div>
+</form>
+</section>
+<!-- END: Step2FormSection -->
+<!-- BEGIN: Step3SuccessSection -->
+<!-- STEP 3: Completion State (Hidden by default) -->
+<section class="hidden text-center py-5 space-y-5" data-purpose="step-completion-success" id="step-3-success">
+<!-- Animated Gold Check Ring -->
+<div class="w-16 h-16 mx-auto rounded-full bg-amber-100 border-2 border-brand-gold flex items-center justify-center text-brand-gold shadow-lg animate-bounce">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold block mb-1">
+                PROFILE ACTIVATED
+              </span>
+<h3 class="font-serif-heading text-2xl sm:text-3xl font-bold text-brand-charcoal">
+                Welcome to Margdarshak!
+              </h3>
+<p class="text-xs sm:text-sm text-[#5F656E] mt-2 max-w-xs mx-auto">
+<span class="font-semibold text-brand-charcoal" id="student-greeting"><span data-bind="user.fullName">Venkat Sai</span></span>, your personalized rural roadmap, scholarships sync, and verified mentors are prepared.
+              </p>
+</div>
+<!-- Profile Summary Pill -->
+<div class="bg-[#F3EDE0] border border-brand-borderCream rounded-xl p-3.5 text-left text-xs space-y-1.5">
+<div class="flex justify-between">
+<span class="text-[#786F5C]">Target Career:</span>
+<span class="font-semibold text-brand-charcoal" id="summary-career">Civil Services</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#786F5C]">Location:</span>
+<span class="font-semibold text-brand-charcoal" id="summary-location">Chittoor, Andhra Pradesh</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#786F5C]">Matching Schemes:</span>
+<span class="font-semibold text-emerald-800">14 Scholarships Found</span>
+</div>
+</div>
+<!-- Launch Student Dashboard Button -->
+<div class="pt-2">
+<a class="w-full inline-flex items-center justify-center gap-2 py-3 px-5 bg-brand-gold hover:bg-brand-goldHover text-white font-bold text-sm rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5" href="/student/dashboard">
+<span>Enter Student Dashboard</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</section>
+<!-- END: Step3SuccessSection -->
+</div>
+<!-- Card Footer Note: Authenticity & Privacy -->
+<footer class="py-3 px-6 bg-[#F3EDE0]/80 border-t border-brand-borderCream/60 text-center">
+<p class="text-[10px] tracking-wider text-[#696150] uppercase font-semibold">
+            FREE FOR RURAL INDIA • GOVERNMENT SCHOLARSHIP SYNC
+          </p>
+</footer>
+</div>
+</section>
+<!-- END: RightOnboardingCardPanel -->
+</main>
+<!-- END: MainContentGrid -->
+<!-- BEGIN: InteractiveHandlersScript -->
+<script data-purpose="onboarding-flow-controller">
+    document.addEventListener('DOMContentLoaded', () => {
+      // Form Steps Elements
+      const step1Content = document.getElementById('step-1-content');
+      const step2Content = document.getElementById('step-2-content');
+      const step3Success = document.getElementById('step-3-success');
+      
+      const stepLabel = document.getElementById('step-label');
+      const stepCount = document.getElementById('step-count');
+      const progressBarFill = document.getElementById('progress-bar-fill');
+      
+      const btnGotoStep2 = document.getElementById('btn-goto-step-2');
+      const btnBackToStep1 = document.getElementById('btn-back-to-step-1');
+      const btnSubmitOnboarding = document.getElementById('btn-submit-onboarding');
+      const btnFillDemo = document.getElementById('btn-fill-demo');
+
+      // Step 1 Inputs
+      const nameInput = document.getElementById('student-name');
+      const dobInput = document.getElementById('student-dob');
+      const phoneInput = document.getElementById('student-phone');
+      const langInput = document.getElementById('student-lang');
+      const stateInput = document.getElementById('student-state');
+      const districtInput = document.getElementById('student-district');
+      const villageInput = document.getElementById('student-village');
+
+      // Step 2 Inputs
+      const institutionInput = document.getElementById('institution-name');
+      const careerGoalInput = document.getElementById('career-goal');
+      const percentageInput = document.getElementById('academic-percentage');
+
+      // Summary placeholders
+      const studentGreeting = document.getElementById('student-greeting');
+      const summaryCareer = document.getElementById('summary-career');
+      const summaryLocation = document.getElementById('summary-location');
+
+      // 1. Chip Selection Toggle
+      const chipButtons = document.querySelectorAll('.chip-btn');
+      chipButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.classList.toggle('active');
+          const check = btn.querySelector('.check-indicator');
+          if (btn.classList.contains('active')) {
+            if (check) check.classList.remove('hidden');
+          } else {
+            if (check) check.classList.add('hidden');
+          }
+        });
+      });
+
+      // 2. Navigation: Step 1 -> Step 2
+      btnGotoStep2.addEventListener('click', () => {
+        const studentName = nameInput.value.trim();
+        if (!studentName) {
+          nameInput.focus();
+          nameInput.classList.add('ring-2', 'ring-red-500');
+          setTimeout(() => nameInput.classList.remove('ring-2', 'ring-red-500'), 2000);
+          return;
+        }
+
+        step1Content.classList.add('hidden');
+        step2Content.classList.remove('hidden');
+
+        // Update Stepper
+        stepLabel.innerText = "STEP 2 OF 2: EDUCATION & ASPIRATIONS";
+        stepCount.innerText = "90%";
+        progressBarFill.style.width = "90%";
+      });
+
+      // 3. Navigation: Step 2 -> Step 1 (Back)
+      btnBackToStep1.addEventListener('click', () => {
+        step2Content.classList.add('hidden');
+        step1Content.classList.remove('hidden');
+
+        // Revert Stepper
+        stepLabel.innerText = "STEP 1 OF 2: PERSONAL & REGION";
+        stepCount.innerText = "50%";
+        progressBarFill.style.width = "50%";
+      });
+
+      // 4. Navigation: Step 2 -> Completion
+      btnSubmitOnboarding.addEventListener('click', () => {
+        const studentName = nameInput.value.trim() || 'Venkat Sai';
+        const district = districtInput.value.trim() || 'Chittoor';
+        const state = stateInput.value || 'Andhra Pradesh';
+        const career = careerGoalInput.value;
+
+        // Populate summary
+        studentGreeting.innerText = studentName;
+        summaryCareer.innerText = career;
+        summaryLocation.innerText = `${district}, ${state}`;
+
+        step2Content.classList.add('hidden');
+        step3Success.classList.remove('hidden');
+
+        // 100% Progress
+        stepLabel.innerText = "STEP COMPLETED";
+        stepCount.innerText = "100%";
+        progressBarFill.style.width = "100%";
+      });
+
+      // 5. Fill Demo Profile Helper
+      btnFillDemo.addEventListener('click', () => {
+        nameInput.value = "Venkat Sai Reddy";
+        dobInput.value = "2006-05-14";
+        phoneInput.value = "9848022338";
+        langInput.value = "Telugu";
+        stateInput.value = "Andhra Pradesh";
+        districtInput.value = "Chittoor";
+        villageInput.value = "Madanapalle Mandal, Gollapalli";
+
+        institutionInput.value = "Govt Model Junior College, Madanapalle";
+        percentageInput.value = "91.4% (Inter 1st Year)";
+        careerGoalInput.value = "Civil Services (IAS/IPS/Group-1)";
+
+        // Visual flash effect on demo fill
+        btnFillDemo.classList.add('ring-2', 'ring-brand-gold');
+        setTimeout(() => btnFillDemo.classList.remove('ring-2', 'ring-brand-gold'), 1200);
+      });
+    });
+  </script>
+<!-- END: InteractiveHandlersScript -->
+</body></html>

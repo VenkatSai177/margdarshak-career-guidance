@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Margdarshak - Guiding Rural Dreams</title>
+<!-- Tailwind CSS v3 -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter, Cinzel & Cormorant Garamond / Playfair for serif elegance, Caveat for handwritten script -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Cinzel:wght@600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            display: ['Cinzel', 'serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          colors: {
+            brand: {
+              dark: '#0f1115',
+              sidebar: '#12141a',
+              cardBg: '#1a1d24',
+              gold: '#c99846',
+              goldHover: '#b58434',
+              goldLight: '#f4ede2',
+              cream: '#fbf9f4',
+              parchment: '#f5edd8',
+              cardBorder: '#e8dfcc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="custom-scrollbars">
+    /* Subtle sleek scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12141a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a2e39;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c99846;
+    }
+  </style>
+<style data-purpose="background-helpers">
+    /* Layered backdrop alignment to leverage source imagery exactly */
+    .hero-bg-overlay {
+      background: linear-gradient(180deg, rgba(20, 22, 28, 0.25) 0%, rgba(20, 22, 28, 0.45) 60%, rgba(245, 243, 238, 0.95) 100%);
+    }
+    .parchment-texture {
+      background-color: #f7f1e1;
+      background-image: radial-gradient(#ecdcb9 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+
+<style data-purpose="custom-scroll-and-paper">
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EFE8DA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D1C4AB;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B5A586;
+    }
+
+    /* Print styling support */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+      }
+      aside, header, #builder-left-pane, footer, .no-print, [data-purpose="hero-banner"], [data-purpose="ai-mentor-insight-card"], #preview-controls-bar {
+        display: none !important;
+      }
+      main {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #a4-preview-card {
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#e9e4d9] text-gray-800 font-sans antialiased overflow-x-hidden min-h-screen">
+<div class="flex min-h-screen w-full">
+<!-- BEGIN: LeftSidebar -->
+<aside class="w-[280px] bg-[#111317] text-gray-300 flex flex-col justify-between shrink-0 border-r border-[#222630] select-none fixed left-0 top-0 bottom-0 h-screen z-50 overflow-y-auto">
+<div>
+<!-- Logo & Branding -->
+<div class="p-5 pb-4 flex items-center gap-3 border-b border-[#1f242e]">
+<!-- Emblem -->
+<div class="w-10 h-10 rounded-lg flex items-center justify-center text-brand-gold bg-[#1c202a] border border-[#303646] shadow-inner">
+<svg class="w-6 h-6 stroke-current fill-brand-gold/20" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+<circle class="fill-brand-gold" cx="12" cy="7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h1 class="font-serif font-bold text-xl tracking-wide text-[#f4ede2] leading-none">Margdarshak</h1>
+<p class="text-[11px] text-[#b3a182] font-medium tracking-wider mt-1">Guiding Rural Dreams</p>
+</div>
+</div>
+<!-- Navigation Menu Items -->
+<nav class="p-3 space-y-1 text-[13.5px] font-medium font-sans">
+<!-- Active Item: Home -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/student/dashboard">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Home</span>
+</a>
+<!-- Career Guidance -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/career-guidance">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="9"></circle>
+<path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"></path>
+</svg>
+<span class="">Career Guidance</span>
+</a>
+<!-- Skill Development -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/skill-development">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="12" r="3"></circle>
+</svg>
+<span class="">Skill Development</span>
+</a>
+<!-- Courses & Colleges -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/courses-colleges">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Courses &amp; Colleges</span>
+</a>
+<!-- Scholarships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/scholarships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Scholarships</span>
+</a>
+<!-- Jobs & Internships -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/jobs-internships">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+<path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+</svg>
+<span class="">Jobs &amp; Internships</span>
+</a>
+<!-- AI Mentor -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/ai-mentor">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">AI Mentor</span>
+</a>
+<!-- Resume Builder -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resume-builder">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resume Builder</span>
+</a>
+<!-- Challenges & XP -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-gradient-to-r from-[#44361e] to-[#24211a] text-white border border-brand-gold/40 shadow-sm" href="/challenges-xp">
+
+<svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="8" r="7"></circle>
+<polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+</svg>
+<span class="">Challenges &amp; XP</span>
+
+</a>
+<!-- Community -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/community">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Community</span>
+</a>
+<!-- Resources -->
+<a class="flex items-center gap-3 px-3.5 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-[#1c202a] transition-colors" href="/resources">
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Resources</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Sidebar Vignette / Quote / Footer -->
+<div class="p-4 border-t border-[#1e222c] relative overflow-hidden bg-gradient-to-t from-black via-[#111317] to-transparent">
+<div class="relative z-10 text-center space-y-2">
+<p class="font-serif italic text-[13px] text-amber-200/90 leading-snug">
+            “Every dream deserves a direction.”
+          </p>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest font-mono">— Margdarshak</p>
+<!-- Decorative Lantern & Books representation -->
+<div class="py-2 flex justify-center items-center">
+<div class="relative w-16 h-16 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 rounded-full blur-xl animate-pulse"></div>
+<svg class="w-10 h-10 text-brand-gold relative drop-shadow" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+<path d="M9 2h6l2 4H7l2-4z"></path>
+<path d="M6 6h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6z"></path>
+<circle class="fill-amber-300 text-amber-400" cx="12" cy="12" r="3"></circle>
+<path d="M4 22h16"></path>
+</svg>
+</div>
+</div>
+<div class="pt-1 text-[9.5px] tracking-widest text-[#a8987d] font-serif uppercase">
+            LEARN • GROW • ACHIEVE
+          </div>
+</div>
+</div>
+</aside>
+<!-- END: LeftSidebar -->
+<div class="ml-[280px] min-h-screen w-[calc(100%-280px)] flex flex-col bg-[#e9e4d9]">
+<!-- BEGIN: TopHeader -->
+<header class="h-16 px-8 flex items-center justify-between border-b border-[#e2d8c3] bg-[#fbf9f4]/95 backdrop-blur-md sticky top-0 z-40 shadow-sm">
+<!-- Global Search Bar -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+<input class="w-full pl-10 pr-16 py-1.5 text-xs bg-[#242834] text-gray-200 rounded-full border border-gray-700/60 focus:outline-none focus:ring-1 focus:ring-brand-gold placeholder-gray-400" placeholder="Search careers, colleges, scholarships, skills..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center text-[10px] text-gray-400 font-mono">
+<span class="bg-[#191b22] px-1.5 py-0.5 rounded border border-gray-700">Ctrl K</span>
+</span>
+</div>
+<!-- Top Right Actions -->
+<div class="flex items-center space-x-5">
+<!-- Language Toggle -->
+
+<!-- Theme Toggle (Sun/Moon) -->
+
+<!-- Notifications with Badge -->
+<div class="relative cursor-pointer">
+<button class="w-8 h-8 rounded-full bg-[#232733] text-gray-300 hover:text-white flex items-center justify-center border border-gray-700">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+</button>
+<span class="absolute -top-1 -right-1 bg-red-600 text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center border border-[#16181f]">
+              3
+            </span>
+</div>
+<!-- User Profile Dropdown -->
+<div class="flex items-center space-x-2.5 cursor-pointer pl-1 hover:opacity-90">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-brand-gold">
+<img alt="Venkat Sai" data-bind="user.fullName" class="w-full h-full object-cover object-[88%_4%]" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=150&amp;auto=format&amp;fit=crop">
+</div>
+<div class="text-left hidden md:block leading-tight">
+<div class="text-xs font-semibold text-gray-200"><span data-bind="user.fullName">Venkat Sai</span></div>
+<div class="text-[10px] text-gray-400">Student</div>
+</div>
+<svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<main class="flex-1 px-8 py-7 space-y-7"><section class="bg-gradient-to-r from-[#EFE5D0] via-[#F3ECE0] to-[#E9DFC8] rounded-2xl p-7 mb-7 border border-[#E6E0D4] shadow-sm relative overflow-hidden" data-purpose="hero-banner"><div class="relative z-10 max-w-4xl"><div class="flex flex-wrap items-center gap-2 mb-3"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E4D1A0] text-[#543D0F] border border-[#D5BE82]">✦ CHALLENGES &amp; XP • KEEP GROWING</span><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#FAF6EE] text-[#4F4638] border border-[#DECBB0]">Personalized for Venkat Sai (Level 5 Explorer)</span></div><h2 class="font-serif text-3xl font-bold tracking-tight text-[#221C14] mb-2 leading-tight">Learn. Practice. Prove Yourself.</h2><p class="text-sm text-[#574E41] leading-relaxed max-w-2xl mb-5">Complete practical challenges, build career-ready skills, earn XP, maintain your learning streak, and unlock new levels along your journey.</p><div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#D9CEB4]"><div class="flex items-center space-x-3"><div class="flex items-center space-x-1.5 px-3 py-1 bg-[#1A1713] text-white rounded-lg text-xs font-medium shadow-sm"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>Rank: <strong class="text-[#E8B931]">#14 Polytechnic State Rank</strong></span></div><div class="text-xs text-[#6B5E4B] flex items-center space-x-1 bg-[#E8DEC7] px-2.5 py-1 rounded-lg"><span class="text-[#B68E18] font-bold">⚡</span><span>Active Track: Diploma CSE Lateral</span></div></div><div class="flex items-center space-x-2.5"><button class="px-4 py-2 text-xs font-bold text-white bg-[#1C1813] hover:bg-[#2C271E] rounded-lg transition flex items-center space-x-1.5 shadow" id="btn-hero-today-action" type="button"><span class="text-[#E8B931]">★</span><span>Continue Today's Challenge →</span></button><button class="px-3.5 py-2 text-xs font-semibold text-[#483E2D] bg-[#F7F2E7] hover:bg-white border border-[#CEBF9E] rounded-lg transition flex items-center space-x-1.5 shadow-sm" id="btn-scroll-all-challenges" type="button"><span>View All Challenges</span></button></div></div></div></section><div class="grid grid-cols-12 gap-5 mb-7"><div class="col-span-12 md:col-span-4 bg-[#FAF7F2] rounded-xl p-5 border border-[#E6E0D4] shadow-sm relative overflow-hidden"><div class="flex items-center justify-between mb-2"><span class="text-xs font-bold uppercase tracking-wider text-[#706450]">Venkat Sai's Progress</span><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FAF2DE] text-[#71500C] border border-[#DEBE76]">Level 5 Explorer</span></div><div class="flex items-baseline justify-between mt-1"><h3 class="text-2xl font-bold font-serif text-[#1E1B18]"><span id="display-current-xp">320</span> <span class="text-xs font-sans font-medium text-[#7C715D]">/ 500 XP</span></h3><span class="text-xs font-semibold text-[#8B6B18]" id="display-xp-remaining">180 XP to Level 6</span></div><div class="w-full bg-[#E5DBCA] h-2 rounded-full mt-3 overflow-hidden"><div class="bg-gradient-to-r from-[#D4AF37] to-[#E8B931] h-2 rounded-full transition-all duration-500" id="xp-progress-bar" style="width: 64%"></div></div><p class="text-[11px] text-[#7F7461] mt-2">Keep completing challenges to unlock Level 6 Master Explorer badge.</p></div><div class="col-span-12 md:col-span-4 bg-[#FAF7F2] rounded-xl p-5 border border-[#E6E0D4] shadow-sm"><div class="flex items-center justify-between mb-2"><span class="text-xs font-bold uppercase tracking-wider text-[#706450]">Learning Streak</span><span class="text-xs font-bold text-amber-600 flex items-center gap-1">🔥 <span id="streak-count-text">7 Days</span></span></div><h3 class="text-base font-bold text-[#1E1B18]">7 Day Active Streak!</h3><p class="text-[11px] text-[#7F7461] mb-3">Complete today's daily challenge to keep your streak alive.</p><div class="flex items-center justify-between pt-1 border-t border-[#F0EAD6]"><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">M</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">T</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">W</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">T</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">F</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-emerald-500 text-white text-[10px] flex items-center justify-center font-bold">✓</span><span class="text-[9.5px] font-medium text-[#726450]">S</span></div><div class="flex flex-col items-center gap-1"><span class="w-5 h-5 rounded-full bg-[#E8B931] text-[#241F18] text-[10px] flex items-center justify-center font-bold ring-2 ring-[#D4AF37]/50 animate-pulse" id="today-streak-dot">★</span><span class="text-[9.5px] font-bold text-[#846316]">Sun</span></div></div></div><div class="col-span-12 md:col-span-4 bg-[#FAF7F2] rounded-xl p-5 border border-[#E6E0D4] shadow-sm"><div class="flex items-center justify-between mb-2"><span class="text-xs font-bold uppercase tracking-wider text-[#706450]">Weekly Goal</span><span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#E8DEC7] text-[#554A37]">+100 Bonus XP</span></div><div class="flex items-baseline justify-between mt-1"><h3 class="text-base font-bold text-[#1E1B18]">4 / 5 Challenges Completed</h3><span class="text-xs font-semibold text-emerald-700">80% Done</span></div><div class="w-full bg-[#E5DBCA] h-2 rounded-full mt-3 overflow-hidden"><div class="bg-emerald-500 h-2 rounded-full" style="width: 80%"></div></div><p class="text-[11px] text-[#7F7461] mt-2">1 challenge remaining to hit this week's milestone and claim +100 XP.</p></div></div><div class="grid grid-cols-12 gap-7 items-start" data-purpose="workspace-grid"><div class="col-span-12 lg:col-span-7 space-y-6"><div class="bg-gradient-to-br from-[#FAF7F2] to-[#FAF3DE] rounded-xl p-5 border-2 border-[#D4AF37]/60 shadow-md relative overflow-hidden" id="card-todays-challenge"><div class="flex items-start justify-between mb-3"><div class="flex items-center space-x-2"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#1C1813] text-[#E8B931] shadow-xs">★ Today's Daily Challenge</span><span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-900 border border-amber-300">+50 XP</span></div><span class="text-[11px] text-[#7F7461] font-medium">Refreshes in 11 hrs</span></div><h3 class="text-lg font-bold font-serif text-[#1E1B18] mb-1.5" id="today-challenge-title">Linked Lists &amp; Stacks Implementation</h3><div class="flex flex-wrap items-center gap-2 mb-3"><span class="px-2 py-0.5 rounded bg-[#ECE3D0] text-[#554A38] text-xs font-medium">Data Structures &amp; Algorithms</span><span class="px-2 py-0.5 rounded bg-[#FAF2DE] text-[#71500C] text-xs font-medium border border-[#DEBE76]">Intermediate</span><span class="px-2 py-0.5 rounded bg-white text-[#524737] text-xs border border-[#DECDB0]">⏱ 45 minutes</span></div><p class="text-xs text-[#4E4435] leading-relaxed mb-4">Practice implementing singly linked lists and LIFO stack operations through bite-sized algorithmic challenges calibrated for your 2nd year Diploma CSE syllabus.</p><div class="flex items-center space-x-3 pt-3 border-t border-[#DECDB2]/60"><button class="px-4 py-2 bg-[#1C1813] hover:bg-[#2C271E] text-white text-xs font-bold rounded-lg transition flex items-center space-x-1.5 shadow" id="btn-start-today-challenge" type="button"><span class="text-[#E8B931]">▶</span><span id="label-start-today">Start Challenge →</span></button><button class="px-3 py-2 bg-white hover:bg-[#FAF6EE] text-[#473D2E] text-xs font-semibold rounded-lg border border-[#DECDB0] transition" type="button">View Details</button><div class="ml-auto text-[11px] text-emerald-800 font-semibold hidden" id="today-complete-badge">✓ Completed Today! (+50 XP Earned)</div></div></div><div><div class="flex items-center justify-between mb-3"><h3 class="text-sm font-bold text-[#1E1B18] tracking-tight uppercase">Explore Challenges</h3><span class="text-xs text-[#7C715D]">5 Available Tracks</span></div><div class="flex flex-wrap gap-1.5 mb-4" id="filter-pills"><button class="filter-pill active px-3 py-1 rounded-full text-xs font-medium bg-[#1C1813] text-white transition" data-category="all">All Challenges</button><button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-[#FAF7F2] text-[#554A38] border border-[#DECDB0] hover:bg-[#FAF2DE] transition" data-category="programming">Programming</button><button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-[#FAF7F2] text-[#554A38] border border-[#DECDB0] hover:bg-[#FAF2DE] transition" data-category="dsa">Data Structures</button><button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-[#FAF7F2] text-[#554A38] border border-[#DECDB0] hover:bg-[#FAF2DE] transition" data-category="web">Web Development</button><button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-[#FAF7F2] text-[#554A38] border border-[#DECDB0] hover:bg-[#FAF2DE] transition" data-category="sql">Database &amp; SQL</button><button class="filter-pill px-3 py-1 rounded-full text-xs font-medium bg-[#FAF7F2] text-[#554A38] border border-[#DECDB0] hover:bg-[#FAF2DE] transition" data-category="aptitude">Aptitude</button></div><div class="space-y-3.5" id="challenges-list"><div class="challenge-card bg-[#FAF7F2] rounded-xl p-4 border border-[#E6E0D4] shadow-sm hover:border-[#D4AF37]/50 transition" data-type="programming"><div class="flex items-start justify-between"><div class="space-y-1"><div><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#ECE3D0] text-[#554A38] mr-2">Programming</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FAF2DE] text-[#71500C]">Beginner</span><span class="text-xs text-[#7F7461] ml-2">⏱ 30 min</span></div><h4 class="text-sm font-bold text-[#1E1B18]">Python String Manipulation &amp; Logic</h4><p class="text-xs text-[#524737] leading-relaxed mt-1">Solve 5 core algorithmic puzzles focused on anagram detection, string reversing, and frequency mapping.</p></div><div class="text-right flex-shrink-0 ml-4"><span class="block text-xs font-bold text-[#846316] mb-2">+40 XP</span><button class="btn-challenge-action px-3 py-1.5 bg-[#E5D7B7] hover:bg-[#DBCBA5] text-[#332B1F] text-xs font-semibold rounded-lg border border-[#BFA779] transition" type="button">Start Challenge</button></div></div></div><div class="challenge-card bg-[#FAF7F2] rounded-xl p-4 border border-[#E6E0D4] shadow-sm hover:border-[#D4AF37]/50 transition" data-type="sql"><div class="flex items-start justify-between"><div class="space-y-1"><div><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#ECE3D0] text-[#554A38] mr-2">Database &amp; SQL</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FAF2DE] text-[#71500C]">Intermediate</span><span class="text-xs text-[#7F7461] ml-2">⏱ 40 min</span></div><h4 class="text-sm font-bold text-[#1E1B18]">SQL Multi-Table JOINs &amp; Aggregations</h4><p class="text-xs text-[#524737] leading-relaxed mt-1">Construct queries on real-world AP Mandi crop price datasets using INNER, LEFT, and aggregate GROUP BY operations.</p></div><div class="text-right flex-shrink-0 ml-4"><span class="block text-xs font-bold text-[#846316] mb-2">+50 XP</span><button class="btn-challenge-action px-3 py-1.5 bg-[#1C1813] hover:bg-[#2C271E] text-white text-xs font-semibold rounded-lg transition" type="button">Resume (60%)</button></div></div></div><div class="challenge-card bg-[#FAF7F2] rounded-xl p-4 border border-[#E6E0D4] shadow-sm hover:border-[#D4AF37]/50 transition" data-type="dsa"><div class="flex items-start justify-between"><div class="space-y-1"><div><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#ECE3D0] text-[#554A38] mr-2">Data Structures</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FAF2DE] text-[#71500C]">Intermediate</span><span class="text-xs text-[#7F7461] ml-2">⏱ 60 min</span></div><h4 class="text-sm font-bold text-[#1E1B18]">Binary Tree Traversal (Inorder &amp; Preorder)</h4><p class="text-xs text-[#524737] leading-relaxed mt-1">Construct tree node structures and write recursive traversal methods for hierarchical student attendance records.</p></div><div class="text-right flex-shrink-0 ml-4"><span class="block text-xs font-bold text-[#846316] mb-2">+75 XP</span><button class="btn-challenge-action px-3 py-1.5 bg-[#E5D7B7] hover:bg-[#DBCBA5] text-[#332B1F] text-xs font-semibold rounded-lg border border-[#BFA779] transition" type="button">Start Challenge</button></div></div></div><div class="challenge-card bg-[#FAF7F2] rounded-xl p-4 border border-[#E6E0D4] shadow-sm hover:border-[#D4AF37]/50 transition" data-type="web"><div class="flex items-start justify-between"><div class="space-y-1"><div><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#ECE3D0] text-[#554A38] mr-2">Web Development</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FAF2DE] text-[#71500C]">Intermediate</span><span class="text-xs text-[#7F7461] ml-2">⏱ 45 min</span></div><h4 class="text-sm font-bold text-[#1E1B18]">Responsive Village Panchayat Dashboard Card</h4><p class="text-xs text-[#524737] leading-relaxed mt-1">Build a lightweight, mobile-responsive stats widget using HTML5 semantic tags and clean utility styling.</p></div><div class="text-right flex-shrink-0 ml-4"><span class="block text-xs font-bold text-[#846316] mb-2">+60 XP</span><button class="btn-challenge-action px-3 py-1.5 bg-[#E5D7B7] hover:bg-[#DBCBA5] text-[#332B1F] text-xs font-semibold rounded-lg border border-[#BFA779] transition" type="button">Start Challenge</button></div></div></div><div class="challenge-card bg-[#FAF7F2] rounded-xl p-4 border border-[#E6E0D4] opacity-90 shadow-sm" data-type="aptitude"><div class="flex items-start justify-between"><div class="space-y-1"><div><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#ECE3D0] text-[#554A38] mr-2">Aptitude</span><span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FAF2DE] text-[#71500C]">Beginner</span><span class="text-xs text-[#7F7461] ml-2">⏱ 25 min</span></div><h4 class="text-sm font-bold text-[#1E1B18]">Aptitude &amp; Logical Reasoning Sprint</h4><p class="text-xs text-[#524737] leading-relaxed mt-1">15 questions covering numerical patterns, syllogisms, and coding-decoding puzzles for technical placement screening.</p></div><div class="text-right flex-shrink-0 ml-4"><span class="block text-xs font-bold text-emerald-700 mb-2">+35 XP</span><span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-xs font-bold">✓ Completed</span></div></div></div></div></div></div><div class="col-span-12 lg:col-span-5 space-y-5"><div class="bg-[#FAF7F2] rounded-xl p-5 border border-[#E6E0D4] shadow-sm"><div class="flex items-center justify-between border-b border-[#F0EAD6] pb-3 mb-3"><div class="flex items-center space-x-2"><span class="w-6 h-6 rounded-full bg-[#FAF3DE] text-[#846316] font-bold text-xs flex items-center justify-center border border-[#DEC37A]">🏅</span><h3 class="text-sm font-bold text-[#1E1B18] tracking-tight">Badges &amp; Achievements</h3></div><span class="text-xs font-semibold text-[#8B6B18]">3 of 8 Unlocked</span></div><div class="grid grid-cols-3 gap-2.5"><div class="p-2.5 bg-white rounded-lg border border-[#DEBE76] text-center shadow-xs"><div class="w-8 h-8 rounded-full bg-[#FAF2DE] text-[#D4AF37] flex items-center justify-center mx-auto mb-1 text-sm font-bold">🏆</div><h4 class="text-[11px] font-bold text-[#231E17] leading-tight">Problem Solver</h4><span class="text-[9px] text-emerald-700 font-semibold">Unlocked ✓</span></div><div class="p-2.5 bg-white rounded-lg border border-[#DEBE76] text-center shadow-xs"><div class="w-8 h-8 rounded-full bg-[#FAF2DE] text-[#D4AF37] flex items-center justify-center mx-auto mb-1 text-sm font-bold">💻</div><h4 class="text-[11px] font-bold text-[#231E17] leading-tight">Python Starter</h4><span class="text-[9px] text-emerald-700 font-semibold">Unlocked ✓</span></div><div class="p-2.5 bg-white rounded-lg border border-[#DEBE76] text-center shadow-xs"><div class="w-8 h-8 rounded-full bg-[#FAF2DE] text-[#D4AF37] flex items-center justify-center mx-auto mb-1 text-sm font-bold">🔥</div><h4 class="text-[11px] font-bold text-[#231E17] leading-tight">Consistency</h4><span class="text-[9px] text-emerald-700 font-semibold">Unlocked ✓</span></div><div class="p-2.5 bg-[#F9F6F0] rounded-lg border border-[#E5DBCA] text-center opacity-85"><div class="w-8 h-8 rounded-full bg-[#ECE3D0] text-[#7C715D] flex items-center justify-center mx-auto mb-1 text-sm font-bold">🗄️</div><h4 class="text-[11px] font-bold text-[#473D2E] leading-tight">SQL Explorer</h4><span class="text-[9px] text-[#8B6B18] font-semibold">80% Done</span></div><div class="p-2.5 bg-[#F4EFE6] rounded-lg border border-[#DECDB2] text-center opacity-60"><div class="w-8 h-8 rounded-full bg-[#E5DBCA] text-[#7C715D] flex items-center justify-center mx-auto mb-1 text-sm font-bold">🔒</div><h4 class="text-[11px] font-bold text-[#6D604C] leading-tight">Career Ready</h4><span class="text-[9px] text-[#7C715D]">Locked</span></div><div class="p-2.5 bg-[#F4EFE6] rounded-lg border border-[#DECDB2] text-center opacity-60"><div class="w-8 h-8 rounded-full bg-[#E5DBCA] text-[#7C715D] flex items-center justify-center mx-auto mb-1 text-sm font-bold">🔒</div><h4 class="text-[11px] font-bold text-[#6D604C] leading-tight">Algo Master</h4><span class="text-[9px] text-[#7C715D]">Locked</span></div></div></div><div class="bg-[#FAF7F2] rounded-xl p-5 border border-[#DFD3B7] shadow-sm"><div class="flex items-center space-x-2.5 pb-2.5 border-b border-[#F0EAD6] mb-3"><div class="w-7 h-7 rounded-full bg-[#FAF2DE] text-[#846316] font-bold text-xs flex items-center justify-center border border-[#DEC37A]">✨</div><div><h4 class="text-xs font-bold text-[#1E1B18]">Margdarshak AI Challenge Mentor</h4><span class="text-[10px] text-emerald-700 font-medium">● Online &amp; Analyzing Venkat's Track</span></div></div><p class="text-xs text-[#524737] leading-relaxed italic bg-white p-3 rounded-lg border border-[#E5DBCA]">“Your Python and problem-solving progress is strong (84.5% Diploma CSE benchmark). Your next high-leverage focus should be Linked Lists, SQL joins, and one practical web project to unlock Level 6 Explorer.”</p><div class="flex items-center justify-between gap-2 mt-3"><button class="flex-1 px-3 py-1.5 bg-[#FAF4DE] text-[#755513] text-xs font-bold rounded-lg border border-[#D5BC78] hover:bg-[#F3E7C1] transition" type="button">Ask AI Mentor →</button><button class="px-3 py-1.5 bg-white text-[#473D2E] text-xs font-semibold rounded-lg border border-[#DECDB0] hover:bg-[#FAF6EE] transition" type="button">Generate Custom</button></div></div><div class="bg-[#FAF7F2] rounded-xl p-5 border border-[#E6E0D4] shadow-sm"><div class="flex items-center justify-between border-b border-[#F0EAD6] pb-2.5 mb-3"><h4 class="text-xs font-bold text-[#1E1B18] uppercase tracking-wider">Your XP Activity Log</h4><span class="text-xs font-bold text-[#846316]">+185 XP This Week</span></div><div class="space-y-2.5 text-xs text-[#4E4435]"><div class="flex items-center justify-between p-2 bg-white rounded-lg border border-[#E5DBCA]"><div><p class="font-bold text-[#231E17]">Completed Python Challenge</p><span class="text-[10px] text-[#7C715D]">Today • 10:45 AM</span></div><span class="text-xs font-bold text-emerald-700">+40 XP</span></div><div class="flex items-center justify-between p-2 bg-white rounded-lg border border-[#E5DBCA]"><div><p class="font-bold text-[#231E17]">Daily Streak Bonus</p><span class="text-[10px] text-[#7C715D]">Today • 08:30 AM</span></div><span class="text-xs font-bold text-amber-600">+20 XP</span></div><div class="flex items-center justify-between p-2 bg-white rounded-lg border border-[#E5DBCA]"><div><p class="font-bold text-[#231E17]">Completed SQL Joins Challenge</p><span class="text-[10px] text-[#7C715D]">Yesterday • 06:15 PM</span></div><span class="text-xs font-bold text-emerald-700">+50 XP</span></div><div class="flex items-center justify-between p-2 bg-white rounded-lg border border-[#E5DBCA]"><div><p class="font-bold text-[#231E17]">Weekly Milestone Bonus</p><span class="text-[10px] text-[#7C715D]">3 days ago</span></div><span class="text-xs font-bold text-[#D4AF37]">+75 XP</span></div></div><div class="mt-3 pt-2.5 border-t border-[#F0EAD6] flex justify-between items-center text-xs"><span class="text-[#7C715D]">Lifetime Earned:</span><span class="font-bold text-[#1E1B18] font-mono">1,420 Total XP</span></div></div></div></div><footer class="mt-16 pt-8 border-t border-[#DFD5BE] text-center" data-purpose="platform-footer"><p class="text-[0.7rem] font-bold tracking-[0.2em] text-[#8C7645] uppercase">RURAL TALENT • GLOBAL OPPORTUNITIES • A BRIGHTER INDIA</p><blockquote class="font-serif italic text-sm text-[#4E4436] max-w-xl mx-auto mt-2 leading-relaxed">“Education is the most powerful weapon which you can use to change your future.”<footer class="text-xs not-italic font-sans font-semibold text-[#8C7B60] mt-1">— Dr. A.P.J. Abdul Kalam</footer></blockquote><div class="mt-4 text-xs font-medium text-[#6D604C]">FROM VILLAGES TO THE WORLD &nbsp;|&nbsp; మన ఊరు - మన భవిష్యత్తు (Mana Ooru - Mana Bhavishyatu)</div><p class="text-[0.68rem] text-[#91846D] mt-2">© 2025 Margdarshak Rural Advancement Initiative. Andhra Pradesh &amp; Telangana Student Portal.</p></footer><script>const btnStartToday = document.getElementById('btn-start-today-challenge'); const btnHeroToday = document.getElementById('btn-hero-today-action'); const xpDisplay = document.getElementById('display-current-xp'); const xpRemainingDisplay = document.getElementById('display-xp-remaining'); const xpBar = document.getElementById('xp-progress-bar'); const badgeComplete = document.getElementById('today-complete-badge'); const labelStartToday = document.getElementById('label-start-today'); function triggerCompleteToday() { if (btnStartToday && !btnStartToday.disabled) { let currentXP = parseInt(xpDisplay ? xpDisplay.textContent : '320', 10); currentXP += 50; if (xpDisplay) xpDisplay.textContent = currentXP; const rem = Math.max(0, 500 - currentXP); if (xpRemainingDisplay) xpRemainingDisplay.textContent = rem + ' XP to Level 6'; if (xpBar) xpBar.style.width = Math.min(100, Math.round((currentXP / 500) * 100)) + '%'; if (badgeComplete) badgeComplete.classList.remove('hidden'); if (labelStartToday) labelStartToday.textContent = 'Completed ✓ (+50 XP)'; btnStartToday.disabled = true; btnStartToday.classList.add('opacity-75', 'cursor-default'); if (btnHeroToday) { btnHeroToday.textContent = '✓ Daily Challenge Done (+50 XP)'; btnHeroToday.classList.remove('bg-[#1C1813]'); btnHeroToday.classList.add('bg-emerald-800'); }  } } btnStartToday?.addEventListener('click', triggerCompleteToday); btnHeroToday?.addEventListener('click', () => { document.getElementById('card-todays-challenge')?.scrollIntoView({ behavior: 'smooth' }); }); document.getElementById('btn-scroll-all-challenges')?.addEventListener('click', () => { document.getElementById('challenges-list')?.scrollIntoView({ behavior: 'smooth' }); }); document.querySelectorAll('.filter-pill').forEach(pill => { pill.addEventListener('click', (e) => { document.querySelectorAll('.filter-pill').forEach(p => { p.classList.remove('active', 'bg-[#1C1813]', 'text-white'); p.classList.add('bg-[#FAF7F2]', 'text-[#554A38]', 'border', 'border-[#DECDB0]'); }); pill.classList.add('active', 'bg-[#1C1813]', 'text-white'); pill.classList.remove('bg-[#FAF7F2]', 'text-[#554A38]', 'border', 'border-[#DECDB0]'); const cat = pill.getAttribute('data-category'); document.querySelectorAll('.challenge-card').forEach(card => { if (cat === 'all' || card.getAttribute('data-type') === cat) { card.style.display = 'block'; } else { card.style.display = 'none'; } }); }); });</script></main>
+</div>
+</div>
+<script src="/public/js/profile-hydration.js"></script>
+
+
+</body></html>

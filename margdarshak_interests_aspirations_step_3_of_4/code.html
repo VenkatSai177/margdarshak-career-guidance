@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Margdarshak - Interests &amp; Aspirations (Step 3 of 4)</title>
+<!-- Google Fonts: Playfair Display for editorial serif, Plus Jakarta Sans for UI -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with forms & container queries -->
+<script>
+  // Safely intercept and silence the expected Tailwind CDN warning
+  const originalWarn = console.warn;
+  console.warn = function() {
+    if (arguments[0] && typeof arguments[0] === 'string' && arguments[0].includes('cdn.tailwindcss.com')) return;
+    originalWarn.apply(console, arguments);
+  };
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#0B0D0E',
+              dark: '#0F1113',
+              cardDark: '#16191C',
+              cream: '#FAF7F0',
+              creamHover: '#F4EFE6',
+              gold: '#C59B27',
+              goldLight: '#D4AF37',
+              goldMuted: '#9B7A1E',
+              goldSoft: '#FDF7E7',
+              goldBorder: '#D4AF37',
+              charcoal: '#1F1E1D',
+              borderDark: '#2B2D2F',
+              subtle: '#686561'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          boxShadow: {
+            'creamCard': '0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px rgba(197, 155, 39, 0.08)',
+            'goldGlow': '0 8px 24px -4px rgba(197, 155, 39, 0.35)',
+            'activeChip': '0 4px 12px rgba(197, 155, 39, 0.15)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Style Configuration -->
+<style data-purpose="scrollbar-and-effects">
+    /* Custom subtle scrollbar for the right interactive panel */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #F3EFE6;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #C59B27;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #A8821B;
+    }
+
+    /* Selection pill animation transition */
+    .chip-toggle {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .chip-toggle.active {
+      background-color: #FDF7E7 !important;
+      border-color: #C59B27 !important;
+      color: #7A5B0B !important;
+      box-shadow: 0 4px 14px -2px rgba(197, 155, 39, 0.18);
+    }
+    .chip-toggle.active .check-icon {
+      opacity: 1 !important;
+      transform: scale(1) !important;
+    }
+    .radio-card.active {
+      background-color: #FDF7E7 !important;
+      border-color: #C59B27 !important;
+      color: #1F1E1D !important;
+      box-shadow: 0 4px 16px -2px rgba(197, 155, 39, 0.2);
+    }
+    .radio-card.active .radio-indicator {
+      border-color: #C59B27 !important;
+      background-color: #C59B27 !important;
+    }
+  </style>
+<!-- END: Custom Style Configuration -->
+</head>
+<body class="h-full bg-brand-black font-sans text-brand-charcoal antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white">
+<!-- BEGIN: Master Application Shell (1440px desktop viewport target) -->
+<div class="min-h-screen w-full flex flex-col lg:flex-row bg-brand-black text-slate-100">
+<!-- BEGIN: Left Brand Story Panel (Visual & Inspiring Anchor) -->
+<aside class="relative w-full lg:w-[46%] xl:w-[48%] h-72 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-between p-6 sm:p-8 lg:p-12 overflow-hidden border-b lg:border-b-0 lg:border-r border-brand-borderDark/40">
+<!-- Background Image with Depth & Golden Hour Overlays -->
+<div class="absolute inset-0 z-0">
+<img alt="Rural Indian student admiring terraced valleys during sunset" class="w-full h-full object-cover object-center transform scale-105" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop"/>
+<!-- Multi-layer gradient overlays for cinematic mood and editorial text legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-dark/85 to-brand-black/70 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-transparent to-brand-black/60"></div>
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- Left Top Navigation Bar -->
+<div class="relative z-10 flex items-center justify-between gap-3 w-full">
+<!-- Back Button -->
+<a class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark/80 backdrop-blur-md border border-white/10 text-xs font-semibold tracking-wider text-slate-300 hover:text-white hover:border-brand-gold/60 transition duration-200" href="/study-details">
+<svg class="w-3.5 h-3.5 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+          BACK TO STUDY DETAILS
+        </a>
+<!-- Cultural Emblem Calligraphy Badge -->
+<div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/40 text-brand-goldLight text-xs tracking-wide">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+<span>చదువు • మార్గం • భవిష్యత్తు</span>
+</div>
+</div>
+<!-- Left Center Story & Branding -->
+<div class="relative z-10 my-auto py-8 hidden lg:block">
+<!-- Brand Emblem -->
+<div class="flex items-center gap-3.5 mb-6">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-gold to-amber-700 flex items-center justify-center shadow-lg shadow-brand-gold/20 border border-brand-goldLight/40">
+<svg class="w-6 h-6 text-brand-black" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"></path>
+</svg>
+</div>
+<div>
+<h2 class="text-sm font-bold tracking-[0.22em] text-brand-gold uppercase">Margdarshak</h2>
+<p class="text-[11px] tracking-widest text-slate-400 font-medium uppercase">Guiding Rural Dreams</p>
+</div>
+</div>
+<p class="text-xs font-bold tracking-[0.25em] text-brand-goldLight uppercase mb-2">Same Roots. Bigger Dreams.</p>
+<h1 class="text-3xl xl:text-4xl font-serif font-bold text-white leading-tight mb-4">
+          Discover what drives you.<br/>
+<span class="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-goldLight via-amber-200 to-brand-gold font-normal">Your strengths. Your direction.</span>
+</h1>
+<p class="text-sm text-slate-300/90 leading-relaxed max-w-lg mb-8">
+          Tell us what you enjoy, what you're good at, and where you'd like to go. Margdarshak will help connect the dots with curated colleges, mentors, and fully-funded scholarships.
+        </p>
+<!-- Kalam Inspiration Quote Card -->
+<div class="relative bg-brand-cardDark/85 backdrop-blur-md rounded-2xl p-5 border border-brand-gold/30 shadow-xl max-w-md">
+<div class="flex items-center justify-between mb-2.5">
+<span class="px-2.5 py-0.5 rounded-md bg-brand-gold/20 text-brand-goldLight text-[10px] font-bold tracking-widest uppercase border border-brand-gold/30">
+              Inspiration
+            </span>
+<span class="text-brand-gold text-lg">“</span>
+</div>
+<blockquote class="text-xs italic text-slate-200 leading-relaxed">
+            "Your roots are where your journey begins. Education gives your dreams the wings to soar."
+          </blockquote>
+<p class="text-[11px] font-bold tracking-wider text-brand-gold mt-2 uppercase">
+            — Dr. A.P.J. Abdul Kalam
+          </p>
+</div>
+</div>
+<!-- Left Bottom Milestone Counter Pill -->
+<div class="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+<div class="flex items-center gap-2">
+<span class="text-base">👥</span>
+<span class="font-medium"><strong class="text-white font-bold">50,000+</strong> Rural Students Guided</span>
+</div>
+<div class="h-4 w-px bg-white/20"></div>
+<div class="flex items-center gap-2">
+<span class="text-base">💳</span>
+<span class="font-medium"><strong class="text-white font-bold">₹5 Cr+</strong> Scholarships Discovered</span>
+</div>
+</div>
+</aside>
+<!-- END: Left Brand Story Panel -->
+<!-- BEGIN: Right Interactive Form Area -->
+<main class="w-full lg:w-[54%] xl:w-[52%] flex flex-col justify-start items-center p-4 sm:p-6 lg:p-10 bg-brand-black">
+<!-- Top Action Bar (Helper Trigger) -->
+<div class="w-full max-w-2xl flex justify-end items-center mb-4">
+<button class="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-cardDark hover:bg-brand-dark border border-brand-gold/40 hover:border-brand-gold text-brand-goldLight hover:text-white text-xs font-semibold tracking-wide shadow-md transition-all duration-200 cursor-pointer active:scale-95" data-purpose="demo-helper-button" id="btn-fill-demo" type="button">
+<span class="text-brand-gold group-hover:scale-125 transition-transform duration-200">⚡</span>
+<span>Fill Demo Interests</span>
+</button>
+</div>
+<!-- Floating Cream Stationery Card -->
+<div class="w-full max-w-2xl bg-brand-cream border border-brand-goldBorder/40 rounded-[28px] sm:rounded-[32px] p-6 sm:p-10 shadow-creamCard custom-scrollbar text-brand-charcoal transition-all">
+<!-- Header Emblem & Brand Marker Inside Card -->
+<div class="flex flex-col items-center text-center pb-6 border-b border-brand-charcoal/10">
+<div class="w-12 h-12 rounded-2xl bg-brand-gold/15 border border-brand-gold/40 flex items-center justify-center mb-3">
+<svg class="w-6 h-6 text-brand-goldMuted" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L1 7l11 5l9-4.09V17h2V7L12 2zM5 11.5v4.5l7 3.5l7-3.5v-4.5L12 15l-7-3.5z"></path>
+</svg>
+</div>
+<span class="text-[11px] font-bold tracking-[0.24em] text-brand-goldMuted uppercase">Margdarshak • Margdarshak Career Matrix</span>
+<h2 class="text-2xl sm:text-3xl font-serif font-bold text-brand-charcoal mt-1">Discover What Drives You</h2>
+<p class="text-xs sm:text-sm text-brand-subtle mt-1.5 max-w-md">Tell us what you enjoy and where you see yourself. There are no wrong answers.</p>
+</div>
+<!-- Progress Tracker Bar (Step 3 of 4 = 75%) -->
+<div class="py-5 border-b border-brand-charcoal/10" data-purpose="onboarding-progress">
+<div class="flex items-center justify-between text-xs font-bold mb-2">
+<span class="text-brand-goldMuted tracking-wider uppercase flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-brand-gold"></span>
+              STEP 3 OF 4: INTERESTS &amp; ASPIRATIONS
+            </span>
+<span class="text-brand-charcoal font-semibold">75%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-stone-200 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-brand-gold via-amber-500 to-brand-goldLight rounded-full transition-all duration-500" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Interactive Form Body -->
+<form action="/profile-review" class="space-y-8 pt-6" id="interests-form" method="GET">
+<!-- SECTION 1: WHAT INTERESTS YOU? -->
+<section data-purpose="interest-domains">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5">
+<span>🌟</span>
+                WHAT INTERESTS YOU? <span class="text-red-600">*</span>
+</label>
+<span class="text-[11px] text-stone-500">Select multiple</span>
+</div>
+<p class="text-xs text-stone-600 mb-3">Choose the broad disciplines you'd like to explore and learn about.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="interests-grid">
+<!-- Multi-select chips -->
+<button class="chip-toggle active w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="technology" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">💻</span> Technology &amp; IT
+                </span>
+<span class="check-icon opacity-100 transform scale-100 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle active w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="ai-data" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🤖</span> AI &amp; Data Science
+                </span>
+<span class="check-icon opacity-100 transform scale-100 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle active w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="engineering" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">⚙️</span> Engineering
+                </span>
+<span class="check-icon opacity-100 transform scale-100 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="medicine" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🩺</span> Medicine &amp; Healthcare
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="civil-services" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🏛️</span> Government &amp; Civil Services
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="teaching" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">📚</span> Teaching &amp; Education
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="agriculture" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🌾</span> Agriculture &amp; Rural Tech
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="entrepreneurship" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">💼</span> Business &amp; Entrepreneurship
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="finance" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">📈</span> Finance &amp; Banking
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="design-media" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🎨</span> Design &amp; Media
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="defence" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🛡️</span> Defence &amp; Public Safety
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="skilled-trades" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🔧</span> Skilled Trades &amp; ITI
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="sustainability" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🌱</span> Environment &amp; Sustainability
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 text-left" data-value="sciences" type="button">
+<span class="flex items-center gap-2">
+<span class="text-sm">🔬</span> Research &amp; Pure Sciences
+                </span>
+<span class="check-icon opacity-0 transform scale-75 text-brand-gold font-bold transition-all">✓</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: WHAT ARE YOU GOOD AT? -->
+<section class="pt-4 border-t border-brand-charcoal/10" data-purpose="student-strengths">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5">
+<span>⚡</span>
+                WHAT ARE YOU GOOD AT? (YOUR STRENGTHS) <span class="text-red-600">*</span>
+</label>
+<span class="text-[11px] text-stone-500">Pick top 3-4</span>
+</div>
+<p class="text-xs text-stone-600 mb-3">Recognizing your natural strengths helps us find the best fit for you.</p>
+<div class="flex flex-wrap gap-2" id="strengths-chip-container">
+<button class="chip-toggle active px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="problem-solving" type="button">
+<span>🧩 Problem Solving</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="math" type="button">
+<span>📐 Mathematics</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="communication" type="button">
+<span>🗣️ Communication &amp; Speaking</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="creativity" type="button">
+<span>💡 Creativity &amp; Ideation</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="leadership" type="button">
+<span>👑 Leadership</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle active px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="analytical" type="button">
+<span>🔍 Analytical Thinking</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle active px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="working-tech" type="button">
+<span>💻 Working with Technology</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="hands-on" type="button">
+<span>🛠️ Practical / Hands-on Work</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="helping" type="button">
+<span>🤝 Helping Others</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/60 text-xs font-medium text-stone-800 flex items-center gap-1.5" data-value="organizing" type="button">
+<span>📋 Organizing &amp; Planning</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<!-- Special Reassurance Pill -->
+<button class="chip-toggle px-3.5 py-2 rounded-xl border border-dashed border-amber-400 bg-amber-50/70 hover:bg-amber-100/60 text-xs font-medium text-amber-900 flex items-center gap-1.5" data-value="discovering" type="button">
+<span>✨ Still Discovering My Strengths</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+</div>
+</section>
+<!-- SECTION 3: WHAT DO YOU ENJOY DOING? -->
+<section class="pt-4 border-t border-brand-charcoal/10" data-purpose="hobbies-and-enjoyment">
+<div class="mb-2">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5">
+<span>💡</span>
+                WHAT DO YOU ENJOY DOING?
+              </label>
+<p class="text-xs text-stone-600 mt-0.5">Things that make you lose track of time.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="enjoyment-container">
+<button class="chip-toggle active w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="building" type="button">
+<span>🛠️ Building things</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle active w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="puzzles" type="button">
+<span>🧩 Solving tricky puzzles</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="gadgets" type="button">
+<span>📱 Using computers &amp; phones</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="village-help" type="button">
+<span>🌱 Helping people in my village</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="teaching-others" type="button">
+<span>📖 Teaching others</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="outdoors" type="button">
+<span>🚜 Working outdoors / agriculture</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="machines" type="button">
+<span>⚙️ Working with machines &amp; tools</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="reading" type="button">
+<span>📚 Reading &amp; learning new topics</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+</div>
+</section>
+<!-- SECTION 4: WHERE DO YOU SEE YOURSELF? (CAREER ASPIRATIONS) -->
+<section class="pt-4 border-t border-brand-charcoal/10" data-purpose="career-aspirations">
+<div class="flex items-center justify-between mb-1.5">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5">
+<span>🎯</span>
+                WHERE DO YOU SEE YOURSELF? <span class="text-red-600">*</span>
+</label>
+<span class="text-[11px] text-stone-500">Select one primary pathway</span>
+</div>
+<p class="text-xs text-stone-600 mb-3">What kind of career excites you right now?</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="aspiration-radio-group">
+<!-- Radio option cards -->
+<div class="radio-card active cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="software-it">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Software Engineer / IT</div>
+<div class="text-[11px] text-stone-500">Tech companies, apps &amp; systems</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="ai-data">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">AI &amp; Data Scientist</div>
+<div class="text-[11px] text-stone-500">Machine learning, automation</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="core-eng">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Core Engineering</div>
+<div class="text-[11px] text-stone-500">Civil, Mechanical, Electrical</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="govt-jobs">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Government Officer</div>
+<div class="text-[11px] text-stone-500">UPSC, State PSC, Banking exams</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="healthcare">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Healthcare / Doctor</div>
+<div class="text-[11px] text-stone-500">Medical, Nursing, Pharmacy</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="teacher">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Teacher / Professor</div>
+<div class="text-[11px] text-stone-500">School, College, Research</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="agri-business">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Agri-Business &amp; Tech</div>
+<div class="text-[11px] text-stone-500">Modern farming, rural enterprise</div>
+</div>
+</div>
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-stone-300 bg-white hover:border-brand-gold/70 transition-all flex items-center gap-3" data-radio-val="defence">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-stone-400 flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-stone-900">Defence / Police Forces</div>
+<div class="text-[11px] text-stone-500">Army, Navy, Air Force, Police</div>
+</div>
+</div>
+<!-- Special Not Sure Yet Full-Width Card -->
+<div class="radio-card cursor-pointer p-3 rounded-xl border border-amber-300 bg-amber-50/50 hover:bg-amber-100/60 transition-all flex items-center gap-3 sm:col-span-2" data-radio-val="not-sure">
+<div class="radio-indicator w-4 h-4 rounded-full border-2 border-brand-gold flex items-center justify-center p-0.5">
+<div class="w-2 h-2 rounded-full bg-transparent"></div>
+</div>
+<div>
+<div class="text-xs font-bold text-brand-goldMuted flex items-center gap-1.5">
+<span>🧭</span> Not Sure Yet (Need Margdarshak Guidance)
+                  </div>
+<div class="text-[11px] text-stone-600">We will recommend based on your high school marks and strengths.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: YOUR DREAM & VISION (OPTIONAL) -->
+<section class="pt-4 border-t border-brand-charcoal/10" data-purpose="dream-vision">
+<div class="mb-2">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5" for="dream-input">
+<span>✨</span>
+                YOUR BIG DREAM <span class="text-stone-400 font-normal lowercase">(optional)</span>
+</label>
+<p class="text-xs text-stone-600 mt-0.5">If you could achieve one great goal for your family or village, what would it be?</p>
+</div>
+<div class="relative">
+<textarea class="w-full text-xs sm:text-sm rounded-xl border-stone-300 bg-white focus:border-brand-gold focus:ring-brand-gold/30 placeholder:text-stone-400 p-3 leading-relaxed shadow-sm transition" id="dream-input" placeholder="e.g. I want to build software solutions to help rural farmers in my district sell crops without middlemen..." rows="3">I want to become a software engineer and build digital solutions to help farmers in my mandal get fair market prices.</textarea>
+<div class="mt-1 flex justify-between items-center text-[11px] text-stone-500">
+<span>Write in English or your regional language</span>
+<span>Don't worry if you're still figuring it out.</span>
+</div>
+</div>
+</section>
+<!-- SECTION 6: HOW CAN MARGDARSHAK HELP YOU? -->
+<section class="pt-4 border-t border-brand-charcoal/10" data-purpose="platform-support">
+<div class="mb-2">
+<label class="text-xs font-bold tracking-wider text-brand-goldMuted uppercase flex items-center gap-1.5">
+<span>🤝</span>
+                WHAT WOULD YOU LIKE MARGDARSHAK TO HELP WITH?
+              </label>
+<p class="text-xs text-stone-600 mt-0.5">Select what support matters most to you right now.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="help-options-container">
+<button class="chip-toggle active w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="career-choice" type="button">
+<span>🎯 Choosing the Right Career</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle active w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="scholarships" type="button">
+<span>💰 Finding Scholarships</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle active w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="in-demand-skills" type="button">
+<span>⚡ Building In-Demand Skills</span>
+<span class="check-icon opacity-100 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="admissions-near" type="button">
+<span>🏫 College Admissions Near Me</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="govt-prep" type="button">
+<span>📝 Government Exam Prep</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+<button class="chip-toggle w-full flex items-center justify-between p-2.5 rounded-xl border border-stone-300 bg-white text-xs font-medium text-stone-800 text-left" data-value="interviews" type="button">
+<span>💼 Placement &amp; Interview Guidance</span>
+<span class="check-icon opacity-0 text-brand-gold font-bold">✓</span>
+</button>
+</div>
+</section>
+<!-- ACTIONS & SUBMISSION -->
+<div class="pt-6 border-t border-brand-charcoal/15 flex flex-col items-center gap-3.5" data-purpose="form-actions">
+<!-- Primary Submit Button -->
+<button class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-500 to-brand-gold text-brand-black hover:brightness-105 font-bold text-sm sm:text-base tracking-wide shadow-goldGlow hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer active:scale-[0.99]" type="submit">
+<span>Continue to Profile Review</span>
+<span class="transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+</button>
+<!-- Secondary Link -->
+<a class="text-xs font-semibold text-stone-600 hover:text-brand-charcoal transition-colors underline-offset-4 hover:underline" href="/dashboard">
+              Save &amp; Continue Later
+            </a>
+<!-- Card Bottom Trust Markers -->
+<div class="pt-3 text-center border-t border-stone-200/80 w-full">
+<p class="text-[10px] font-semibold tracking-widest text-stone-500 uppercase">
+                FREE FOR RURAL INDIA • GOVERNMENT SCHOLARSHIP SYNC • 100% VERIFIED PATHWAYS
+              </p>
+</div>
+</div>
+</form>
+</div>
+<!-- Mobile Brand Note (Shows on small screens where sidebar is shortened) -->
+<div class="mt-6 text-center text-xs text-slate-400 lg:hidden">
+<p>Margdarshak • Guiding Rural Dreams • చదువు • మార్గం • భవిష్యత్తు</p>
+</div>
+</main>
+<!-- END: Right Interactive Form Area -->
+</div>
+<!-- END: Master Application Shell -->
+<!-- BEGIN: Client Interactivity Script -->
+<script data-purpose="chip-and-demo-interactivity">
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Handle Multi-Select Chips (Toggling active state)
+      const allChips = document.querySelectorAll('.chip-toggle');
+      allChips.forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isActive = chip.classList.contains('active');
+          const checkIcon = chip.querySelector('.check-icon');
+
+          if (isActive) {
+            chip.classList.remove('active');
+            if (checkIcon) {
+              checkIcon.classList.remove('opacity-100', 'scale-100');
+              checkIcon.classList.add('opacity-0', 'scale-75');
+            }
+          } else {
+            chip.classList.add('active');
+            if (checkIcon) {
+              checkIcon.classList.remove('opacity-0', 'scale-75');
+              checkIcon.classList.add('opacity-100', 'scale-100');
+            }
+          }
+        });
+      });
+
+      // 2. Handle Single-Select Radio Cards (Career Aspirations)
+      const radioCards = document.querySelectorAll('.radio-card');
+      radioCards.forEach(card => {
+        card.addEventListener('click', () => {
+          radioCards.forEach(c => {
+            c.classList.remove('active');
+            const dot = c.querySelector('.radio-indicator div');
+            if (dot) dot.classList.add('bg-transparent');
+          });
+
+          card.classList.add('active');
+          const activeDot = card.querySelector('.radio-indicator div');
+          if (activeDot) {
+            activeDot.classList.remove('bg-transparent');
+            activeDot.classList.add('bg-white');
+          }
+        });
+      });
+
+      // 3. Demo Helper Button Interaction (Pre-populates values)
+      const demoBtn = document.getElementById('btn-fill-demo');
+      if (demoBtn) {
+        demoBtn.addEventListener('click', () => {
+          // Add quick flash effect on button
+          demoBtn.classList.add('ring-2', 'ring-brand-gold');
+          setTimeout(() => demoBtn.classList.remove('ring-2', 'ring-brand-gold'), 600);
+
+          // Target values for demo
+          const activeInterests = ['technology', 'ai-data', 'engineering', 'agriculture'];
+          const activeStrengths = ['problem-solving', 'analytical', 'working-tech', 'math'];
+          const activeEnjoyments = ['building', 'puzzles', 'gadgets'];
+          const activeHelps = ['career-choice', 'scholarships', 'in-demand-skills'];
+
+          // Sync chips
+          allChips.forEach(chip => {
+            const val = chip.getAttribute('data-value');
+            const checkIcon = chip.querySelector('.check-icon');
+
+            if (
+              activeInterests.includes(val) ||
+              activeStrengths.includes(val) ||
+              activeEnjoyments.includes(val) ||
+              activeHelps.includes(val)
+            ) {
+              chip.classList.add('active');
+              if (checkIcon) {
+                checkIcon.classList.remove('opacity-0', 'scale-75');
+                checkIcon.classList.add('opacity-100', 'scale-100');
+              }
+            } else {
+              chip.classList.remove('active');
+              if (checkIcon) {
+                checkIcon.classList.remove('opacity-100', 'scale-100');
+                checkIcon.classList.add('opacity-0', 'scale-75');
+              }
+            }
+          });
+
+          // Set radio card to Software / IT
+          radioCards.forEach(card => {
+            const isSoftware = card.getAttribute('data-radio-val') === 'software-it';
+            card.classList.toggle('active', isSoftware);
+            const dot = card.querySelector('.radio-indicator div');
+            if (dot) {
+              if (isSoftware) {
+                dot.classList.remove('bg-transparent');
+                dot.classList.add('bg-white');
+              } else {
+                dot.classList.add('bg-transparent');
+              }
+            }
+          });
+
+          // Set sample textarea goal
+          const dreamInput = document.getElementById('dream-input');
+          if (dreamInput) {
+            dreamInput.value = "I want to become an AI & Software Engineer to build smart agriculture apps for small-scale farmers in Andhra Pradesh and Telangana.";
+            // Subtle highlight
+            dreamInput.classList.add('border-brand-gold', 'bg-brand-goldSoft/40');
+            setTimeout(() => {
+              dreamInput.classList.remove('bg-brand-goldSoft/40');
+            }, 800);
+          }
+        });
+      }
+    });
+  </script>
+<!-- END: Client Interactivity Script -->
+<script src="/public/js/profile-hydration.js"></script>
+</body></html>
