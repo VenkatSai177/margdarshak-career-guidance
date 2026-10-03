@@ -216,9 +216,11 @@ Object.keys(routeMap).forEach(function(route) {
   });
 });
 
-app.listen(PORT, function() {
-  console.log(' Margdarshak Platform running on http://localhost:' + PORT);
-  console.log(' Total 22 Google Stitch export screens connected to Production Backend!');
-});
+if (require.main === module) {
+  app.listen(PORT, function() {
+    console.log(' Margdarshak Platform running on http://localhost:' + PORT);
+    console.log(' Total 22 Google Stitch export screens connected to Production Backend!');
+  });
+}
 
 module.exports = app;

@@ -465,7 +465,11 @@ class Store {
   init() {
     if (!fs.existsSync(DB_FILE)) {
       this.data = JSON.parse(JSON.stringify(initialData));
-      fs.writeFileSync(DB_FILE, JSON.stringify(this.data, null, 2));
+      try {
+        fs.writeFileSync(DB_FILE, JSON.stringify(this.data, null, 2));
+      } catch (err) {
+        console.warn('ReadOnly FileSystem - running in memory only');
+      }
     } else {
       try {
         const content = fs.readFileSync(DB_FILE, 'utf8');
